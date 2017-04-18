@@ -50,6 +50,22 @@ var PublisherSessionType = new GraphQLObjectType({
         return fetchDevice(publisherSession.device.id);
       }
     },
+    identityProvider: {
+      type: IdentityProviderType,
+        resolve: (publisherSession) => {
+          var idpId = publisherSession.identityProvider.id;
+
+          return idpId? fetchIdentityProvider(idpId) : null;
+      }
+    },
+    publisher: {
+      type: PublisherType,
+        resolve: (publisherSession) => {
+          var publisherId = publisherSession.publisher.id;
+
+          return publisherId? fetchPublisher(publisherId) : null;
+      }
+    },
     createdDate: {
       type: DateType
     }
@@ -63,6 +79,51 @@ var DeviceType = new GraphQLObjectType({
       type: GraphQLString
     },
     status: {
+      type: GraphQLString
+    },
+    createdDate: {
+      type: DateType
+    },
+    modifiedDate: {
+      type: DateType
+    }
+  })
+});
+
+var PublisherType = new GraphQLObjectType( {
+  name: 'PublisherType',
+  fields: () => ({
+    id: {
+      type: GraphQLString
+    },
+    status: {
+      type: GraphQLString
+    },
+    name: {
+      type: GraphQLString
+    },
+    createdDate: {
+      type: DateType
+    },
+    modifiedDate: {
+      type: DateType
+    }
+  })
+})
+
+var IdentityProviderType = new GraphQLObjectType({
+  name: 'IdentityProviderType',
+  fields: () => ({
+    id: {
+      type: GraphQLString
+    },
+    name: {
+      type: GraphQLString
+    },
+    entityId: {
+      type: GraphQLString
+    },
+    federationId: {
       type: GraphQLString
     },
     createdDate: {
@@ -92,6 +153,20 @@ var schema = new GraphQLSchema({
           id: { type: GraphQLString }
         },
         resolve: (root, args) => fetchDevice(args.id)
+      },
+      identityProvider: {
+        type: IdentityProviderType,
+        args: {
+          id: { type: GraphQLString }
+        },
+        resolve: (root, args) => fetchIdentityProvider(args.id)
+      },
+      publisher: {
+        type: PublisherType,
+        args: {
+          id: { type: GraphQLString }
+        },
+        resolve: (root, args) => fetchPublisher(args.id)
       }
     }
   })
@@ -115,21 +190,23 @@ function fetchDevice(id) {
   return fetchResponseByURL(`/1/device/${id}`);
 }
 
-// The root provides a resolver function for each API endpoint
-var root = {
-  hello: () => {
-    return 'Hello world!';
-  },
+function fetchIdentityProvider(id) {
+  console.log(`fetching identity provider ${id}`);
 
-  publisherSession: () => {
-          return '';
-        }
-};
+  return fetchResponseByURL(`/1/identityProvider/${id}`);
+}
+
+function fetchPublisher(id) {
+  console.log(`fetching publisher ${id}`);
+
+  return fetchResponseByURL(`/1/publisher/${id}`);
+}
+
 
 var app = express();
 app.use('/graphql', graphqlHTTP({
   schema: schema,
-  rootValue: root,
+  rootValue: global,
   graphiql: true,
 }));
 app.listen(4000);
