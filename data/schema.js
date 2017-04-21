@@ -1,20 +1,42 @@
+/**
+ * This file provided by Facebook is for non-commercial testing and evaluation
+ * purposes only.  Facebook reserves all rights not expressly granted.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ * FACEBOOK BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+import {
+  GraphQLBoolean,
+  GraphQLID,
+  GraphQLInt,
+  GraphQLNonNull,
+  GraphQLObjectType,
+  GraphQLSchema,
+  GraphQLScalarType,
+  GraphQLString,
+  GraphQLList
+} from 'graphql';
+
+import {
+  connectionArgs,
+  connectionDefinitions,
+  connectionFromArray,
+  fromGlobalId,
+  globalIdField,
+  mutationWithClientMutationId,
+  nodeDefinitions,
+} from 'graphql-relay';
 
 
-var graphqlModule = require("graphql");
-var graphql = graphqlModule.graphql;
-var GraphQLSchema = graphqlModule.GraphQLSchema;
-var GraphQLObjectType = graphqlModule.GraphQLObjectType;
-var GraphQLString = graphqlModule.GraphQLString;
-var GraphQLScalarType = graphqlModule.GraphQLScalarType;
-var GraphQLInt = graphqlModule.GraphQLInt;
-
-
-var express = require('express');
-var graphqlHTTP = require('express-graphql');
-var { buildSchema } = require('graphql');
 var fetch = require('node-fetch');
+var DataLoader = require('dataloader')
 
-
+var publisherLoader = new DataLoader(keys => fetchPublishers(keys));
 
 var DateType = new GraphQLScalarType({
     name: 'Date',
@@ -34,8 +56,9 @@ var DateType = new GraphQLScalarType({
   });
 
 var PublisherSessionType = new GraphQLObjectType({
-  name: 'PublisherSessionType',
+  name: 'PublisherSession',
   fields: () => ({
+    gid:       globalIdField('PublisherSession'),
     id: {
       type: GraphQLString,
       description: 'The wayf id of the session.',
@@ -44,27 +67,23 @@ var PublisherSessionType = new GraphQLObjectType({
       type: GraphQLString,
       description: 'The local id of the session.',
     },
-    device :{
-      type: DeviceType,
-      resolve: (publisherSession) => {
-        return fetchDevice(publisherSession.device.id);
-      }
+    device: {
+      type: DeviceType
     },
     identityProvider: {
-      type: IdentityProviderType,
-        resolve: (publisherSession) => {
-          var idpId = publisherSession.identityProvider.id;
-
-          return idpId? fetchIdentityProvider(idpId) : null;
-      }
+      type: IdentityProviderType
     },
     publisher: {
       type: PublisherType,
         resolve: (publisherSession) => {
           var publisherId = publisherSession.publisher.id;
 
-          return publisherId? fetchPublisher(publisherId) : null;
+
+          return publisherId? publisherLoader.load(publisherId) : null;
       }
+    },
+    lastActiveDate: {
+      type: DateType
     },
     createdDate: {
       type: DateType
@@ -135,24 +154,42 @@ var IdentityProviderType = new GraphQLObjectType({
   })
 });
 
+
+
+export class User {
+  constructor(secretDeviceId) {
+    this.secretDeviceId = secretDeviceId;
+  }
+}
+const viewer = new User('c1c08c23-8a19-4fb6-a95c-a5fd8680b8ab');
+
+function getViewer() {
+  return new User('c1c08c23-8a19-4fb6-a95c-a5fd8680b8ab');
+}
+
 // The root provides a resolver function for each API endpoint
-var schema = new GraphQLSchema({
-  query: new GraphQLObjectType({
-    name: 'RootQueryType',
+const ViewerType = new GraphQLObjectType({
+    name: 'viewer',
     fields: {
       publisherSession: {
         type: PublisherSessionType,
         args: {
           id: { type: GraphQLString }
         },
-        resolve: (root, args) => fetchPublisherSession(args.id)
+        //resolve: (root, args) => fetchPublisherSession(args.id)
+        resolve: (root, args) => fetchPublisherSession('c1c08c23-8a19-4fb6-a95c-a5fd8680b8ab')
+      },
+      publisherSessions: {
+        name: 'publisherSessions',
+        type: new GraphQLList(PublisherSessionType),
+        resolve: (root, args) => fetchPublisherSessions(root.secretDeviceId)
       },
       device: {
         type: DeviceType,
         args: {
           id: { type: GraphQLString }
         },
-        resolve: (root, args) => fetchDevice(args.id)
+        resolve: (root, args) => fetchDevice(root.secretDeviceId)
       },
       identityProvider: {
         type: IdentityProviderType,
@@ -169,22 +206,43 @@ var schema = new GraphQLSchema({
         resolve: (root, args) => fetchPublisher(args.id)
       }
     }
+  });
+
+
+export const schema = new GraphQLSchema({
+  query: new GraphQLObjectType({
+    name: 'RootQueryType',
+    fields: {
+      viewer: {
+        type: ViewerType,
+        resolve: () => getViewer()
+      }
+    }
   })
 });
 
 const BASE_URL = 'http://localhost:8080';
 
 function fetchResponseByURL(relativeURL) {
+  console.log(relativeURL);
+
   return fetch(`${BASE_URL}${relativeURL}`).then(res => res.json());
 }
 
 function fetchPublisherSession(id) {
   console.log(`fetching publisher session ${id}`);
 
-  return fetchResponseByURL(`/1/publisherSession/${id}`);
+  return fetchResponseByURL(`/1/publisherSessions/${id}`);
+}
+
+function fetchPublisherSessions(deviceId) {
+  console.log(`fetching publisher session ${deviceId}`);
+
+  return fetchResponseByURL(`/1/publisherSessions?device.id=${deviceId}`);
 }
 
 function fetchDevice(id) {
+
   console.log(`fetching device ${id}`);
 
   return fetchResponseByURL(`/1/device/${id}`);
@@ -202,12 +260,11 @@ function fetchPublisher(id) {
   return fetchResponseByURL(`/1/publisher/${id}`);
 }
 
+function fetchPublishers(id) {
+  console.log(`fetching publishers ${id}`);
 
-var app = express();
-app.use('/graphql', graphqlHTTP({
-  schema: schema,
-  rootValue: global,
-  graphiql: true,
-}));
-app.listen(4000);
-console.log('Running a GraphQL API server at localhost:4000/graphql');
+  return fetchResponseByURL(`/1/publishers?id=${id}`);
+}
+
+
+
