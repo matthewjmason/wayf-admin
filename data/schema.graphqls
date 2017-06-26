@@ -4,9 +4,33 @@ schema {
 
 scalar Date
 
+type DeviceAccessType {
+  localId: String
+  device: DeviceType
+  identityProvider: IdentityProviderType
+  publisher: PublisherType
+  type: DeviceAccessTypeEnum
+  createdDate: Date
+  modifiedDate: Date
+}
+
+enum DeviceAccessTypeEnum {
+  REMOVE_IDP
+  READ_IDP_HISTORY
+  ADD_IDP
+}
+
+type DeviceInfoType {
+  userAgent: String
+}
+
 type DeviceType {
-  id: String
+  id: Int
+  globalId: String
   status: String
+  info: DeviceInfoType
+  history: [IdentityProviderUsageType]
+  activity: [DeviceAccessType]
   createdDate: Date
   modifiedDate: Date
 }
@@ -14,26 +38,20 @@ type DeviceType {
 type IdentityProviderType {
   id: String
   name: String
-  entityId: String
-  federationId: String
   createdDate: Date
   modifiedDate: Date
 }
 
-type PublisherSession {
-  gid: ID!
-  id: String
-  localId: String
-  device: DeviceType
-  identityProvider: IdentityProviderType
-  publisher: PublisherType
+type IdentityProviderUsageType {
   lastActiveDate: Date
-  createdDate: Date
+  frequency: Float
+  idp: IdentityProviderType
 }
 
 type PublisherType {
   id: String
   status: String
+  code: String
   name: String
   createdDate: Date
   modifiedDate: Date
@@ -44,8 +62,6 @@ type RootQueryType {
 }
 
 type viewer {
-  publisherSession(id: String): PublisherSession
-  publisherSessions: [PublisherSession]
   device(id: String): DeviceType
   identityProvider(id: String): IdentityProviderType
   publisher(id: String): PublisherType

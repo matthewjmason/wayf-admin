@@ -6,7 +6,7 @@
   "presets": [
     {
       "plugins": [
-        "./build/babelRelayPlugin"
+        ["relay", {"schema": "data/schema.graphqls"}]
       ]
     },
     "react",
