@@ -38,6 +38,7 @@ var fetch = require('node-fetch');
 var DataLoader = require('dataloader')
 
 var publisherLoader = new DataLoader(keys => fetchPublishers(keys));
+var identityProviderLoader = new DataLoader(keys => fetchIdentityProviders(keys));
 
 var DateType = new GraphQLScalarType({
     name: 'Date',
@@ -75,7 +76,13 @@ var DeviceAccessType = new GraphQLObjectType({
             type: DeviceType
         },
         identityProvider: {
-            type: IdentityProviderType
+            type: IdentityProviderType,
+            resolve: (deviceAccess) => {
+                var idp = deviceAccess.identityProvider;
+                var idpId = idp? deviceAccess.identityProvider.id : null;
+
+                return idpId ? identityProviderLoader.load(idpId) : null;
+            }
         },
         publisher: {
             type: PublisherType,
@@ -269,6 +276,12 @@ function fetchIdentityProvider(id) {
     console.log(`fetching identity provider ${id}`);
 
     return fetchResponseByURL(`/1/identityProvider/${id}`);
+}
+
+function fetchIdentityProviders(ids) {
+    console.log(`fetching identity provider ${ids}`);
+
+    return fetchResponseByURL(`/1/identityProviders?ids=${ids}`);
 }
 
 function fetchPublisher(id) {
