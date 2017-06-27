@@ -11,8 +11,6 @@
  */
 
 import {
-    GraphQLBoolean,
-    GraphQLID,
     GraphQLInt,
     GraphQLEnumType,
     GraphQLFloat,
@@ -22,17 +20,6 @@ import {
     GraphQLString,
     GraphQLList
 } from 'graphql';
-
-import {
-    connectionArgs,
-    connectionDefinitions,
-    connectionFromArray,
-    fromGlobalId,
-    globalIdField,
-    mutationWithClientMutationId,
-    nodeDefinitions,
-} from 'graphql-relay';
-
 
 var fetch = require('node-fetch');
 var DataLoader = require('dataloader')
@@ -79,7 +66,7 @@ var DeviceAccessType = new GraphQLObjectType({
             type: IdentityProviderType,
             resolve: (deviceAccess) => {
                 var idp = deviceAccess.identityProvider;
-                var idpId = idp? deviceAccess.identityProvider.id : null;
+                var idpId = idp? idp.id : null;
 
                 return idpId ? identityProviderLoader.load(idpId) : null;
             }
@@ -87,7 +74,8 @@ var DeviceAccessType = new GraphQLObjectType({
         publisher: {
             type: PublisherType,
             resolve: (deviceAccess) => {
-                var publisherId = deviceAccess.publisher.id;
+                var publisher = deviceAccess.publisher;
+                var publisherId = publisher? publisher.id : null;
 
                 return publisherId ? publisherLoader.load(publisherId) : null;
             }
@@ -114,7 +102,13 @@ var IdentityProviderUsageType = new GraphQLObjectType( {
             type: GraphQLFloat
         },
         idp: {
-            type: IdentityProviderType
+            type: IdentityProviderType,
+            resolve: (idpUsage) => {
+                var idp = idpUsage.idp;
+                var idpId = idp? idp.id : null;
+
+                return idpId ? identityProviderLoader.load(idpId) : null;
+            }
         }
     })
 });
@@ -193,6 +187,9 @@ var IdentityProviderType = new GraphQLObjectType({
         id: {
             type: GraphQLString
         },
+        type: {
+            type: GraphQLString
+        },
         name: {
             type: GraphQLString
         },
@@ -241,6 +238,20 @@ const ViewerType = new GraphQLObjectType({
                 id: {type: GraphQLString}
             },
             resolve: (root, args) => fetchPublisher(args.id)
+        },
+        history: {
+            type: new GraphQLList(IdentityProviderUsageType),
+            args: {
+                globalId: {type: GraphQLString}
+            },
+            resolve: (root, args) => fetchHistory(args.globalId)
+        },
+        latestActivity: {
+            type: DeviceAccessType,
+            args: {
+                globalId: {type: GraphQLString}
+            },
+            resolve: (root, args) => fetchLatestActivity(args.globalId)
         }
     }
 });
@@ -264,6 +275,12 @@ function fetchResponseByURL(relativeURL) {
     console.log(relativeURL);
 
     return fetch(`${BASE_URL}${relativeURL}`).then(res => res.json());
+}
+
+function fetchResponseByURLAndHeader(relativeURL, header) {
+    console.log(relativeURL, header);
+
+    return fetch(`${BASE_URL}${relativeURL}`, {headers: header}).then(res => res.json());
 }
 
 function fetchDevice(id) {
@@ -300,4 +317,21 @@ function fetchActivity(id) {
     console.log(`fetching activity ${id}`);
 
     return fetchResponseByURL(`/1/device/${id}/activity`);
+}
+
+function fetchLatestActivity(id) {
+    console.log(`fetching latest activity ${id}`);
+
+    return fetchResponseByURL(`/1/device/${id}/activity?limit=1&type=ADD_IDP`)
+        .then(function(res) {
+            var activity = res;
+
+            return activity[0];
+        });
+}
+
+function fetchHistory(id) {
+    console.log(`fetching activity ${id}`);
+
+    return fetchResponseByURLAndHeader(`/1/mydevice/history`, {'X-Device-Id': 'c5501c52-451e-41ca-a752-3ce236d52da7'});
 }

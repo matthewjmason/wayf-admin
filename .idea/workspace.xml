@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="defefc87-4e46-4263-847e-0bfcda47cf13" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/schema.js" afterPath="$PROJECT_DIR$/data/schema.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -17,16 +18,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="updateSchema.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/updateSchema.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/components/App.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -71,70 +62,9 @@
       <file leaf-file-name="schema.graphqls" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/schema.graphqls">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-              <folding>
-                <marker date="1498508118901" expanded="true" signature="370:569" ph="type...{&#10;  globalId: String&#10;  status: String&#10;  info: DeviceInfoType&#10;  history: [IdentityProviderUsageType]&#10;  activity: [DeviceAccessType]&#10;  createdDate: Date&#10;  modifiedDate: Date&#10;}" />
-                <marker date="1498508118901" expanded="true" signature="386:569" ph="{...}" />
-                <marker date="1498508118901" expanded="true" signature="390:408" ph="globalId...globalId" />
-                <marker date="1498508118901" expanded="true" signature="410:416" ph="String...String" />
-                <marker date="1498508118901" expanded="true" signature="419:425" ph="status...status" />
-                <marker date="1498508118901" expanded="true" signature="427:433" ph="String...String" />
-                <marker date="1498508118901" expanded="true" signature="436:440" ph="info...info" />
-                <marker date="1498508118901" expanded="true" signature="442:456" ph="DeviceInfoType...DeviceInfoType" />
-                <marker date="1498508118901" expanded="true" signature="459:466" ph="history...history" />
-                <marker date="1498508118901" expanded="true" signature="469:494" ph="IdentityProviderUsageType...IdentityProviderUsageType" />
-                <marker date="1498508118901" expanded="true" signature="498:506" ph="activity...activity" />
-                <marker date="1498508118901" expanded="true" signature="509:525" ph="DeviceAccessType...DeviceAccessType" />
-                <marker date="1498508118901" expanded="true" signature="529:540" ph="createdDate...createdDate" />
-                <marker date="1498508118901" expanded="true" signature="542:546" ph="Date...Date" />
-                <marker date="1498508118901" expanded="true" signature="549:561" ph="modifiedDate...modifiedDate" />
-                <marker date="1498508118901" expanded="true" signature="563:567" ph="Date...Date" />
-                <marker date="1498508118901" expanded="true" signature="571:669" ph="type...{&#10;  id: String&#10;  name: String&#10;  createdDate: Date&#10;  modifiedDate: Date&#10;}" />
-                <marker date="1498508118901" expanded="true" signature="576:596" ph="IdentityProviderType...IdentityProviderType" />
-                <marker date="1498508118901" expanded="true" signature="597:669" ph="{...}" />
-                <marker date="1498508118901" expanded="true" signature="601:603" ph="id...id" />
-                <marker date="1498508118901" expanded="true" signature="605:611" ph="String...String" />
-                <marker date="1498508118901" expanded="true" signature="614:618" ph="name...name" />
-                <marker date="1498508118901" expanded="true" signature="620:626" ph="String...String" />
-                <marker date="1498508118901" expanded="true" signature="629:640" ph="createdDate...createdDate" />
-                <marker date="1498508118901" expanded="true" signature="642:646" ph="Date...Date" />
-                <marker date="1498508118901" expanded="true" signature="649:661" ph="modifiedDate...modifiedDate" />
-                <marker date="1498508118901" expanded="true" signature="663:667" ph="Date...Date" />
-                <marker date="1498508118901" expanded="true" signature="671:775" ph="type...{&#10;  lastActiveDate: Date&#10;  frequency: Float&#10;  idp: IdentityProviderType&#10;}" />
-                <marker date="1498508118901" expanded="true" signature="676:701" ph="IdentityProviderUsageType...IdentityProviderUsageType" />
-                <marker date="1498508118901" expanded="true" signature="702:775" ph="{...}" />
-                <marker date="1498508118901" expanded="true" signature="706:720" ph="lastActiveDate...lastActiveDate" />
-                <marker date="1498508118901" expanded="true" signature="722:726" ph="Date...Date" />
-                <marker date="1498508118901" expanded="true" signature="729:738" ph="frequency...frequency" />
-                <marker date="1498508118901" expanded="true" signature="740:745" ph="Float...Float" />
-                <marker date="1498508118901" expanded="true" signature="748:751" ph="idp...idp" />
-                <marker date="1498508118901" expanded="true" signature="753:773" ph="IdentityProviderType...IdentityProviderType" />
-                <marker date="1498508118901" expanded="true" signature="777:900" ph="type...{&#10;  id: String&#10;  status: String&#10;  code: String&#10;  name: String&#10;  createdDate: Date&#10;  modifiedDate: Date&#10;}" />
-                <marker date="1498508118901" expanded="true" signature="782:795" ph="PublisherType...PublisherType" />
-                <marker date="1498508118901" expanded="true" signature="796:900" ph="{...}" />
-                <marker date="1498508118901" expanded="true" signature="800:802" ph="id...id" />
-                <marker date="1498508118901" expanded="true" signature="804:810" ph="String...String" />
-                <marker date="1498508118901" expanded="true" signature="813:819" ph="status...status" />
-                <marker date="1498508118901" expanded="true" signature="821:827" ph="String...String" />
-                <marker date="1498508118901" expanded="true" signature="830:834" ph="code...code" />
-                <marker date="1498508118901" expanded="true" signature="836:842" ph="String...String" />
-                <marker date="1498508118901" expanded="true" signature="845:849" ph="name...name" />
-                <marker date="1498508118901" expanded="true" signature="851:857" ph="String...String" />
-                <marker date="1498508118901" expanded="true" signature="860:871" ph="createdDate...createdDate" />
-                <marker date="1498508118901" expanded="true" signature="873:877" ph="Date...Date" />
-                <marker date="1498508118901" expanded="true" signature="880:892" ph="modifiedDate...modifiedDate" />
-                <marker date="1498508118901" expanded="true" signature="894:898" ph="Date...Date" />
-                <marker date="1498508118901" expanded="true" signature="902:941" ph="type...{&#10;  viewer: viewer&#10;}" />
-                <marker date="1498508118901" expanded="true" signature="907:920" ph="RootQueryType...RootQueryType" />
-                <marker date="1498508118901" expanded="true" signature="925:931" ph="viewer...viewer" />
-                <marker date="1498508118901" expanded="true" signature="933:939" ph="viewer...viewer" />
-                <marker date="1498508118901" expanded="true" signature="948:954" ph="viewer...viewer" />
-                <marker date="1498508118901" expanded="true" signature="959:965" ph="device...device" />
-                <marker date="1498508118901" expanded="true" signature="966:968" ph="id...id" />
-                <marker date="1498508118901" expanded="true" signature="970:976" ph="String...String" />
-                <marker date="1498508118901" expanded="true" signature="979:989" ph="DeviceType...DeviceType" />
-              </folding>
+            <state relative-caret-position="748">
+              <caret line="44" column="22" lean-forward="false" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -142,18 +72,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="36" column="18" lean-forward="true" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wayf-admin.graphqls" pinned="false" current-in-tab="false">
-        <entry file="mock://wayf-admin.graphqls">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-306">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="425">
+              <caret line="25" column="60" lean-forward="true" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -162,241 +82,20 @@
       <file leaf-file-name="schema.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/schema.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-408">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="21" column="15" lean-forward="false" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
               <folding>
-                <marker date="1498508118905" expanded="true" signature="169:44949" ph="[...]" />
-                <marker date="1498508118905" expanded="true" signature="3505:7126" ph="{&quot;name&quot;: &quot;DeviceType&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="3618:3657" ph="[...]" />
-                <marker date="1498508118905" expanded="true" signature="3632:3657" ph="{&quot;name&quot;: &quot;globalId&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="7136:7739" ph="{&quot;name&quot;: &quot;DeviceInfoType&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="7253:7607" ph="[...]" />
-                <marker date="1498508118905" expanded="true" signature="7267:7595" ph="{&quot;name&quot;: &quot;userAgent&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="7387:7503" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="7749:9057" ph="{&quot;name&quot;: &quot;IdentityProviderUsageType&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="7877:8925" ph="[...]" />
-                <marker date="1498508118905" expanded="true" signature="7891:8222" ph="{&quot;name&quot;: &quot;lastActiveDate&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="8016:8130" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="8236:8563" ph="{&quot;name&quot;: &quot;frequency&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="8356:8471" ph="{&quot;name&quot;: &quot;Float&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="8577:8913" ph="{&quot;name&quot;: &quot;idp&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="8691:8821" ph="{&quot;name&quot;: &quot;IdentityProviderType&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="9067:9333" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="9343:9742" ph="{&quot;name&quot;: &quot;Float&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="9752:11376" ph="{&quot;name&quot;: &quot;IdentityProviderType&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="9875:11244" ph="[...]" />
-                <marker date="1498508118905" expanded="true" signature="9889:10210" ph="{&quot;name&quot;: &quot;id&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="10002:10118" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="10224:10547" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="10339:10455" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="10561:10889" ph="{&quot;name&quot;: &quot;createdDate&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="10683:10797" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="10903:11232" ph="{&quot;name&quot;: &quot;modifiedDate&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="11026:11140" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="11386:14078" ph="{&quot;name&quot;: &quot;DeviceAccessType&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="11505:13946" ph="[...]" />
-                <marker date="1498508118905" expanded="true" signature="11519:11845" ph="{&quot;name&quot;: &quot;localId&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="11637:11753" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="11859:12188" ph="{&quot;name&quot;: &quot;device&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="11976:12096" ph="{&quot;name&quot;: &quot;DeviceType&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="12202:12551" ph="{&quot;name&quot;: &quot;identityProvider&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="12329:12459" ph="{&quot;name&quot;: &quot;IdentityProviderType&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="12565:12900" ph="{&quot;name&quot;: &quot;publisher&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="12685:12808" ph="{&quot;name&quot;: &quot;PublisherType&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="12914:13249" ph="{&quot;name&quot;: &quot;type&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="13029:13157" ph="{&quot;name&quot;: &quot;DeviceAccessTypeEnum&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="13263:13591" ph="{&quot;name&quot;: &quot;createdDate&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="13385:13499" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="13605:13934" ph="{&quot;name&quot;: &quot;modifiedDate&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="13728:13842" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="14088:16381" ph="{&quot;name&quot;: &quot;PublisherType&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="14204:16249" ph="[...]" />
-                <marker date="1498508118905" expanded="true" signature="14218:14539" ph="{&quot;name&quot;: &quot;id&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="14331:14447" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="14553:14878" ph="{&quot;name&quot;: &quot;status&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="14670:14786" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="14892:15215" ph="{&quot;name&quot;: &quot;code&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="15007:15123" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="15229:15552" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="15344:15460" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="15566:15894" ph="{&quot;name&quot;: &quot;createdDate&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="15688:15802" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="15908:16237" ph="{&quot;name&quot;: &quot;modifiedDate&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="16031:16145" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="16391:17192" ph="{&quot;name&quot;: &quot;DeviceAccessTypeEnum&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="16603:17149" ph="[...]" />
-                <marker date="1498508118905" expanded="true" signature="16617:16780" ph="{&quot;name&quot;: &quot;REMOVE_IDP&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="16794:16963" ph="{&quot;name&quot;: &quot;READ_IDP_HISTORY&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="16977:17137" ph="{&quot;name&quot;: &quot;ADD_IDP&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="17202:20557" ph="{&quot;name&quot;: &quot;__Schema&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="17512:20425" ph="[...]" />
-                <marker date="1498508118905" expanded="true" signature="17526:18267" ph="{&quot;name&quot;: &quot;types&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="17685:18175" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="17779:18159" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="17875:18141" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="17981:18121" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="18281:18774" ph="{&quot;name&quot;: &quot;queryType&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="18448:18682" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="18542:18666" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="18788:19203" ph="{&quot;name&quot;: &quot;mutationType&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="18995:19111" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="19217:19643" ph="{&quot;name&quot;: &quot;subscriptionType&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="19435:19551" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="19657:20413" ph="{&quot;name&quot;: &quot;directives&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="19826:20321" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="19920:20305" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="20016:20287" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="20122:20267" ph="{&quot;name&quot;: &quot;__Directive&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="20567:26422" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="21194:26290" ph="[...]" />
-                <marker date="1498508118905" expanded="true" signature="21208:21651" ph="{&quot;name&quot;: &quot;kind&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="21323:21559" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="21417:21543" ph="{&quot;name&quot;: &quot;__TypeKind&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="21665:21988" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="21780:21896" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="22002:22332" ph="{&quot;name&quot;: &quot;description&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="22124:22240" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="22346:23252" ph="{&quot;name&quot;: &quot;fields&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="22437:22779" ph="[...]" />
-                <marker date="1498508118905" expanded="true" signature="22455:22763" ph="{&quot;name&quot;: &quot;includeDeprecated&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="22569:22702" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="22803:23160" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="22893:23144" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="22993:23126" ph="{&quot;name&quot;: &quot;__Field&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="23266:23835" ph="{&quot;name&quot;: &quot;interfaces&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="23387:23743" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="23477:23727" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="23577:23709" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="23849:24421" ph="{&quot;name&quot;: &quot;possibleTypes&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="23973:24329" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="24063:24313" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="24163:24295" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="24435:25349" ph="{&quot;name&quot;: &quot;enumValues&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="24530:24872" ph="[...]" />
-                <marker date="1498508118905" expanded="true" signature="24548:24856" ph="{&quot;name&quot;: &quot;includeDeprecated&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="24662:24795" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="24896:25257" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="24986:25241" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="25086:25223" ph="{&quot;name&quot;: &quot;__EnumValue&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="25363:25939" ph="{&quot;name&quot;: &quot;inputFields&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="25485:25847" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="25575:25831" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="25675:25813" ph="{&quot;name&quot;: &quot;__InputValue&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="25953:26278" ph="{&quot;name&quot;: &quot;ofType&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="26070:26186" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="26432:28626" ph="{&quot;name&quot;: &quot;__TypeKind&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="26689:28583" ph="[...]" />
-                <marker date="1498508118905" expanded="true" signature="26703:26892" ph="{&quot;name&quot;: &quot;SCALAR&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="26906:27140" ph="{&quot;name&quot;: &quot;OBJECT&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="27154:27397" ph="{&quot;name&quot;: &quot;INTERFACE&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="27411:27632" ph="{&quot;name&quot;: &quot;UNION&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="27646:27863" ph="{&quot;name&quot;: &quot;ENUM&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="27877:28111" ph="{&quot;name&quot;: &quot;INPUT_OBJECT&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="28125:28337" ph="{&quot;name&quot;: &quot;LIST&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="28351:28571" ph="{&quot;name&quot;: &quot;NON_NULL&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="28636:28937" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="28947:32123" ph="{&quot;name&quot;: &quot;__Field&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="29194:31991" ph="[...]" />
-                <marker date="1498508118905" expanded="true" signature="29208:29649" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="29323:29557" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="29417:29541" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="29663:29993" ph="{&quot;name&quot;: &quot;description&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="29785:29901" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="30007:30710" ph="{&quot;name&quot;: &quot;args&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="30122:30618" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="30216:30602" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="30312:30584" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="30418:30564" ph="{&quot;name&quot;: &quot;__InputValue&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="30724:31165" ph="{&quot;name&quot;: &quot;type&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="30839:31073" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="30933:31057" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="31179:31629" ph="{&quot;name&quot;: &quot;isDeprecated&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="31302:31537" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="31396:31521" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="31643:31979" ph="{&quot;name&quot;: &quot;deprecationReason&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="31771:31887" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="32133:34237" ph="{&quot;name&quot;: &quot;__InputValue&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="32417:34105" ph="[...]" />
-                <marker date="1498508118905" expanded="true" signature="32431:32872" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="32546:32780" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="32640:32764" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="32886:33216" ph="{&quot;name&quot;: &quot;description&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="33008:33124" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="33230:33671" ph="{&quot;name&quot;: &quot;type&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="33345:33579" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="33439:33563" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="33685:34093" ph="{&quot;name&quot;: &quot;defaultValue&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="33885:34001" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="34247:36298" ph="{&quot;name&quot;: &quot;__EnumValue&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="34541:36166" ph="[...]" />
-                <marker date="1498508118905" expanded="true" signature="34555:34996" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="34670:34904" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="34764:34888" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="35010:35340" ph="{&quot;name&quot;: &quot;description&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="35132:35248" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="35354:35804" ph="{&quot;name&quot;: &quot;isDeprecated&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="35477:35712" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="35571:35696" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="35818:36154" ph="{&quot;name&quot;: &quot;deprecationReason&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="35946:36062" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="36308:40605" ph="{&quot;name&quot;: &quot;__Directive&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="36795:40473" ph="[...]" />
-                <marker date="1498508118905" expanded="true" signature="36809:37250" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="36924:37158" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="37018:37142" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="37264:37594" ph="{&quot;name&quot;: &quot;description&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="37386:37502" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="37608:38321" ph="{&quot;name&quot;: &quot;locations&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="37728:38229" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="37822:38213" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="37918:38195" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="38024:38175" ph="{&quot;name&quot;: &quot;__DirectiveLocation&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="38335:39038" ph="{&quot;name&quot;: &quot;args&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="38450:38946" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="38544:38930" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="38640:38912" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="38746:38892" ph="{&quot;name&quot;: &quot;__InputValue&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="39052:39514" ph="{&quot;name&quot;: &quot;onOperation&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="39174:39409" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="39268:39393" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="39528:39989" ph="{&quot;name&quot;: &quot;onFragment&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="39649:39884" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="39743:39868" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="40003:40461" ph="{&quot;name&quot;: &quot;onField&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="40121:40356" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="40215:40340" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="40615:44941" ph="{&quot;name&quot;: &quot;__DirectiveLocation&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="40953:44898" ph="[...]" />
-                <marker date="1498508118905" expanded="true" signature="40967:41162" ph="{&quot;name&quot;: &quot;QUERY&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="41176:41377" ph="{&quot;name&quot;: &quot;MUTATION&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="41391:41600" ph="{&quot;name&quot;: &quot;SUBSCRIPTION&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="41614:41799" ph="{&quot;name&quot;: &quot;FIELD&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="41813:42026" ph="{&quot;name&quot;: &quot;FRAGMENT_DEFINITION&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="42040:42245" ph="{&quot;name&quot;: &quot;FRAGMENT_SPREAD&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="42259:42465" ph="{&quot;name&quot;: &quot;INLINE_FRAGMENT&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="42479:42677" ph="{&quot;name&quot;: &quot;SCHEMA&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="42691:42889" ph="{&quot;name&quot;: &quot;SCALAR&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="42903:43107" ph="{&quot;name&quot;: &quot;OBJECT&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="43121:43328" ph="{&quot;name&quot;: &quot;FIELD_DEFINITION&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="43342:43556" ph="{&quot;name&quot;: &quot;ARGUMENT_DEFINITION&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="43570:43775" ph="{&quot;name&quot;: &quot;INTERFACE&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="43789:43985" ph="{&quot;name&quot;: &quot;UNION&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="43999:44194" ph="{&quot;name&quot;: &quot;ENUM&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="44208:44415" ph="{&quot;name&quot;: &quot;ENUM_VALUE&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="44429:44645" ph="{&quot;name&quot;: &quot;INPUT_OBJECT&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="44659:44886" ph="{&quot;name&quot;: &quot;INPUT_FIELD_DEFINITION&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="44981:45695" ph="{&quot;name&quot;: &quot;include&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="45155:45250" ph="[...]" />
-                <marker date="1498508118905" expanded="true" signature="45270:45685" ph="[...]" />
-                <marker date="1498508118905" expanded="true" signature="45284:45673" ph="{&quot;name&quot;: &quot;if&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="45388:45623" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="45482:45607" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="45705:46407" ph="{&quot;name&quot;: &quot;skip&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="45868:45963" ph="[...]" />
-                <marker date="1498508118905" expanded="true" signature="45983:46397" ph="[...]" />
-                <marker date="1498508118905" expanded="true" signature="45997:46385" ph="{&quot;name&quot;: &quot;if&quot;...}" />
-                <marker date="1498508118905" expanded="true" signature="46100:46335" ph="{&quot;name&quot;: null...}" />
-                <marker date="1498508118905" expanded="true" signature="46194:46319" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -405,12 +104,22 @@
       <file leaf-file-name="schema.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/schema.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="288" column="0" lean-forward="true" selection-start-line="288" selection-start-column="0" selection-end-line="288" selection-end-column="0" />
+            <state relative-caret-position="-2932">
+              <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="e#617#833#0" expanded="true" />
+                <element signature="e#617#798#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="graphql.config.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/graphql.config.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="7" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -539,57 +248,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wayf-admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wayf-admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wayf-admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wayf-admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wayf-admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wayf-admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -754,12 +413,12 @@
       <updated>1498501160216</updated>
       <workItem from="1498501161314" duration="157000" />
       <workItem from="1498501537443" duration="3840000" />
-      <workItem from="1498505730568" duration="3983000" />
+      <workItem from="1498505730568" duration="17730000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7980000" />
+    <option name="totallyTimeSpent" value="21727000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="2497" height="1452" extended-state="6" />
@@ -845,68 +504,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1005">
           <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding>
-            <marker date="1498508118901" expanded="true" signature="370:569" ph="type...{&#10;  globalId: String&#10;  status: String&#10;  info: DeviceInfoType&#10;  history: [IdentityProviderUsageType]&#10;  activity: [DeviceAccessType]&#10;  createdDate: Date&#10;  modifiedDate: Date&#10;}" />
-            <marker date="1498508118901" expanded="true" signature="386:569" ph="{...}" />
-            <marker date="1498508118901" expanded="true" signature="390:408" ph="globalId...globalId" />
-            <marker date="1498508118901" expanded="true" signature="410:416" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="419:425" ph="status...status" />
-            <marker date="1498508118901" expanded="true" signature="427:433" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="436:440" ph="info...info" />
-            <marker date="1498508118901" expanded="true" signature="442:456" ph="DeviceInfoType...DeviceInfoType" />
-            <marker date="1498508118901" expanded="true" signature="459:466" ph="history...history" />
-            <marker date="1498508118901" expanded="true" signature="469:494" ph="IdentityProviderUsageType...IdentityProviderUsageType" />
-            <marker date="1498508118901" expanded="true" signature="498:506" ph="activity...activity" />
-            <marker date="1498508118901" expanded="true" signature="509:525" ph="DeviceAccessType...DeviceAccessType" />
-            <marker date="1498508118901" expanded="true" signature="529:540" ph="createdDate...createdDate" />
-            <marker date="1498508118901" expanded="true" signature="542:546" ph="Date...Date" />
-            <marker date="1498508118901" expanded="true" signature="549:561" ph="modifiedDate...modifiedDate" />
-            <marker date="1498508118901" expanded="true" signature="563:567" ph="Date...Date" />
-            <marker date="1498508118901" expanded="true" signature="571:669" ph="type...{&#10;  id: String&#10;  name: String&#10;  createdDate: Date&#10;  modifiedDate: Date&#10;}" />
-            <marker date="1498508118901" expanded="true" signature="576:596" ph="IdentityProviderType...IdentityProviderType" />
-            <marker date="1498508118901" expanded="true" signature="597:669" ph="{...}" />
-            <marker date="1498508118901" expanded="true" signature="601:603" ph="id...id" />
-            <marker date="1498508118901" expanded="true" signature="605:611" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="614:618" ph="name...name" />
-            <marker date="1498508118901" expanded="true" signature="620:626" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="629:640" ph="createdDate...createdDate" />
-            <marker date="1498508118901" expanded="true" signature="642:646" ph="Date...Date" />
-            <marker date="1498508118901" expanded="true" signature="649:661" ph="modifiedDate...modifiedDate" />
-            <marker date="1498508118901" expanded="true" signature="663:667" ph="Date...Date" />
-            <marker date="1498508118901" expanded="true" signature="671:775" ph="type...{&#10;  lastActiveDate: Date&#10;  frequency: Float&#10;  idp: IdentityProviderType&#10;}" />
-            <marker date="1498508118901" expanded="true" signature="676:701" ph="IdentityProviderUsageType...IdentityProviderUsageType" />
-            <marker date="1498508118901" expanded="true" signature="702:775" ph="{...}" />
-            <marker date="1498508118901" expanded="true" signature="706:720" ph="lastActiveDate...lastActiveDate" />
-            <marker date="1498508118901" expanded="true" signature="722:726" ph="Date...Date" />
-            <marker date="1498508118901" expanded="true" signature="729:738" ph="frequency...frequency" />
-            <marker date="1498508118901" expanded="true" signature="740:745" ph="Float...Float" />
-            <marker date="1498508118901" expanded="true" signature="748:751" ph="idp...idp" />
-            <marker date="1498508118901" expanded="true" signature="753:773" ph="IdentityProviderType...IdentityProviderType" />
-            <marker date="1498508118901" expanded="true" signature="777:900" ph="type...{&#10;  id: String&#10;  status: String&#10;  code: String&#10;  name: String&#10;  createdDate: Date&#10;  modifiedDate: Date&#10;}" />
-            <marker date="1498508118901" expanded="true" signature="782:795" ph="PublisherType...PublisherType" />
-            <marker date="1498508118901" expanded="true" signature="796:900" ph="{...}" />
-            <marker date="1498508118901" expanded="true" signature="800:802" ph="id...id" />
-            <marker date="1498508118901" expanded="true" signature="804:810" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="813:819" ph="status...status" />
-            <marker date="1498508118901" expanded="true" signature="821:827" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="830:834" ph="code...code" />
-            <marker date="1498508118901" expanded="true" signature="836:842" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="845:849" ph="name...name" />
-            <marker date="1498508118901" expanded="true" signature="851:857" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="860:871" ph="createdDate...createdDate" />
-            <marker date="1498508118901" expanded="true" signature="873:877" ph="Date...Date" />
-            <marker date="1498508118901" expanded="true" signature="880:892" ph="modifiedDate...modifiedDate" />
-            <marker date="1498508118901" expanded="true" signature="894:898" ph="Date...Date" />
-            <marker date="1498508118901" expanded="true" signature="902:941" ph="type...{&#10;  viewer: viewer&#10;}" />
-            <marker date="1498508118901" expanded="true" signature="907:920" ph="RootQueryType...RootQueryType" />
-            <marker date="1498508118901" expanded="true" signature="925:931" ph="viewer...viewer" />
-            <marker date="1498508118901" expanded="true" signature="933:939" ph="viewer...viewer" />
-            <marker date="1498508118901" expanded="true" signature="948:954" ph="viewer...viewer" />
-            <marker date="1498508118901" expanded="true" signature="959:965" ph="device...device" />
-            <marker date="1498508118901" expanded="true" signature="966:968" ph="id...id" />
-            <marker date="1498508118901" expanded="true" signature="970:976" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="979:989" ph="DeviceType...DeviceType" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -922,240 +520,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1498508118905" expanded="true" signature="169:44949" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="3505:7126" ph="{&quot;name&quot;: &quot;DeviceType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="3618:3657" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="3632:3657" ph="{&quot;name&quot;: &quot;globalId&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="7136:7739" ph="{&quot;name&quot;: &quot;DeviceInfoType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="7253:7607" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="7267:7595" ph="{&quot;name&quot;: &quot;userAgent&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="7387:7503" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="7749:9057" ph="{&quot;name&quot;: &quot;IdentityProviderUsageType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="7877:8925" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="7891:8222" ph="{&quot;name&quot;: &quot;lastActiveDate&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="8016:8130" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="8236:8563" ph="{&quot;name&quot;: &quot;frequency&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="8356:8471" ph="{&quot;name&quot;: &quot;Float&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="8577:8913" ph="{&quot;name&quot;: &quot;idp&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="8691:8821" ph="{&quot;name&quot;: &quot;IdentityProviderType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="9067:9333" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="9343:9742" ph="{&quot;name&quot;: &quot;Float&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="9752:11376" ph="{&quot;name&quot;: &quot;IdentityProviderType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="9875:11244" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="9889:10210" ph="{&quot;name&quot;: &quot;id&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="10002:10118" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="10224:10547" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="10339:10455" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="10561:10889" ph="{&quot;name&quot;: &quot;createdDate&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="10683:10797" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="10903:11232" ph="{&quot;name&quot;: &quot;modifiedDate&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="11026:11140" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="11386:14078" ph="{&quot;name&quot;: &quot;DeviceAccessType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="11505:13946" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="11519:11845" ph="{&quot;name&quot;: &quot;localId&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="11637:11753" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="11859:12188" ph="{&quot;name&quot;: &quot;device&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="11976:12096" ph="{&quot;name&quot;: &quot;DeviceType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="12202:12551" ph="{&quot;name&quot;: &quot;identityProvider&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="12329:12459" ph="{&quot;name&quot;: &quot;IdentityProviderType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="12565:12900" ph="{&quot;name&quot;: &quot;publisher&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="12685:12808" ph="{&quot;name&quot;: &quot;PublisherType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="12914:13249" ph="{&quot;name&quot;: &quot;type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="13029:13157" ph="{&quot;name&quot;: &quot;DeviceAccessTypeEnum&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="13263:13591" ph="{&quot;name&quot;: &quot;createdDate&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="13385:13499" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="13605:13934" ph="{&quot;name&quot;: &quot;modifiedDate&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="13728:13842" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="14088:16381" ph="{&quot;name&quot;: &quot;PublisherType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="14204:16249" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="14218:14539" ph="{&quot;name&quot;: &quot;id&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="14331:14447" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="14553:14878" ph="{&quot;name&quot;: &quot;status&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="14670:14786" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="14892:15215" ph="{&quot;name&quot;: &quot;code&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="15007:15123" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="15229:15552" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="15344:15460" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="15566:15894" ph="{&quot;name&quot;: &quot;createdDate&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="15688:15802" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="15908:16237" ph="{&quot;name&quot;: &quot;modifiedDate&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="16031:16145" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="16391:17192" ph="{&quot;name&quot;: &quot;DeviceAccessTypeEnum&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="16603:17149" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="16617:16780" ph="{&quot;name&quot;: &quot;REMOVE_IDP&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="16794:16963" ph="{&quot;name&quot;: &quot;READ_IDP_HISTORY&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="16977:17137" ph="{&quot;name&quot;: &quot;ADD_IDP&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="17202:20557" ph="{&quot;name&quot;: &quot;__Schema&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="17512:20425" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="17526:18267" ph="{&quot;name&quot;: &quot;types&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="17685:18175" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="17779:18159" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="17875:18141" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="17981:18121" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="18281:18774" ph="{&quot;name&quot;: &quot;queryType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="18448:18682" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="18542:18666" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="18788:19203" ph="{&quot;name&quot;: &quot;mutationType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="18995:19111" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="19217:19643" ph="{&quot;name&quot;: &quot;subscriptionType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="19435:19551" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="19657:20413" ph="{&quot;name&quot;: &quot;directives&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="19826:20321" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="19920:20305" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="20016:20287" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="20122:20267" ph="{&quot;name&quot;: &quot;__Directive&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="20567:26422" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="21194:26290" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="21208:21651" ph="{&quot;name&quot;: &quot;kind&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="21323:21559" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="21417:21543" ph="{&quot;name&quot;: &quot;__TypeKind&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="21665:21988" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="21780:21896" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="22002:22332" ph="{&quot;name&quot;: &quot;description&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="22124:22240" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="22346:23252" ph="{&quot;name&quot;: &quot;fields&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="22437:22779" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="22455:22763" ph="{&quot;name&quot;: &quot;includeDeprecated&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="22569:22702" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="22803:23160" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="22893:23144" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="22993:23126" ph="{&quot;name&quot;: &quot;__Field&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="23266:23835" ph="{&quot;name&quot;: &quot;interfaces&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="23387:23743" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="23477:23727" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="23577:23709" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="23849:24421" ph="{&quot;name&quot;: &quot;possibleTypes&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="23973:24329" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="24063:24313" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="24163:24295" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="24435:25349" ph="{&quot;name&quot;: &quot;enumValues&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="24530:24872" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="24548:24856" ph="{&quot;name&quot;: &quot;includeDeprecated&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="24662:24795" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="24896:25257" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="24986:25241" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="25086:25223" ph="{&quot;name&quot;: &quot;__EnumValue&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="25363:25939" ph="{&quot;name&quot;: &quot;inputFields&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="25485:25847" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="25575:25831" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="25675:25813" ph="{&quot;name&quot;: &quot;__InputValue&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="25953:26278" ph="{&quot;name&quot;: &quot;ofType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="26070:26186" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="26432:28626" ph="{&quot;name&quot;: &quot;__TypeKind&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="26689:28583" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="26703:26892" ph="{&quot;name&quot;: &quot;SCALAR&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="26906:27140" ph="{&quot;name&quot;: &quot;OBJECT&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="27154:27397" ph="{&quot;name&quot;: &quot;INTERFACE&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="27411:27632" ph="{&quot;name&quot;: &quot;UNION&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="27646:27863" ph="{&quot;name&quot;: &quot;ENUM&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="27877:28111" ph="{&quot;name&quot;: &quot;INPUT_OBJECT&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="28125:28337" ph="{&quot;name&quot;: &quot;LIST&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="28351:28571" ph="{&quot;name&quot;: &quot;NON_NULL&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="28636:28937" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="28947:32123" ph="{&quot;name&quot;: &quot;__Field&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="29194:31991" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="29208:29649" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="29323:29557" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="29417:29541" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="29663:29993" ph="{&quot;name&quot;: &quot;description&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="29785:29901" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="30007:30710" ph="{&quot;name&quot;: &quot;args&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="30122:30618" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="30216:30602" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="30312:30584" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="30418:30564" ph="{&quot;name&quot;: &quot;__InputValue&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="30724:31165" ph="{&quot;name&quot;: &quot;type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="30839:31073" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="30933:31057" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="31179:31629" ph="{&quot;name&quot;: &quot;isDeprecated&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="31302:31537" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="31396:31521" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="31643:31979" ph="{&quot;name&quot;: &quot;deprecationReason&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="31771:31887" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="32133:34237" ph="{&quot;name&quot;: &quot;__InputValue&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="32417:34105" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="32431:32872" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="32546:32780" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="32640:32764" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="32886:33216" ph="{&quot;name&quot;: &quot;description&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="33008:33124" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="33230:33671" ph="{&quot;name&quot;: &quot;type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="33345:33579" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="33439:33563" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="33685:34093" ph="{&quot;name&quot;: &quot;defaultValue&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="33885:34001" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="34247:36298" ph="{&quot;name&quot;: &quot;__EnumValue&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="34541:36166" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="34555:34996" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="34670:34904" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="34764:34888" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="35010:35340" ph="{&quot;name&quot;: &quot;description&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="35132:35248" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="35354:35804" ph="{&quot;name&quot;: &quot;isDeprecated&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="35477:35712" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="35571:35696" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="35818:36154" ph="{&quot;name&quot;: &quot;deprecationReason&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="35946:36062" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="36308:40605" ph="{&quot;name&quot;: &quot;__Directive&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="36795:40473" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="36809:37250" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="36924:37158" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="37018:37142" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="37264:37594" ph="{&quot;name&quot;: &quot;description&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="37386:37502" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="37608:38321" ph="{&quot;name&quot;: &quot;locations&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="37728:38229" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="37822:38213" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="37918:38195" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="38024:38175" ph="{&quot;name&quot;: &quot;__DirectiveLocation&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="38335:39038" ph="{&quot;name&quot;: &quot;args&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="38450:38946" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="38544:38930" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="38640:38912" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="38746:38892" ph="{&quot;name&quot;: &quot;__InputValue&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="39052:39514" ph="{&quot;name&quot;: &quot;onOperation&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="39174:39409" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="39268:39393" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="39528:39989" ph="{&quot;name&quot;: &quot;onFragment&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="39649:39884" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="39743:39868" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="40003:40461" ph="{&quot;name&quot;: &quot;onField&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="40121:40356" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="40215:40340" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="40615:44941" ph="{&quot;name&quot;: &quot;__DirectiveLocation&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="40953:44898" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="40967:41162" ph="{&quot;name&quot;: &quot;QUERY&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="41176:41377" ph="{&quot;name&quot;: &quot;MUTATION&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="41391:41600" ph="{&quot;name&quot;: &quot;SUBSCRIPTION&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="41614:41799" ph="{&quot;name&quot;: &quot;FIELD&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="41813:42026" ph="{&quot;name&quot;: &quot;FRAGMENT_DEFINITION&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="42040:42245" ph="{&quot;name&quot;: &quot;FRAGMENT_SPREAD&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="42259:42465" ph="{&quot;name&quot;: &quot;INLINE_FRAGMENT&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="42479:42677" ph="{&quot;name&quot;: &quot;SCHEMA&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="42691:42889" ph="{&quot;name&quot;: &quot;SCALAR&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="42903:43107" ph="{&quot;name&quot;: &quot;OBJECT&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="43121:43328" ph="{&quot;name&quot;: &quot;FIELD_DEFINITION&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="43342:43556" ph="{&quot;name&quot;: &quot;ARGUMENT_DEFINITION&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="43570:43775" ph="{&quot;name&quot;: &quot;INTERFACE&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="43789:43985" ph="{&quot;name&quot;: &quot;UNION&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="43999:44194" ph="{&quot;name&quot;: &quot;ENUM&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="44208:44415" ph="{&quot;name&quot;: &quot;ENUM_VALUE&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="44429:44645" ph="{&quot;name&quot;: &quot;INPUT_OBJECT&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="44659:44886" ph="{&quot;name&quot;: &quot;INPUT_FIELD_DEFINITION&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="44981:45695" ph="{&quot;name&quot;: &quot;include&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="45155:45250" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="45270:45685" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="45284:45673" ph="{&quot;name&quot;: &quot;if&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="45388:45623" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="45482:45607" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="45705:46407" ph="{&quot;name&quot;: &quot;skip&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="45868:45963" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="45983:46397" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="45997:46385" ph="{&quot;name&quot;: &quot;if&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="46100:46335" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="46194:46319" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1189,7 +554,7 @@
           <caret line="63" column="20" lean-forward="false" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#617#833#0" expanded="true" />
+            <element signature="e#617#798#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1245,68 +610,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
           <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding>
-            <marker date="1498508118901" expanded="true" signature="370:569" ph="type...{&#10;  globalId: String&#10;  status: String&#10;  info: DeviceInfoType&#10;  history: [IdentityProviderUsageType]&#10;  activity: [DeviceAccessType]&#10;  createdDate: Date&#10;  modifiedDate: Date&#10;}" />
-            <marker date="1498508118901" expanded="true" signature="386:569" ph="{...}" />
-            <marker date="1498508118901" expanded="true" signature="390:408" ph="globalId...globalId" />
-            <marker date="1498508118901" expanded="true" signature="410:416" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="419:425" ph="status...status" />
-            <marker date="1498508118901" expanded="true" signature="427:433" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="436:440" ph="info...info" />
-            <marker date="1498508118901" expanded="true" signature="442:456" ph="DeviceInfoType...DeviceInfoType" />
-            <marker date="1498508118901" expanded="true" signature="459:466" ph="history...history" />
-            <marker date="1498508118901" expanded="true" signature="469:494" ph="IdentityProviderUsageType...IdentityProviderUsageType" />
-            <marker date="1498508118901" expanded="true" signature="498:506" ph="activity...activity" />
-            <marker date="1498508118901" expanded="true" signature="509:525" ph="DeviceAccessType...DeviceAccessType" />
-            <marker date="1498508118901" expanded="true" signature="529:540" ph="createdDate...createdDate" />
-            <marker date="1498508118901" expanded="true" signature="542:546" ph="Date...Date" />
-            <marker date="1498508118901" expanded="true" signature="549:561" ph="modifiedDate...modifiedDate" />
-            <marker date="1498508118901" expanded="true" signature="563:567" ph="Date...Date" />
-            <marker date="1498508118901" expanded="true" signature="571:669" ph="type...{&#10;  id: String&#10;  name: String&#10;  createdDate: Date&#10;  modifiedDate: Date&#10;}" />
-            <marker date="1498508118901" expanded="true" signature="576:596" ph="IdentityProviderType...IdentityProviderType" />
-            <marker date="1498508118901" expanded="true" signature="597:669" ph="{...}" />
-            <marker date="1498508118901" expanded="true" signature="601:603" ph="id...id" />
-            <marker date="1498508118901" expanded="true" signature="605:611" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="614:618" ph="name...name" />
-            <marker date="1498508118901" expanded="true" signature="620:626" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="629:640" ph="createdDate...createdDate" />
-            <marker date="1498508118901" expanded="true" signature="642:646" ph="Date...Date" />
-            <marker date="1498508118901" expanded="true" signature="649:661" ph="modifiedDate...modifiedDate" />
-            <marker date="1498508118901" expanded="true" signature="663:667" ph="Date...Date" />
-            <marker date="1498508118901" expanded="true" signature="671:775" ph="type...{&#10;  lastActiveDate: Date&#10;  frequency: Float&#10;  idp: IdentityProviderType&#10;}" />
-            <marker date="1498508118901" expanded="true" signature="676:701" ph="IdentityProviderUsageType...IdentityProviderUsageType" />
-            <marker date="1498508118901" expanded="true" signature="702:775" ph="{...}" />
-            <marker date="1498508118901" expanded="true" signature="706:720" ph="lastActiveDate...lastActiveDate" />
-            <marker date="1498508118901" expanded="true" signature="722:726" ph="Date...Date" />
-            <marker date="1498508118901" expanded="true" signature="729:738" ph="frequency...frequency" />
-            <marker date="1498508118901" expanded="true" signature="740:745" ph="Float...Float" />
-            <marker date="1498508118901" expanded="true" signature="748:751" ph="idp...idp" />
-            <marker date="1498508118901" expanded="true" signature="753:773" ph="IdentityProviderType...IdentityProviderType" />
-            <marker date="1498508118901" expanded="true" signature="777:900" ph="type...{&#10;  id: String&#10;  status: String&#10;  code: String&#10;  name: String&#10;  createdDate: Date&#10;  modifiedDate: Date&#10;}" />
-            <marker date="1498508118901" expanded="true" signature="782:795" ph="PublisherType...PublisherType" />
-            <marker date="1498508118901" expanded="true" signature="796:900" ph="{...}" />
-            <marker date="1498508118901" expanded="true" signature="800:802" ph="id...id" />
-            <marker date="1498508118901" expanded="true" signature="804:810" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="813:819" ph="status...status" />
-            <marker date="1498508118901" expanded="true" signature="821:827" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="830:834" ph="code...code" />
-            <marker date="1498508118901" expanded="true" signature="836:842" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="845:849" ph="name...name" />
-            <marker date="1498508118901" expanded="true" signature="851:857" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="860:871" ph="createdDate...createdDate" />
-            <marker date="1498508118901" expanded="true" signature="873:877" ph="Date...Date" />
-            <marker date="1498508118901" expanded="true" signature="880:892" ph="modifiedDate...modifiedDate" />
-            <marker date="1498508118901" expanded="true" signature="894:898" ph="Date...Date" />
-            <marker date="1498508118901" expanded="true" signature="902:941" ph="type...{&#10;  viewer: viewer&#10;}" />
-            <marker date="1498508118901" expanded="true" signature="907:920" ph="RootQueryType...RootQueryType" />
-            <marker date="1498508118901" expanded="true" signature="925:931" ph="viewer...viewer" />
-            <marker date="1498508118901" expanded="true" signature="933:939" ph="viewer...viewer" />
-            <marker date="1498508118901" expanded="true" signature="948:954" ph="viewer...viewer" />
-            <marker date="1498508118901" expanded="true" signature="959:965" ph="device...device" />
-            <marker date="1498508118901" expanded="true" signature="966:968" ph="id...id" />
-            <marker date="1498508118901" expanded="true" signature="970:976" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="979:989" ph="DeviceType...DeviceType" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1314,240 +618,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1498508118905" expanded="true" signature="169:44949" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="3505:7126" ph="{&quot;name&quot;: &quot;DeviceType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="3618:3657" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="3632:3657" ph="{&quot;name&quot;: &quot;globalId&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="7136:7739" ph="{&quot;name&quot;: &quot;DeviceInfoType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="7253:7607" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="7267:7595" ph="{&quot;name&quot;: &quot;userAgent&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="7387:7503" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="7749:9057" ph="{&quot;name&quot;: &quot;IdentityProviderUsageType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="7877:8925" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="7891:8222" ph="{&quot;name&quot;: &quot;lastActiveDate&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="8016:8130" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="8236:8563" ph="{&quot;name&quot;: &quot;frequency&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="8356:8471" ph="{&quot;name&quot;: &quot;Float&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="8577:8913" ph="{&quot;name&quot;: &quot;idp&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="8691:8821" ph="{&quot;name&quot;: &quot;IdentityProviderType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="9067:9333" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="9343:9742" ph="{&quot;name&quot;: &quot;Float&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="9752:11376" ph="{&quot;name&quot;: &quot;IdentityProviderType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="9875:11244" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="9889:10210" ph="{&quot;name&quot;: &quot;id&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="10002:10118" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="10224:10547" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="10339:10455" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="10561:10889" ph="{&quot;name&quot;: &quot;createdDate&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="10683:10797" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="10903:11232" ph="{&quot;name&quot;: &quot;modifiedDate&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="11026:11140" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="11386:14078" ph="{&quot;name&quot;: &quot;DeviceAccessType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="11505:13946" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="11519:11845" ph="{&quot;name&quot;: &quot;localId&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="11637:11753" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="11859:12188" ph="{&quot;name&quot;: &quot;device&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="11976:12096" ph="{&quot;name&quot;: &quot;DeviceType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="12202:12551" ph="{&quot;name&quot;: &quot;identityProvider&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="12329:12459" ph="{&quot;name&quot;: &quot;IdentityProviderType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="12565:12900" ph="{&quot;name&quot;: &quot;publisher&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="12685:12808" ph="{&quot;name&quot;: &quot;PublisherType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="12914:13249" ph="{&quot;name&quot;: &quot;type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="13029:13157" ph="{&quot;name&quot;: &quot;DeviceAccessTypeEnum&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="13263:13591" ph="{&quot;name&quot;: &quot;createdDate&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="13385:13499" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="13605:13934" ph="{&quot;name&quot;: &quot;modifiedDate&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="13728:13842" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="14088:16381" ph="{&quot;name&quot;: &quot;PublisherType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="14204:16249" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="14218:14539" ph="{&quot;name&quot;: &quot;id&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="14331:14447" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="14553:14878" ph="{&quot;name&quot;: &quot;status&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="14670:14786" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="14892:15215" ph="{&quot;name&quot;: &quot;code&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="15007:15123" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="15229:15552" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="15344:15460" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="15566:15894" ph="{&quot;name&quot;: &quot;createdDate&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="15688:15802" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="15908:16237" ph="{&quot;name&quot;: &quot;modifiedDate&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="16031:16145" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="16391:17192" ph="{&quot;name&quot;: &quot;DeviceAccessTypeEnum&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="16603:17149" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="16617:16780" ph="{&quot;name&quot;: &quot;REMOVE_IDP&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="16794:16963" ph="{&quot;name&quot;: &quot;READ_IDP_HISTORY&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="16977:17137" ph="{&quot;name&quot;: &quot;ADD_IDP&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="17202:20557" ph="{&quot;name&quot;: &quot;__Schema&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="17512:20425" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="17526:18267" ph="{&quot;name&quot;: &quot;types&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="17685:18175" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="17779:18159" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="17875:18141" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="17981:18121" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="18281:18774" ph="{&quot;name&quot;: &quot;queryType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="18448:18682" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="18542:18666" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="18788:19203" ph="{&quot;name&quot;: &quot;mutationType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="18995:19111" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="19217:19643" ph="{&quot;name&quot;: &quot;subscriptionType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="19435:19551" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="19657:20413" ph="{&quot;name&quot;: &quot;directives&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="19826:20321" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="19920:20305" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="20016:20287" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="20122:20267" ph="{&quot;name&quot;: &quot;__Directive&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="20567:26422" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="21194:26290" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="21208:21651" ph="{&quot;name&quot;: &quot;kind&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="21323:21559" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="21417:21543" ph="{&quot;name&quot;: &quot;__TypeKind&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="21665:21988" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="21780:21896" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="22002:22332" ph="{&quot;name&quot;: &quot;description&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="22124:22240" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="22346:23252" ph="{&quot;name&quot;: &quot;fields&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="22437:22779" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="22455:22763" ph="{&quot;name&quot;: &quot;includeDeprecated&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="22569:22702" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="22803:23160" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="22893:23144" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="22993:23126" ph="{&quot;name&quot;: &quot;__Field&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="23266:23835" ph="{&quot;name&quot;: &quot;interfaces&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="23387:23743" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="23477:23727" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="23577:23709" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="23849:24421" ph="{&quot;name&quot;: &quot;possibleTypes&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="23973:24329" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="24063:24313" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="24163:24295" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="24435:25349" ph="{&quot;name&quot;: &quot;enumValues&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="24530:24872" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="24548:24856" ph="{&quot;name&quot;: &quot;includeDeprecated&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="24662:24795" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="24896:25257" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="24986:25241" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="25086:25223" ph="{&quot;name&quot;: &quot;__EnumValue&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="25363:25939" ph="{&quot;name&quot;: &quot;inputFields&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="25485:25847" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="25575:25831" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="25675:25813" ph="{&quot;name&quot;: &quot;__InputValue&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="25953:26278" ph="{&quot;name&quot;: &quot;ofType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="26070:26186" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="26432:28626" ph="{&quot;name&quot;: &quot;__TypeKind&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="26689:28583" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="26703:26892" ph="{&quot;name&quot;: &quot;SCALAR&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="26906:27140" ph="{&quot;name&quot;: &quot;OBJECT&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="27154:27397" ph="{&quot;name&quot;: &quot;INTERFACE&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="27411:27632" ph="{&quot;name&quot;: &quot;UNION&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="27646:27863" ph="{&quot;name&quot;: &quot;ENUM&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="27877:28111" ph="{&quot;name&quot;: &quot;INPUT_OBJECT&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="28125:28337" ph="{&quot;name&quot;: &quot;LIST&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="28351:28571" ph="{&quot;name&quot;: &quot;NON_NULL&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="28636:28937" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="28947:32123" ph="{&quot;name&quot;: &quot;__Field&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="29194:31991" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="29208:29649" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="29323:29557" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="29417:29541" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="29663:29993" ph="{&quot;name&quot;: &quot;description&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="29785:29901" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="30007:30710" ph="{&quot;name&quot;: &quot;args&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="30122:30618" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="30216:30602" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="30312:30584" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="30418:30564" ph="{&quot;name&quot;: &quot;__InputValue&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="30724:31165" ph="{&quot;name&quot;: &quot;type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="30839:31073" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="30933:31057" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="31179:31629" ph="{&quot;name&quot;: &quot;isDeprecated&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="31302:31537" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="31396:31521" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="31643:31979" ph="{&quot;name&quot;: &quot;deprecationReason&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="31771:31887" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="32133:34237" ph="{&quot;name&quot;: &quot;__InputValue&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="32417:34105" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="32431:32872" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="32546:32780" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="32640:32764" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="32886:33216" ph="{&quot;name&quot;: &quot;description&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="33008:33124" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="33230:33671" ph="{&quot;name&quot;: &quot;type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="33345:33579" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="33439:33563" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="33685:34093" ph="{&quot;name&quot;: &quot;defaultValue&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="33885:34001" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="34247:36298" ph="{&quot;name&quot;: &quot;__EnumValue&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="34541:36166" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="34555:34996" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="34670:34904" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="34764:34888" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="35010:35340" ph="{&quot;name&quot;: &quot;description&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="35132:35248" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="35354:35804" ph="{&quot;name&quot;: &quot;isDeprecated&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="35477:35712" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="35571:35696" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="35818:36154" ph="{&quot;name&quot;: &quot;deprecationReason&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="35946:36062" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="36308:40605" ph="{&quot;name&quot;: &quot;__Directive&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="36795:40473" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="36809:37250" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="36924:37158" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="37018:37142" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="37264:37594" ph="{&quot;name&quot;: &quot;description&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="37386:37502" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="37608:38321" ph="{&quot;name&quot;: &quot;locations&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="37728:38229" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="37822:38213" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="37918:38195" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="38024:38175" ph="{&quot;name&quot;: &quot;__DirectiveLocation&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="38335:39038" ph="{&quot;name&quot;: &quot;args&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="38450:38946" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="38544:38930" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="38640:38912" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="38746:38892" ph="{&quot;name&quot;: &quot;__InputValue&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="39052:39514" ph="{&quot;name&quot;: &quot;onOperation&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="39174:39409" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="39268:39393" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="39528:39989" ph="{&quot;name&quot;: &quot;onFragment&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="39649:39884" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="39743:39868" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="40003:40461" ph="{&quot;name&quot;: &quot;onField&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="40121:40356" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="40215:40340" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="40615:44941" ph="{&quot;name&quot;: &quot;__DirectiveLocation&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="40953:44898" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="40967:41162" ph="{&quot;name&quot;: &quot;QUERY&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="41176:41377" ph="{&quot;name&quot;: &quot;MUTATION&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="41391:41600" ph="{&quot;name&quot;: &quot;SUBSCRIPTION&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="41614:41799" ph="{&quot;name&quot;: &quot;FIELD&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="41813:42026" ph="{&quot;name&quot;: &quot;FRAGMENT_DEFINITION&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="42040:42245" ph="{&quot;name&quot;: &quot;FRAGMENT_SPREAD&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="42259:42465" ph="{&quot;name&quot;: &quot;INLINE_FRAGMENT&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="42479:42677" ph="{&quot;name&quot;: &quot;SCHEMA&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="42691:42889" ph="{&quot;name&quot;: &quot;SCALAR&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="42903:43107" ph="{&quot;name&quot;: &quot;OBJECT&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="43121:43328" ph="{&quot;name&quot;: &quot;FIELD_DEFINITION&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="43342:43556" ph="{&quot;name&quot;: &quot;ARGUMENT_DEFINITION&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="43570:43775" ph="{&quot;name&quot;: &quot;INTERFACE&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="43789:43985" ph="{&quot;name&quot;: &quot;UNION&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="43999:44194" ph="{&quot;name&quot;: &quot;ENUM&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="44208:44415" ph="{&quot;name&quot;: &quot;ENUM_VALUE&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="44429:44645" ph="{&quot;name&quot;: &quot;INPUT_OBJECT&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="44659:44886" ph="{&quot;name&quot;: &quot;INPUT_FIELD_DEFINITION&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="44981:45695" ph="{&quot;name&quot;: &quot;include&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="45155:45250" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="45270:45685" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="45284:45673" ph="{&quot;name&quot;: &quot;if&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="45388:45623" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="45482:45607" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="45705:46407" ph="{&quot;name&quot;: &quot;skip&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="45868:45963" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="45983:46397" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="45997:46385" ph="{&quot;name&quot;: &quot;if&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="46100:46335" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="46194:46319" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1563,6 +634,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="21" column="15" lean-forward="true" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1572,7 +646,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#617#833#0" expanded="true" />
+            <element signature="e#617#798#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1592,21 +666,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/graphql.schema.json" />
-    <entry file="file://$PROJECT_DIR$/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="15" lean-forward="false" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graphql.config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="7" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/routes/AppHomeRoute.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1647,321 +706,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/schema.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1498508118905" expanded="true" signature="169:44949" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="3505:7126" ph="{&quot;name&quot;: &quot;DeviceType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="3618:3657" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="3632:3657" ph="{&quot;name&quot;: &quot;globalId&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="7136:7739" ph="{&quot;name&quot;: &quot;DeviceInfoType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="7253:7607" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="7267:7595" ph="{&quot;name&quot;: &quot;userAgent&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="7387:7503" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="7749:9057" ph="{&quot;name&quot;: &quot;IdentityProviderUsageType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="7877:8925" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="7891:8222" ph="{&quot;name&quot;: &quot;lastActiveDate&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="8016:8130" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="8236:8563" ph="{&quot;name&quot;: &quot;frequency&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="8356:8471" ph="{&quot;name&quot;: &quot;Float&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="8577:8913" ph="{&quot;name&quot;: &quot;idp&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="8691:8821" ph="{&quot;name&quot;: &quot;IdentityProviderType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="9067:9333" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="9343:9742" ph="{&quot;name&quot;: &quot;Float&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="9752:11376" ph="{&quot;name&quot;: &quot;IdentityProviderType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="9875:11244" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="9889:10210" ph="{&quot;name&quot;: &quot;id&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="10002:10118" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="10224:10547" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="10339:10455" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="10561:10889" ph="{&quot;name&quot;: &quot;createdDate&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="10683:10797" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="10903:11232" ph="{&quot;name&quot;: &quot;modifiedDate&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="11026:11140" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="11386:14078" ph="{&quot;name&quot;: &quot;DeviceAccessType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="11505:13946" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="11519:11845" ph="{&quot;name&quot;: &quot;localId&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="11637:11753" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="11859:12188" ph="{&quot;name&quot;: &quot;device&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="11976:12096" ph="{&quot;name&quot;: &quot;DeviceType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="12202:12551" ph="{&quot;name&quot;: &quot;identityProvider&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="12329:12459" ph="{&quot;name&quot;: &quot;IdentityProviderType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="12565:12900" ph="{&quot;name&quot;: &quot;publisher&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="12685:12808" ph="{&quot;name&quot;: &quot;PublisherType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="12914:13249" ph="{&quot;name&quot;: &quot;type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="13029:13157" ph="{&quot;name&quot;: &quot;DeviceAccessTypeEnum&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="13263:13591" ph="{&quot;name&quot;: &quot;createdDate&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="13385:13499" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="13605:13934" ph="{&quot;name&quot;: &quot;modifiedDate&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="13728:13842" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="14088:16381" ph="{&quot;name&quot;: &quot;PublisherType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="14204:16249" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="14218:14539" ph="{&quot;name&quot;: &quot;id&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="14331:14447" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="14553:14878" ph="{&quot;name&quot;: &quot;status&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="14670:14786" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="14892:15215" ph="{&quot;name&quot;: &quot;code&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="15007:15123" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="15229:15552" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="15344:15460" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="15566:15894" ph="{&quot;name&quot;: &quot;createdDate&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="15688:15802" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="15908:16237" ph="{&quot;name&quot;: &quot;modifiedDate&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="16031:16145" ph="{&quot;name&quot;: &quot;Date&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="16391:17192" ph="{&quot;name&quot;: &quot;DeviceAccessTypeEnum&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="16603:17149" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="16617:16780" ph="{&quot;name&quot;: &quot;REMOVE_IDP&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="16794:16963" ph="{&quot;name&quot;: &quot;READ_IDP_HISTORY&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="16977:17137" ph="{&quot;name&quot;: &quot;ADD_IDP&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="17202:20557" ph="{&quot;name&quot;: &quot;__Schema&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="17512:20425" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="17526:18267" ph="{&quot;name&quot;: &quot;types&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="17685:18175" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="17779:18159" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="17875:18141" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="17981:18121" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="18281:18774" ph="{&quot;name&quot;: &quot;queryType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="18448:18682" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="18542:18666" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="18788:19203" ph="{&quot;name&quot;: &quot;mutationType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="18995:19111" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="19217:19643" ph="{&quot;name&quot;: &quot;subscriptionType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="19435:19551" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="19657:20413" ph="{&quot;name&quot;: &quot;directives&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="19826:20321" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="19920:20305" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="20016:20287" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="20122:20267" ph="{&quot;name&quot;: &quot;__Directive&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="20567:26422" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="21194:26290" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="21208:21651" ph="{&quot;name&quot;: &quot;kind&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="21323:21559" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="21417:21543" ph="{&quot;name&quot;: &quot;__TypeKind&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="21665:21988" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="21780:21896" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="22002:22332" ph="{&quot;name&quot;: &quot;description&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="22124:22240" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="22346:23252" ph="{&quot;name&quot;: &quot;fields&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="22437:22779" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="22455:22763" ph="{&quot;name&quot;: &quot;includeDeprecated&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="22569:22702" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="22803:23160" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="22893:23144" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="22993:23126" ph="{&quot;name&quot;: &quot;__Field&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="23266:23835" ph="{&quot;name&quot;: &quot;interfaces&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="23387:23743" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="23477:23727" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="23577:23709" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="23849:24421" ph="{&quot;name&quot;: &quot;possibleTypes&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="23973:24329" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="24063:24313" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="24163:24295" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="24435:25349" ph="{&quot;name&quot;: &quot;enumValues&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="24530:24872" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="24548:24856" ph="{&quot;name&quot;: &quot;includeDeprecated&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="24662:24795" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="24896:25257" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="24986:25241" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="25086:25223" ph="{&quot;name&quot;: &quot;__EnumValue&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="25363:25939" ph="{&quot;name&quot;: &quot;inputFields&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="25485:25847" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="25575:25831" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="25675:25813" ph="{&quot;name&quot;: &quot;__InputValue&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="25953:26278" ph="{&quot;name&quot;: &quot;ofType&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="26070:26186" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="26432:28626" ph="{&quot;name&quot;: &quot;__TypeKind&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="26689:28583" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="26703:26892" ph="{&quot;name&quot;: &quot;SCALAR&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="26906:27140" ph="{&quot;name&quot;: &quot;OBJECT&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="27154:27397" ph="{&quot;name&quot;: &quot;INTERFACE&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="27411:27632" ph="{&quot;name&quot;: &quot;UNION&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="27646:27863" ph="{&quot;name&quot;: &quot;ENUM&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="27877:28111" ph="{&quot;name&quot;: &quot;INPUT_OBJECT&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="28125:28337" ph="{&quot;name&quot;: &quot;LIST&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="28351:28571" ph="{&quot;name&quot;: &quot;NON_NULL&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="28636:28937" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="28947:32123" ph="{&quot;name&quot;: &quot;__Field&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="29194:31991" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="29208:29649" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="29323:29557" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="29417:29541" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="29663:29993" ph="{&quot;name&quot;: &quot;description&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="29785:29901" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="30007:30710" ph="{&quot;name&quot;: &quot;args&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="30122:30618" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="30216:30602" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="30312:30584" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="30418:30564" ph="{&quot;name&quot;: &quot;__InputValue&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="30724:31165" ph="{&quot;name&quot;: &quot;type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="30839:31073" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="30933:31057" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="31179:31629" ph="{&quot;name&quot;: &quot;isDeprecated&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="31302:31537" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="31396:31521" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="31643:31979" ph="{&quot;name&quot;: &quot;deprecationReason&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="31771:31887" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="32133:34237" ph="{&quot;name&quot;: &quot;__InputValue&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="32417:34105" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="32431:32872" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="32546:32780" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="32640:32764" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="32886:33216" ph="{&quot;name&quot;: &quot;description&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="33008:33124" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="33230:33671" ph="{&quot;name&quot;: &quot;type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="33345:33579" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="33439:33563" ph="{&quot;name&quot;: &quot;__Type&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="33685:34093" ph="{&quot;name&quot;: &quot;defaultValue&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="33885:34001" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="34247:36298" ph="{&quot;name&quot;: &quot;__EnumValue&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="34541:36166" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="34555:34996" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="34670:34904" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="34764:34888" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="35010:35340" ph="{&quot;name&quot;: &quot;description&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="35132:35248" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="35354:35804" ph="{&quot;name&quot;: &quot;isDeprecated&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="35477:35712" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="35571:35696" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="35818:36154" ph="{&quot;name&quot;: &quot;deprecationReason&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="35946:36062" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="36308:40605" ph="{&quot;name&quot;: &quot;__Directive&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="36795:40473" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="36809:37250" ph="{&quot;name&quot;: &quot;name&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="36924:37158" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="37018:37142" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="37264:37594" ph="{&quot;name&quot;: &quot;description&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="37386:37502" ph="{&quot;name&quot;: &quot;String&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="37608:38321" ph="{&quot;name&quot;: &quot;locations&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="37728:38229" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="37822:38213" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="37918:38195" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="38024:38175" ph="{&quot;name&quot;: &quot;__DirectiveLocation&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="38335:39038" ph="{&quot;name&quot;: &quot;args&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="38450:38946" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="38544:38930" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="38640:38912" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="38746:38892" ph="{&quot;name&quot;: &quot;__InputValue&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="39052:39514" ph="{&quot;name&quot;: &quot;onOperation&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="39174:39409" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="39268:39393" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="39528:39989" ph="{&quot;name&quot;: &quot;onFragment&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="39649:39884" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="39743:39868" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="40003:40461" ph="{&quot;name&quot;: &quot;onField&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="40121:40356" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="40215:40340" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="40615:44941" ph="{&quot;name&quot;: &quot;__DirectiveLocation&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="40953:44898" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="40967:41162" ph="{&quot;name&quot;: &quot;QUERY&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="41176:41377" ph="{&quot;name&quot;: &quot;MUTATION&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="41391:41600" ph="{&quot;name&quot;: &quot;SUBSCRIPTION&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="41614:41799" ph="{&quot;name&quot;: &quot;FIELD&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="41813:42026" ph="{&quot;name&quot;: &quot;FRAGMENT_DEFINITION&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="42040:42245" ph="{&quot;name&quot;: &quot;FRAGMENT_SPREAD&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="42259:42465" ph="{&quot;name&quot;: &quot;INLINE_FRAGMENT&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="42479:42677" ph="{&quot;name&quot;: &quot;SCHEMA&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="42691:42889" ph="{&quot;name&quot;: &quot;SCALAR&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="42903:43107" ph="{&quot;name&quot;: &quot;OBJECT&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="43121:43328" ph="{&quot;name&quot;: &quot;FIELD_DEFINITION&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="43342:43556" ph="{&quot;name&quot;: &quot;ARGUMENT_DEFINITION&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="43570:43775" ph="{&quot;name&quot;: &quot;INTERFACE&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="43789:43985" ph="{&quot;name&quot;: &quot;UNION&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="43999:44194" ph="{&quot;name&quot;: &quot;ENUM&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="44208:44415" ph="{&quot;name&quot;: &quot;ENUM_VALUE&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="44429:44645" ph="{&quot;name&quot;: &quot;INPUT_OBJECT&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="44659:44886" ph="{&quot;name&quot;: &quot;INPUT_FIELD_DEFINITION&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="44981:45695" ph="{&quot;name&quot;: &quot;include&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="45155:45250" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="45270:45685" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="45284:45673" ph="{&quot;name&quot;: &quot;if&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="45388:45623" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="45482:45607" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="45705:46407" ph="{&quot;name&quot;: &quot;skip&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="45868:45963" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="45983:46397" ph="[...]" />
-            <marker date="1498508118905" expanded="true" signature="45997:46385" ph="{&quot;name&quot;: &quot;if&quot;...}" />
-            <marker date="1498508118905" expanded="true" signature="46100:46335" ph="{&quot;name&quot;: null...}" />
-            <marker date="1498508118905" expanded="true" signature="46194:46319" ph="{&quot;name&quot;: &quot;Boolean&quot;...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/babelRelayPlugin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="12" column="55" lean-forward="false" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/schema.graphqls">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-          <folding>
-            <marker date="1498508118901" expanded="true" signature="370:569" ph="type...{&#10;  globalId: String&#10;  status: String&#10;  info: DeviceInfoType&#10;  history: [IdentityProviderUsageType]&#10;  activity: [DeviceAccessType]&#10;  createdDate: Date&#10;  modifiedDate: Date&#10;}" />
-            <marker date="1498508118901" expanded="true" signature="386:569" ph="{...}" />
-            <marker date="1498508118901" expanded="true" signature="390:408" ph="globalId...globalId" />
-            <marker date="1498508118901" expanded="true" signature="410:416" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="419:425" ph="status...status" />
-            <marker date="1498508118901" expanded="true" signature="427:433" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="436:440" ph="info...info" />
-            <marker date="1498508118901" expanded="true" signature="442:456" ph="DeviceInfoType...DeviceInfoType" />
-            <marker date="1498508118901" expanded="true" signature="459:466" ph="history...history" />
-            <marker date="1498508118901" expanded="true" signature="469:494" ph="IdentityProviderUsageType...IdentityProviderUsageType" />
-            <marker date="1498508118901" expanded="true" signature="498:506" ph="activity...activity" />
-            <marker date="1498508118901" expanded="true" signature="509:525" ph="DeviceAccessType...DeviceAccessType" />
-            <marker date="1498508118901" expanded="true" signature="529:540" ph="createdDate...createdDate" />
-            <marker date="1498508118901" expanded="true" signature="542:546" ph="Date...Date" />
-            <marker date="1498508118901" expanded="true" signature="549:561" ph="modifiedDate...modifiedDate" />
-            <marker date="1498508118901" expanded="true" signature="563:567" ph="Date...Date" />
-            <marker date="1498508118901" expanded="true" signature="571:669" ph="type...{&#10;  id: String&#10;  name: String&#10;  createdDate: Date&#10;  modifiedDate: Date&#10;}" />
-            <marker date="1498508118901" expanded="true" signature="576:596" ph="IdentityProviderType...IdentityProviderType" />
-            <marker date="1498508118901" expanded="true" signature="597:669" ph="{...}" />
-            <marker date="1498508118901" expanded="true" signature="601:603" ph="id...id" />
-            <marker date="1498508118901" expanded="true" signature="605:611" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="614:618" ph="name...name" />
-            <marker date="1498508118901" expanded="true" signature="620:626" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="629:640" ph="createdDate...createdDate" />
-            <marker date="1498508118901" expanded="true" signature="642:646" ph="Date...Date" />
-            <marker date="1498508118901" expanded="true" signature="649:661" ph="modifiedDate...modifiedDate" />
-            <marker date="1498508118901" expanded="true" signature="663:667" ph="Date...Date" />
-            <marker date="1498508118901" expanded="true" signature="671:775" ph="type...{&#10;  lastActiveDate: Date&#10;  frequency: Float&#10;  idp: IdentityProviderType&#10;}" />
-            <marker date="1498508118901" expanded="true" signature="676:701" ph="IdentityProviderUsageType...IdentityProviderUsageType" />
-            <marker date="1498508118901" expanded="true" signature="702:775" ph="{...}" />
-            <marker date="1498508118901" expanded="true" signature="706:720" ph="lastActiveDate...lastActiveDate" />
-            <marker date="1498508118901" expanded="true" signature="722:726" ph="Date...Date" />
-            <marker date="1498508118901" expanded="true" signature="729:738" ph="frequency...frequency" />
-            <marker date="1498508118901" expanded="true" signature="740:745" ph="Float...Float" />
-            <marker date="1498508118901" expanded="true" signature="748:751" ph="idp...idp" />
-            <marker date="1498508118901" expanded="true" signature="753:773" ph="IdentityProviderType...IdentityProviderType" />
-            <marker date="1498508118901" expanded="true" signature="777:900" ph="type...{&#10;  id: String&#10;  status: String&#10;  code: String&#10;  name: String&#10;  createdDate: Date&#10;  modifiedDate: Date&#10;}" />
-            <marker date="1498508118901" expanded="true" signature="782:795" ph="PublisherType...PublisherType" />
-            <marker date="1498508118901" expanded="true" signature="796:900" ph="{...}" />
-            <marker date="1498508118901" expanded="true" signature="800:802" ph="id...id" />
-            <marker date="1498508118901" expanded="true" signature="804:810" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="813:819" ph="status...status" />
-            <marker date="1498508118901" expanded="true" signature="821:827" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="830:834" ph="code...code" />
-            <marker date="1498508118901" expanded="true" signature="836:842" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="845:849" ph="name...name" />
-            <marker date="1498508118901" expanded="true" signature="851:857" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="860:871" ph="createdDate...createdDate" />
-            <marker date="1498508118901" expanded="true" signature="873:877" ph="Date...Date" />
-            <marker date="1498508118901" expanded="true" signature="880:892" ph="modifiedDate...modifiedDate" />
-            <marker date="1498508118901" expanded="true" signature="894:898" ph="Date...Date" />
-            <marker date="1498508118901" expanded="true" signature="902:941" ph="type...{&#10;  viewer: viewer&#10;}" />
-            <marker date="1498508118901" expanded="true" signature="907:920" ph="RootQueryType...RootQueryType" />
-            <marker date="1498508118901" expanded="true" signature="925:931" ph="viewer...viewer" />
-            <marker date="1498508118901" expanded="true" signature="933:939" ph="viewer...viewer" />
-            <marker date="1498508118901" expanded="true" signature="948:954" ph="viewer...viewer" />
-            <marker date="1498508118901" expanded="true" signature="959:965" ph="device...device" />
-            <marker date="1498508118901" expanded="true" signature="966:968" ph="id...id" />
-            <marker date="1498508118901" expanded="true" signature="970:976" ph="String...String" />
-            <marker date="1498508118901" expanded="true" signature="979:989" ph="DeviceType...DeviceType" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2000,21 +749,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/graphql.config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="7" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="18" lean-forward="true" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+        <state relative-caret-position="425">
+          <caret line="25" column="60" lean-forward="true" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/schema.graphqls">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="44" column="22" lean-forward="false" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="21" column="15" lean-forward="false" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/schema.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-408">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/schema.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="288" column="0" lean-forward="true" selection-start-line="288" selection-start-column="0" selection-end-line="288" selection-end-column="0" />
+        <state relative-caret-position="-2932">
+          <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#617#833#0" expanded="true" />
+            <element signature="e#617#798#0" expanded="true" />
           </folding>
         </state>
       </provider>
