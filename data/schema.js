@@ -116,9 +116,6 @@ var IdentityProviderUsageType = new GraphQLObjectType( {
 var DeviceType = new GraphQLObjectType({
     name: 'DeviceType',
     fields: () => ({
-        id: {
-            type: GraphQLInt
-        },
         globalId: {
             type: GraphQLString
         },
@@ -208,10 +205,10 @@ export class User {
         this.secretDeviceId = secretDeviceId;
     }
 }
-const viewer = new User('c5501c52-451e-41ca-a752-3ce236d52da7');
+const viewer = new User('baedb88c-af67-47b1-96da-940fd3643f2c');
 
 function getViewer() {
-    return new User('c5501c52-451e-41ca-a752-3ce236d52da7');
+    return new User('baedb88c-af67-47b1-96da-940fd3643f2c');
 }
 
 // The root provides a resolver function for each API endpoint
@@ -221,7 +218,7 @@ const ViewerType = new GraphQLObjectType({
         device: {
             type: DeviceType,
             args: {
-                id: {type: GraphQLString}
+                globalId: {type: GraphQLString}
             },
             resolve: (root, args) => fetchDevice(root.secretDeviceId)
         },
@@ -244,14 +241,14 @@ const ViewerType = new GraphQLObjectType({
             args: {
                 globalId: {type: GraphQLString}
             },
-            resolve: (root, args) => fetchHistory(args.globalId)
+            resolve: (root, args) => fetchHistory(root.secretDeviceId)
         },
         latestActivity: {
             type: DeviceAccessType,
             args: {
                 globalId: {type: GraphQLString}
             },
-            resolve: (root, args) => fetchLatestActivity(args.globalId)
+            resolve: (root, args) => fetchLatestActivity(root.secretDeviceId)
         }
     }
 });
@@ -333,5 +330,5 @@ function fetchLatestActivity(id) {
 function fetchHistory(id) {
     console.log(`fetching activity ${id}`);
 
-    return fetchResponseByURLAndHeader(`/1/mydevice/history`, {'X-Device-Id': 'c5501c52-451e-41ca-a752-3ce236d52da7'});
+    return fetchResponseByURLAndHeader(`/1/mydevice/history`, {'X-Device-Id': getViewer().secretDeviceId});
 }

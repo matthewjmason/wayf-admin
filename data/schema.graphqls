@@ -25,7 +25,6 @@ type DeviceInfoType {
 }
 
 type DeviceType {
-  id: Int
   globalId: String
   status: String
   info: DeviceInfoType
@@ -37,6 +36,7 @@ type DeviceType {
 
 type IdentityProviderType {
   id: String
+  type: String
   name: String
   createdDate: Date
   modifiedDate: Date
@@ -62,7 +62,9 @@ type RootQueryType {
 }
 
 type viewer {
-  device(id: String): DeviceType
+  device(globalId: String): DeviceType
   identityProvider(id: String): IdentityProviderType
   publisher(id: String): PublisherType
+  history(globalId: String): [IdentityProviderUsageType]
+  latestActivity(globalId: String): DeviceAccessType
 }

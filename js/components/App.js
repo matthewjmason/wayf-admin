@@ -12,101 +12,173 @@
 
 import React from 'react';
 import Relay from 'react-relay';
-import { Button, 
-  Grid, 
-  Col, 
-  Row, 
-  Nav, 
-  NavItem,
-  PageHeader,
-  Label } from 'react-bootstrap';
 
+import { Button,
+    Grid,
+    Col,
+    Row,
+    Nav,
+    NavItem,
+    PageHeader,
+Tab,
+Tabs,
+    Label } from 'react-bootstrap';
 var classNames = require('classnames');
 
-function sessionRow(publisherSessions) {
+function sessionRow(activity) {
 
-  return publisherSessions.map(
-    function(publisherSession, i) {
-          return (
-            <Row>
-              <Col md={5}>
-                {publisherSession.publisher.name}
-              </Col>
-              <Col md={5}>
-                {publisherSession.lastActiveDate}
-              </Col>
-              <Col md={2}>
-                <Button bsStyle="danger">Delete</Button>
-              </Col>
-            </Row>
-          )
+    return activity.map(
+        function(access, i) {
+            return (
+                <Row>
+                  <Col md={5}>
+                      {access.createdDate}
+                  </Col>
+                  <Col md={5}>
+                      {access.publisher.name}
+                  </Col>
+                  <Col md={2}>
+                      {access.type}
+                  </Col>
+                </Row>
+            )
         }
-        );
+    );
 }
 
-class App extends React.Component {
-  render() {
+function summaryRow(usages) {
+    return usages.map(
+        function(usage, i) {
+            return (
+                <Row>
+                  <Col md={5}>
+                      {usage.idp.name}
+                  </Col>
+                  <Col md={5}>
+                      {usage.idp.type}
+                  </Col>
+                  <Col md={2}>
+                      {usage.lastActiveDate}
+                  </Col>
+                </Row>
+            )
+        }
+    );
+}
+
+function loadSummary(history) {
+
     return (
-    
-<Grid>
-    <Row className="row-fluid">
-      <Grid>
-        <Row>
-          <Col md={12}>
-            <PageHeader>[BrowserName]<small> [version]</small></PageHeader>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={12}>
-            <Label bsStyle="success">&nbsp;</Label>&nbsp;Last seen on [date]
-          </Col>
-        </Row>
-      </Grid>
-    </Row>
-    <Row className="row-fluid">
-      <Col md={12}>
-        <Nav bsStyle="tabs" activeKey="1">
-          <NavItem eventKey="1" href="#">Overview</NavItem>
-          <NavItem eventKey="2" title="Activity">Activity</NavItem>
-        </Nav>
         <Grid>
           <Row className="row-fluid">
             <Col md={5}>
-              <h2>Organization</h2>
+              <h2>Last Seen</h2>
             </Col>
             <Col md={5}>
-              <h2>Last Seen</h2>
+              <h2>Organization</h2>
             </Col>
             <Col md={2}>
               <h2></h2>
             </Col>
           </Row>
-          
-          {sessionRow(this.props.viewer.publisherSessions)}
+            {summaryRow(history)}
         </Grid>
-      </Col>
-    </Row>
-  </Grid>
     );
-  }
 }
 
+function loadActivity(device) {
+
+      return (
+        <Grid>
+            {sessionRow(device.activity)}
+        </Grid>
+    );
+}
+class App extends React.Component {
+    constructor(props) {
+        super();
+        this.state = {
+            // Takes active tab from props if it is defined there
+            activeTab: props.activeTab || 1
+        };
+
+        // Bind the handleSelect function already here (not in the render function)
+        this.handleSelect = this.handleSelect.bind(this);
+    }
+
+    handleSelect(selectedTab) {
+        // The active tab must be set into the state so that
+        // the Tabs component knows about the change and re-renders.
+        this.setState({
+            activeTab: selectedTab
+        });
+    }
+
+
+    render() {
+        return (
+
+            <Grid>
+              <Row className="row-fluid">
+                <Grid>
+                  <Row>
+                    <Col md={12}>
+                      <PageHeader>{this.props.viewer.device.info.userAgent}</PageHeader>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md={12}>
+                      <Label bsStyle="success">&nbsp;</Label>&nbsp;Last seen {this.props.viewer.latestActivity.createdDate} at {this.props.viewer.latestActivity.publisher.name}
+                    </Col>
+                  </Row>
+                </Grid>
+              </Row>
+              <Row className="row-fluid">
+                <Col md={12}>
+                  <Tabs activeKey={this.state.activeTab} onSelect={this.handleSelect}>
+                    <Tab eventKey={1} title="Overview">{loadSummary(this.props.viewer.history)}</Tab>
+                    <Tab eventKey={2} title="Activity">{loadActivity(this.props.viewer.device)}</Tab>
+                  </Tabs>
+                </Col>
+              </Row>
+            </Grid>
+        );
+    }
+}
 export default Relay.createContainer(App, {
-  fragments: {
-    viewer: () => Relay.QL`
-      fragment on viewer {
-        device {
-          id
-        },
-        publisherSessions {
-          id
-          localId,
-          publisher {
-            name
-          },
-          lastActiveDate
-        }
-      }
-    `,
-  },
+    fragments: {
+        viewer: () => Relay.QL`
+            fragment on viewer {
+                device {
+                    globalId,
+                    info {
+                        userAgent
+                    },
+                    activity {
+                        publisher {
+                            name
+                        },
+                        type,
+                        createdDate
+                    }
+                    
+                },
+                latestActivity {
+                    publisher {
+                        name
+                    },
+                    createdDate
+                },
+                history {
+                    key: idp {name},
+                    idp {
+                        name,
+                        type
+                    },
+                    lastActiveDate
+                }
+
+            }
+        `,
+    },
 });
