@@ -53,6 +53,15 @@ var DeviceAccessTypeEnum = new GraphQLEnumType({
     }
 });
 
+var IdentityProviderTypeEnum = new GraphQLEnumType({
+    name: 'IdentityProviderTypeEnum',
+    values: {
+        SAML: {},
+        OAUTH: {},
+        OPEN_ATHENS : {}
+    }
+});
+
 var DeviceAccessType = new GraphQLObjectType({
     name: 'DeviceAccessType',
     fields: () => ({
@@ -102,13 +111,7 @@ var IdentityProviderUsageType = new GraphQLObjectType( {
             type: GraphQLFloat
         },
         idp: {
-            type: IdentityProviderType,
-            resolve: (idpUsage) => {
-                var idp = idpUsage.idp;
-                var idpId = idp? idp.id : null;
-
-                return idpId ? identityProviderLoader.load(idpId) : null;
-            }
+            type: IdentityProviderType
         }
     })
 });
@@ -185,7 +188,7 @@ var IdentityProviderType = new GraphQLObjectType({
             type: GraphQLString
         },
         type: {
-            type: GraphQLString
+            type: IdentityProviderTypeEnum
         },
         name: {
             type: GraphQLString
@@ -249,21 +252,31 @@ const ViewerType = new GraphQLObjectType({
                 globalId: {type: GraphQLString}
             },
             resolve: (root, args) => fetchLatestActivity(root.secretDeviceId)
+        },
+        identityProvider: {
+            type: IdentityProviderType,
+            args: {
+                id: {type: GraphQLInt}
+            },
+            resolve: (root, args) => fetchIdentityProvider(args.id)
         }
     }
 });
 
-
-export const schema = new GraphQLSchema({
-    query: new GraphQLObjectType({
-        name: 'RootQueryType',
-        fields: {
-            viewer: {
-                type: ViewerType,
-                resolve: () => getViewer()
-            }
+const queryType = new GraphQLObjectType({
+    name: 'Query',
+    fields: () => ({
+        // Add your own root fields here
+        viewer: {
+            type: ViewerType,
+            resolve: () => getViewer()
         }
     })
+});
+
+
+export default new GraphQLSchema({
+    query: queryType
 });
 
 const BASE_URL = 'http://localhost:8080';

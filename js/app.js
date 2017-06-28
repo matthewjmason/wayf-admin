@@ -1,14 +1,28 @@
-import App from './components/App';
-import AppHomeRoute from './routes/AppHomeRoute';
+// @flow
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Relay from 'react-relay';
+import { AppContainer } from 'react-hot-loader';
+import '../node_modules/react-mdl/extra/material';
+import Root from './root';
 
-ReactDOM.render(
-    <Relay.Renderer
-        environment={Relay.Store}
-        Container={App}
-        queryConfig={new AppHomeRoute()}
-    />,
-    document.getElementById('root')
-);
+const rootNode = document.createElement('div');
+document.body.appendChild(rootNode);
+
+const render = (Component) => {
+    ReactDOM.render(
+        <AppContainer >
+            <Component />
+        </AppContainer>,
+        rootNode
+    );
+};
+
+render(Root);
+
+// Hot Module Replacement API
+if (module.hot) {
+    module.hot.accept('./root', () => {
+        render(Root);
+    });
+}

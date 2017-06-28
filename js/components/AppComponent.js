@@ -11,7 +11,12 @@
  */
 
 import React from 'react';
-import Relay from 'react-relay';
+import {
+    createFragmentContainer,
+    graphql,
+    compat
+} from 'react-relay';
+import DeviceHeader from './DeviceHeaderContainer';
 
 import { Button,
     Grid,
@@ -20,8 +25,8 @@ import { Button,
     Nav,
     NavItem,
     PageHeader,
-Tab,
-Tabs,
+    Tab,
+    Tabs,
     Label } from 'react-bootstrap';
 var classNames = require('classnames');
 
@@ -94,7 +99,8 @@ function loadActivity(device) {
         </Grid>
     );
 }
-class App extends React.Component {
+
+export default class App extends React.Component {
     constructor(props) {
         super();
         this.state = {
@@ -117,22 +123,9 @@ class App extends React.Component {
 
     render() {
         return (
-
             <Grid>
-              <Row className="row-fluid">
-                <Grid>
-                  <Row>
-                    <Col md={12}>
-                      <PageHeader>{this.props.viewer.device.info.userAgent}</PageHeader>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col md={12}>
-                      <Label bsStyle="success">&nbsp;</Label>&nbsp;Last seen {this.props.viewer.latestActivity.createdDate} at {this.props.viewer.latestActivity.publisher.name}
-                    </Col>
-                  </Row>
-                </Grid>
-              </Row>
+              <DeviceHeader viewer={this.props.viewer} />
+
               <Row className="row-fluid">
                 <Col md={12}>
                   <Tabs activeKey={this.state.activeTab} onSelect={this.handleSelect}>
@@ -145,40 +138,15 @@ class App extends React.Component {
         );
     }
 }
-export default Relay.createContainer(App, {
-    fragments: {
-        viewer: () => Relay.QL`
-            fragment on viewer {
-                device {
-                    globalId,
-                    info {
-                        userAgent
-                    },
-                    activity {
-                        publisher {
-                            name
-                        },
-                        type,
-                        createdDate
-                    }
-                    
-                },
-                latestActivity {
-                    publisher {
-                        name
-                    },
-                    createdDate
-                },
-                history {
-                    key: idp {name},
-                    idp {
-                        name,
-                        type
-                    },
-                    lastActiveDate
-                }
+/*
+export default class App extends React.Component {
+    static propTypes = {
 
-            }
-        `,
-    },
-});
+    };
+
+    render() {
+        return (
+            <p>Always a pleasure scaffolding your apps</p>
+        );
+    }
+}*/

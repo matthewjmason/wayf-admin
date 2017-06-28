@@ -1,7 +1,4 @@
-schema {
-  query: RootQueryType
-}
-
+# Date custom scalar type
 scalar Date
 
 type DeviceAccessType {
@@ -36,10 +33,16 @@ type DeviceType {
 
 type IdentityProviderType {
   id: String
-  type: String
+  type: IdentityProviderTypeEnum
   name: String
   createdDate: Date
   modifiedDate: Date
+}
+
+enum IdentityProviderTypeEnum {
+  SAML
+  OAUTH
+  OPEN_ATHENS
 }
 
 type IdentityProviderUsageType {
@@ -57,13 +60,13 @@ type PublisherType {
   modifiedDate: Date
 }
 
-type RootQueryType {
+type Query {
   viewer: viewer
 }
 
 type viewer {
   device(globalId: String): DeviceType
-  identityProvider(id: String): IdentityProviderType
+  identityProvider(id: Int): IdentityProviderType
   publisher(id: String): PublisherType
   history(globalId: String): [IdentityProviderUsageType]
   latestActivity(globalId: String): DeviceAccessType
