@@ -47,7 +47,7 @@ function commit(
         {
             mutation,
             variables: { input: idpId },
-            optimisticResponse: () => getOptimisticResponse(idpId, viewerId),
+            optimisticResponse: getOptimisticResponse(idpId, viewerId),
             configs: getConfigs(viewerId),
         }
     );

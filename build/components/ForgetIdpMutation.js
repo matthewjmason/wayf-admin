@@ -104,9 +104,7 @@ function commit(environment, idpId, viewerId) {
     (0, _compat.commitMutation)(environment, {
         mutation: mutation,
         variables: { input: idpId },
-        optimisticResponse: function optimisticResponse() {
-            return getOptimisticResponse(idpId, viewerId);
-        },
+        optimisticResponse: getOptimisticResponse(idpId, viewerId),
         configs: getConfigs(viewerId)
     });
 }

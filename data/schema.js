@@ -388,5 +388,7 @@ function fetchHistory(id) {
 function forgetIdp(idpId) {
     console.log(`forgetting idp ${idpId}`);
 
-    return deleteByURLAndHeader(`/1/mydevice/history/idp/${idpId}`, {'X-Device-Id': getViewer().secretDeviceId});
+    return deleteByURLAndHeader(`/1/mydevice/history/idp/${idpId}`, {'X-Device-Id': getViewer().secretDeviceId}).then((function (res) {
+        return getViewer();
+    }));
 }
