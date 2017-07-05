@@ -2,28 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="defefc87-4e46-4263-847e-0bfcda47cf13" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/environment/development.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/environment/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/environment/production.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/components/AppContainer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/components/DeviceHeaderComponent.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/components/DeviceHeaderContainer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/root.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/routes/Route.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/routes/ViewerQuery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webpack.config.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/schema.graphqls" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/schema.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/routes/AppHomeRoute.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/components/App.js" afterPath="$PROJECT_DIR$/js/components/AppComponent.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.babelrc" afterPath="$PROJECT_DIR$/.babelrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/components/ForgetIdpButtonComponent.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/components/ForgetIdpMutation.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/components/AppComponent.js" afterPath="$PROJECT_DIR$/build/components/AppComponent.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/components/AppContainer.js" afterPath="$PROJECT_DIR$/build/components/AppContainer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/components/DeviceHeaderContainer.js" afterPath="$PROJECT_DIR$/build/components/DeviceHeaderContainer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/components/__generated__/AppContainer_viewer.graphql.js" afterPath="$PROJECT_DIR$/build/components/__generated__/AppContainer_viewer.graphql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/components/__generated__/DeviceHeaderContainer_viewer.graphql.js" afterPath="$PROJECT_DIR$/build/components/__generated__/DeviceHeaderContainer_viewer.graphql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/schema.graphqls" afterPath="$PROJECT_DIR$/data/schema.graphqls" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/schema.js" afterPath="$PROJECT_DIR$/data/schema.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/schema.json" afterPath="$PROJECT_DIR$/data/schema.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/components/AppComponent.js" afterPath="$PROJECT_DIR$/js/components/AppComponent.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/components/AppContainer.js" afterPath="$PROJECT_DIR$/js/components/AppContainer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/components/__generated__/AppContainer_viewer.graphql.js" afterPath="$PROJECT_DIR$/js/components/__generated__/AppContainer_viewer.graphql.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/components/__generated__/DeviceHeaderContainer_viewer.graphql.js" afterPath="$PROJECT_DIR$/js/components/__generated__/DeviceHeaderContainer_viewer.graphql.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/updateSchema.js" afterPath="$PROJECT_DIR$/scripts/updateSchema.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -38,72 +32,46 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AppComponent.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/components/AppComponent.js">
+      <file leaf-file-name="updateSchema.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/updateSchema.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="29" column="33" lean-forward="false" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="111" lean-forward="false" selection-start-line="21" selection-start-column="111" selection-end-line="21" selection-end-column="111" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppContainer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/components/AppContainer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="21" lean-forward="true" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+            <state relative-caret-position="289">
+              <caret line="17" column="56" lean-forward="false" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
               <folding>
-                <marker date="1498678987135" expanded="true" signature="241:741" ph="fragment...{&#10;            globalId&#10;        }" />
-                <marker date="1498678987135" expanded="true" signature="250:269" ph="AppContainer_viewer...AppContainer_viewer" />
-                <marker date="1498678987135" expanded="true" signature="273:279" ph="viewer...viewer" />
-                <marker date="1498678987135" expanded="true" signature="280:741" ph="{...}" />
-                <marker date="1498678987135" expanded="true" signature="297:316" ph="DeviceHeader_viewer...DeviceHeader_viewer" />
-                <marker date="1498678987135" expanded="true" signature="330:336" ph="device...device" />
-                <marker date="1498678987135" expanded="true" signature="330:539" ph="device...{&#10;                activity {&#10;                    publisher {&#10;                        name&#10;                    },&#10;                    type,&#10;                    createdDate&#10;                }&#10;            }" />
-                <marker date="1498678987135" expanded="true" signature="337:539" ph="{...}" />
-                <marker date="1498678987135" expanded="true" signature="355:363" ph="activity...activity" />
-                <marker date="1498678987135" expanded="true" signature="355:525" ph="activity...{&#10;                    publisher {&#10;                        name&#10;                    },&#10;                    type,&#10;                    createdDate&#10;                }" />
-                <marker date="1498678987135" expanded="true" signature="364:525" ph="{...}" />
-                <marker date="1498678987135" expanded="true" signature="386:395" ph="publisher...publisher" />
-                <marker date="1498678987135" expanded="true" signature="386:448" ph="publisher...{&#10;                        name&#10;                    }" />
-                <marker date="1498678987135" expanded="true" signature="396:448" ph="{...}" />
-                <marker date="1498678987135" expanded="true" signature="422:426" ph="name...name" />
-                <marker date="1498678987135" expanded="true" signature="470:474" ph="type...type" />
-                <marker date="1498678987135" expanded="true" signature="496:507" ph="createdDate...createdDate" />
-                <marker date="1498678987135" expanded="true" signature="552:559" ph="history...history" />
-                <marker date="1498678987135" expanded="true" signature="552:731" ph="history...{&#10;                key: idp {name},&#10;                idp {&#10;                    name,&#10;                    type&#10;                },&#10;                lastActiveDate&#10;            }" />
-                <marker date="1498678987135" expanded="true" signature="560:731" ph="{...}" />
-                <marker date="1498678987135" expanded="true" signature="583:586" ph="idp...idp" />
-                <marker date="1498678987135" expanded="true" signature="583:593" ph="idp...{name}" />
-                <marker date="1498678987135" expanded="true" signature="587:593" ph="{...}" />
-                <marker date="1498678987135" expanded="true" signature="588:592" ph="name...name" />
-                <marker date="1498678987135" expanded="true" signature="611:614" ph="idp...idp" />
-                <marker date="1498678987135" expanded="true" signature="611:685" ph="idp...{&#10;                    name,&#10;                    type&#10;                }" />
-                <marker date="1498678987135" expanded="true" signature="615:685" ph="{...}" />
-                <marker date="1498678987135" expanded="true" signature="637:641" ph="name...name" />
-                <marker date="1498678987135" expanded="true" signature="663:667" ph="type...type" />
-                <marker date="1498678987135" expanded="true" signature="703:717" ph="lastActiveDate...lastActiveDate" />
+                <element signature="e#33#57#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/environment/index.js">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="68" lean-forward="false" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
+            <state relative-caret-position="357">
+              <caret line="21" column="53" lean-forward="false" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppComponent.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/components/AppComponent.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1063">
+              <caret line="83" column="68" lean-forward="false" selection-start-line="83" selection-start-column="68" selection-end-line="83" selection-end-column="68" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#617#643#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeviceHeaderContainer_viewer.graphql.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/components/__generated__/DeviceHeaderContainer_viewer.graphql.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1201">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -114,10 +82,9 @@
       <file leaf-file-name="DeviceHeaderContainer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/components/DeviceHeaderContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+            <state relative-caret-position="255">
+              <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
                 <marker date="1498678978094" expanded="true" signature="242:629" ph="fragment...{&#10;                device {&#10;                    globalId,&#10;                    info {&#10;                        userAgent&#10;                    },&#10;                },&#10;                latestActivity {&#10;                    publisher {&#10;                        name&#10;                    },&#10;                    createdDate&#10;                }&#10;            }" />
                 <marker date="1498678978094" expanded="true" signature="251:279" ph="DeviceHeaderContainer_viewer...DeviceHeaderContainer_viewer" />
                 <marker date="1498678978094" expanded="true" signature="283:289" ph="viewer...viewer" />
@@ -143,11 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Route.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/routes/Route.js">
+      <file leaf-file-name="ForgetIdpButtonComponent.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/components/ForgetIdpButtonComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="2" lean-forward="false" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+            <state relative-caret-position="374">
+              <caret line="22" column="38" lean-forward="false" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -155,17 +122,73 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ViewerQuery.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/routes/ViewerQuery.js">
+      <file leaf-file-name="ForgetIdpMutation.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/components/ForgetIdpMutation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="43" lean-forward="false" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+            <state relative-caret-position="363">
+              <caret line="31" column="25" lean-forward="false" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
               <folding>
-                <marker date="1498676215568" expanded="true" signature="102:205" ph="query...{&#10;            viewer {&#10;                ${Component.getFragment('viewer')}&#10;            }&#10;        }" />
-                <marker date="1498676215568" expanded="true" signature="108:205" ph="{...}" />
-                <marker date="1498676215568" expanded="true" signature="122:128" ph="viewer...viewer" />
-                <marker date="1498676215568" expanded="true" signature="122:195" ph="viewer...{&#10;                ${Component.getFragment('viewer')}&#10;            }" />
-                <marker date="1498676215568" expanded="true" signature="129:195" ph="{...}" />
+                <marker date="1499268085045" expanded="true" signature="106:317" ph="mutation...{&#10;        forgetIdp(input: $input) {&#10;            viewer {&#10;                device {&#10;                    globalId&#10;                }&#10;            }&#10;        }&#10;    }" />
+                <marker date="1499268085045" expanded="true" signature="115:132" ph="ForgetIdpMutation...ForgetIdpMutation" />
+                <marker date="1499268085045" expanded="true" signature="132:157" ph="(...)" />
+                <marker date="1499268085045" expanded="true" signature="141:155" ph="ForgetIdpInput...ForgetIdpInput" />
+                <marker date="1499268085045" expanded="true" signature="158:317" ph="{...}" />
+                <marker date="1499268085045" expanded="true" signature="168:177" ph="forgetIdp...forgetIdp" />
+                <marker date="1499268085045" expanded="true" signature="168:311" ph="forgetIdp...{&#10;            viewer {&#10;                device {&#10;                    globalId&#10;                }&#10;            }&#10;        }" />
+                <marker date="1499268085045" expanded="true" signature="177:192" ph="(...)" />
+                <marker date="1499268085045" expanded="true" signature="178:183" ph="input...input" />
+                <marker date="1499268085045" expanded="true" signature="193:311" ph="{...}" />
+                <marker date="1499268085045" expanded="true" signature="207:213" ph="viewer...viewer" />
+                <marker date="1499268085045" expanded="true" signature="207:301" ph="viewer...{&#10;                device {&#10;                    globalId&#10;                }&#10;            }" />
+                <marker date="1499268085045" expanded="true" signature="214:301" ph="{...}" />
+                <marker date="1499268085045" expanded="true" signature="232:238" ph="device...device" />
+                <marker date="1499268085045" expanded="true" signature="232:287" ph="device...{&#10;                    globalId&#10;                }" />
+                <marker date="1499268085045" expanded="true" signature="239:287" ph="{...}" />
+                <marker date="1499268085045" expanded="true" signature="261:269" ph="globalId...globalId" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppContainer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/components/AppContainer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#79#0" expanded="true" />
+                <marker date="1498766345181" expanded="true" signature="241:765" ph="fragment...{&#10;            globalId&#10;        }" />
+                <marker date="1498766345181" expanded="true" signature="250:269" ph="AppContainer_viewer...AppContainer_viewer" />
+                <marker date="1498766345181" expanded="true" signature="273:279" ph="viewer...viewer" />
+                <marker date="1498766345181" expanded="true" signature="280:765" ph="{...}" />
+                <marker date="1498766345181" expanded="true" signature="297:316" ph="DeviceHeader_viewer...DeviceHeader_viewer" />
+                <marker date="1498766345181" expanded="true" signature="330:336" ph="device...device" />
+                <marker date="1498766345181" expanded="true" signature="330:539" ph="device...{&#10;                activity {&#10;                    publisher {&#10;                        name&#10;                    },&#10;                    type,&#10;                    createdDate&#10;                }&#10;            }" />
+                <marker date="1498766345181" expanded="true" signature="330:559" ph="history...history" />
+                <marker date="1498766345181" expanded="true" signature="330:755" ph="history...{&#10;                key: idp {name},&#10;                idp {&#10;                    name,&#10;                    type&#10;                },&#10;                lastActiveDate&#10;            }" />
+                <marker date="1498766345181" expanded="true" signature="337:539" ph="{...}" />
+                <marker date="1498766345181" expanded="true" signature="355:363" ph="activity...activity" />
+                <marker date="1498766345181" expanded="true" signature="355:525" ph="activity...{&#10;                    publisher {&#10;                        name&#10;                    },&#10;                    type,&#10;                    createdDate&#10;                }" />
+                <marker date="1498766345181" expanded="true" signature="364:525" ph="{...}" />
+                <marker date="1498766345181" expanded="true" signature="386:395" ph="publisher...publisher" />
+                <marker date="1498766345181" expanded="true" signature="386:448" ph="publisher...{&#10;                        name&#10;                    }" />
+                <marker date="1498766345181" expanded="true" signature="396:448" ph="{...}" />
+                <marker date="1498766345181" expanded="true" signature="422:426" ph="name...name" />
+                <marker date="1498766345181" expanded="true" signature="470:474" ph="type...type" />
+                <marker date="1498766345181" expanded="true" signature="496:507" ph="createdDate...createdDate" />
+                <marker date="1498766345181" expanded="true" signature="552:559" ph="history...history" />
+                <marker date="1498766345181" expanded="true" signature="560:755" ph="{...}" />
+                <marker date="1498766345181" expanded="true" signature="583:586" ph="idp...idp" />
+                <marker date="1498766345181" expanded="true" signature="583:593" ph="idp...{name}" />
+                <marker date="1498766345181" expanded="true" signature="587:593" ph="{...}" />
+                <marker date="1498766345181" expanded="true" signature="588:592" ph="name...name" />
+                <marker date="1498766345181" expanded="true" signature="611:614" ph="idp...idp" />
+                <marker date="1498766345181" expanded="true" signature="611:709" ph="idp...{&#10;                    name,&#10;                    type&#10;                }" />
+                <marker date="1498766345181" expanded="true" signature="615:709" ph="{...}" />
+                <marker date="1498766345181" expanded="true" signature="637:639" ph="id...id" />
+                <marker date="1498766345181" expanded="true" signature="661:665" ph="name...name" />
+                <marker date="1498766345181" expanded="true" signature="687:691" ph="type...type" />
+                <marker date="1498766345181" expanded="true" signature="727:741" ph="lastActiveDate...lastActiveDate" />
               </folding>
             </state>
           </provider>
@@ -174,8 +197,8 @@
       <file leaf-file-name="DeviceHeaderComponent.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/components/DeviceHeaderComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+            <state relative-caret-position="527">
+              <caret line="31" column="37" lean-forward="false" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -183,22 +206,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="schema.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="schema.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/schema.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="754">
-              <caret line="268" column="0" lean-forward="false" selection-start-line="268" selection-start-column="0" selection-end-line="268" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".babelrc" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.babelrc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="34" column="18" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="18" />
-              <folding />
+            <state relative-caret-position="1641">
+              <caret line="390" column="33" lean-forward="false" selection-start-line="390" selection-start-column="33" selection-end-line="390" selection-end-column="33" />
+              <folding>
+                <element signature="e#617#846#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -214,6 +229,10 @@
       <find>app.js</find>
       <find>client</find>
       <find>compa</find>
+      <find>moment</find>
+      <find>summaryRow</find>
+      <find>userType</find>
+      <find>forgetIdp</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -231,7 +250,6 @@
         <option value="$PROJECT_DIR$/js/components/DeviceContainer.js" />
         <option value="$PROJECT_DIR$/js/routes/AppHomeRoute.js" />
         <option value="$PROJECT_DIR$/scripts/updateSchema.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.babelrc" />
         <option value="$PROJECT_DIR$/config/environment/index.js" />
         <option value="$PROJECT_DIR$/config/environment/production.js" />
@@ -243,12 +261,15 @@
         <option value="$PROJECT_DIR$/js/components/App.js" />
         <option value="$PROJECT_DIR$/js/routes/Route.js" />
         <option value="$PROJECT_DIR$/js/routes/ViewerQuery.js" />
-        <option value="$PROJECT_DIR$/data/schema.js" />
-        <option value="$PROJECT_DIR$/js/components/DeviceHeaderComponent.js" />
-        <option value="$PROJECT_DIR$/js/components/AppComponent.js" />
         <option value="$PROJECT_DIR$/js/components/DeviceHeaderContainer.js" />
-        <option value="$PROJECT_DIR$/js/components/AppContainer.js" />
         <option value="$PROJECT_DIR$/js/index.html" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/js/components/DeviceHeaderComponent.js" />
+        <option value="$PROJECT_DIR$/js/components/AppContainer.js" />
+        <option value="$PROJECT_DIR$/js/components/AppComponent.js" />
+        <option value="$PROJECT_DIR$/js/components/ForgetIdpMutation.js" />
+        <option value="$PROJECT_DIR$/js/components/ForgetIdpButtonComponent.js" />
+        <option value="$PROJECT_DIR$/data/schema.js" />
       </list>
     </option>
   </component>
@@ -405,6 +426,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="__generated__" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wayf-admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wayf-admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -469,7 +512,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.schema.js">
     <configuration default="false" name="update-schema" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -498,6 +541,9 @@
       </scripts>
       <node-interpreter value="project" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="schema.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="schema.js" working-dir="$PROJECT_DIR$/data">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -566,16 +612,18 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="npm.update-schema" />
       <item index="1" class="java.lang.String" itemvalue="npm.start" />
       <item index="2" class="java.lang.String" itemvalue="npm.update" />
+      <item index="3" class="java.lang.String" itemvalue="Node.js.schema.js" />
     </list>
     <recent_temporary>
-      <list size="3">
+      <list size="4">
         <item index="0" class="java.lang.String" itemvalue="npm.start" />
         <item index="1" class="java.lang.String" itemvalue="npm.update" />
-        <item index="2" class="java.lang.String" itemvalue="npm.update-schema" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.schema.js" />
+        <item index="3" class="java.lang.String" itemvalue="npm.update-schema" />
       </list>
     </recent_temporary>
   </component>
@@ -596,11 +644,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48589000" />
+    <option name="totallyTimeSpent" value="76851000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="2497" height="1452" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2496994" sideWeight="0.81" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -609,7 +656,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2496994" sideWeight="0.19" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958803" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -638,43 +685,11 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/components/AppComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="25" column="7" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/schema.graphqls">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/schema.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -711,7 +726,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="63" column="20" lean-forward="false" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
-          <folding />
+          <folding>
+            <element signature="e#617#846#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -727,7 +744,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#617#643#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -774,7 +794,7 @@
         <state relative-caret-position="255">
           <caret line="21" column="15" lean-forward="true" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
           <folding>
-            <element signature="e#10#36#0" expanded="true" />
+            <element signature="e#10#36#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -783,7 +803,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#617#846#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -808,7 +830,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="60" lean-forward="true" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -816,18 +837,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
           <caret line="62" column="20" lean-forward="false" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react/lib/ReactComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-474">
-          <caret line="30" column="39" lean-forward="false" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react/lib/ReactComponent.js" />
     <entry file="file://$PROJECT_DIR$/data/schema.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-408">
@@ -848,7 +861,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="771">
           <caret line="1026" column="1" lean-forward="false" selection-start-line="1026" selection-start-column="1" selection-end-line="1026" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -856,7 +868,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
           <caret line="60" column="12" lean-forward="false" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -864,14 +875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/babelRelayPlugin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -891,23 +894,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/updateSchema.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="126" lean-forward="false" selection-start-line="3" selection-start-column="126" selection-end-line="3" selection-end-column="126" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -915,7 +901,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -923,7 +908,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -934,14 +918,6 @@
           <folding>
             <element signature="e#53#77#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -957,7 +933,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -966,26 +941,8 @@
         <state relative-caret-position="459">
           <caret line="27" column="1" lean-forward="false" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
           <folding>
-            <element signature="e#10#36#0" expanded="true" />
+            <element signature="e#10#36#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/environment/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="68" lean-forward="false" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/schema.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="268" column="0" lean-forward="false" selection-start-line="268" selection-start-column="0" selection-end-line="268" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1016,17 +973,84 @@
         <state relative-caret-position="204">
           <caret line="12" column="2" lean-forward="false" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="7" lean-forward="false" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="62" column="22" lean-forward="false" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environment/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="68" lean-forward="false" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-113">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/babelRelayPlugin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/updateSchema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="56" lean-forward="false" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
+          <folding>
+            <element signature="e#33#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="53" lean-forward="false" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/components/__generated__/DeviceHeaderContainer_viewer.graphql.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1201">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/components/DeviceHeaderContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        <state relative-caret-position="255">
+          <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
             <marker date="1498678978094" expanded="true" signature="242:629" ph="fragment...{&#10;                device {&#10;                    globalId,&#10;                    info {&#10;                        userAgent&#10;                    },&#10;                },&#10;                latestActivity {&#10;                    publisher {&#10;                        name&#10;                    },&#10;                    createdDate&#10;                }&#10;            }" />
             <marker date="1498678978094" expanded="true" signature="251:279" ph="DeviceHeaderContainer_viewer...DeviceHeaderContainer_viewer" />
             <marker date="1498678978094" expanded="true" signature="283:289" ph="viewer...viewer" />
@@ -1051,68 +1075,112 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/components/DeviceHeaderComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/components/AppContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="21" lean-forward="true" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        <state relative-caret-position="255">
+          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
           <folding>
-            <marker date="1498678987135" expanded="true" signature="241:741" ph="fragment...{&#10;            globalId&#10;        }" />
-            <marker date="1498678987135" expanded="true" signature="250:269" ph="AppContainer_viewer...AppContainer_viewer" />
-            <marker date="1498678987135" expanded="true" signature="273:279" ph="viewer...viewer" />
-            <marker date="1498678987135" expanded="true" signature="280:741" ph="{...}" />
-            <marker date="1498678987135" expanded="true" signature="297:316" ph="DeviceHeader_viewer...DeviceHeader_viewer" />
-            <marker date="1498678987135" expanded="true" signature="330:336" ph="device...device" />
-            <marker date="1498678987135" expanded="true" signature="330:539" ph="device...{&#10;                activity {&#10;                    publisher {&#10;                        name&#10;                    },&#10;                    type,&#10;                    createdDate&#10;                }&#10;            }" />
-            <marker date="1498678987135" expanded="true" signature="337:539" ph="{...}" />
-            <marker date="1498678987135" expanded="true" signature="355:363" ph="activity...activity" />
-            <marker date="1498678987135" expanded="true" signature="355:525" ph="activity...{&#10;                    publisher {&#10;                        name&#10;                    },&#10;                    type,&#10;                    createdDate&#10;                }" />
-            <marker date="1498678987135" expanded="true" signature="364:525" ph="{...}" />
-            <marker date="1498678987135" expanded="true" signature="386:395" ph="publisher...publisher" />
-            <marker date="1498678987135" expanded="true" signature="386:448" ph="publisher...{&#10;                        name&#10;                    }" />
-            <marker date="1498678987135" expanded="true" signature="396:448" ph="{...}" />
-            <marker date="1498678987135" expanded="true" signature="422:426" ph="name...name" />
-            <marker date="1498678987135" expanded="true" signature="470:474" ph="type...type" />
-            <marker date="1498678987135" expanded="true" signature="496:507" ph="createdDate...createdDate" />
-            <marker date="1498678987135" expanded="true" signature="552:559" ph="history...history" />
-            <marker date="1498678987135" expanded="true" signature="552:731" ph="history...{&#10;                key: idp {name},&#10;                idp {&#10;                    name,&#10;                    type&#10;                },&#10;                lastActiveDate&#10;            }" />
-            <marker date="1498678987135" expanded="true" signature="560:731" ph="{...}" />
-            <marker date="1498678987135" expanded="true" signature="583:586" ph="idp...idp" />
-            <marker date="1498678987135" expanded="true" signature="583:593" ph="idp...{name}" />
-            <marker date="1498678987135" expanded="true" signature="587:593" ph="{...}" />
-            <marker date="1498678987135" expanded="true" signature="588:592" ph="name...name" />
-            <marker date="1498678987135" expanded="true" signature="611:614" ph="idp...idp" />
-            <marker date="1498678987135" expanded="true" signature="611:685" ph="idp...{&#10;                    name,&#10;                    type&#10;                }" />
-            <marker date="1498678987135" expanded="true" signature="615:685" ph="{...}" />
-            <marker date="1498678987135" expanded="true" signature="637:641" ph="name...name" />
-            <marker date="1498678987135" expanded="true" signature="663:667" ph="type...type" />
-            <marker date="1498678987135" expanded="true" signature="703:717" ph="lastActiveDate...lastActiveDate" />
+            <element signature="e#0#79#0" expanded="true" />
+            <marker date="1498766345181" expanded="true" signature="241:765" ph="fragment...{&#10;            globalId&#10;        }" />
+            <marker date="1498766345181" expanded="true" signature="250:269" ph="AppContainer_viewer...AppContainer_viewer" />
+            <marker date="1498766345181" expanded="true" signature="273:279" ph="viewer...viewer" />
+            <marker date="1498766345181" expanded="true" signature="280:765" ph="{...}" />
+            <marker date="1498766345181" expanded="true" signature="297:316" ph="DeviceHeader_viewer...DeviceHeader_viewer" />
+            <marker date="1498766345181" expanded="true" signature="330:336" ph="device...device" />
+            <marker date="1498766345181" expanded="true" signature="330:539" ph="device...{&#10;                activity {&#10;                    publisher {&#10;                        name&#10;                    },&#10;                    type,&#10;                    createdDate&#10;                }&#10;            }" />
+            <marker date="1498766345181" expanded="true" signature="330:559" ph="history...history" />
+            <marker date="1498766345181" expanded="true" signature="330:755" ph="history...{&#10;                key: idp {name},&#10;                idp {&#10;                    name,&#10;                    type&#10;                },&#10;                lastActiveDate&#10;            }" />
+            <marker date="1498766345181" expanded="true" signature="337:539" ph="{...}" />
+            <marker date="1498766345181" expanded="true" signature="355:363" ph="activity...activity" />
+            <marker date="1498766345181" expanded="true" signature="355:525" ph="activity...{&#10;                    publisher {&#10;                        name&#10;                    },&#10;                    type,&#10;                    createdDate&#10;                }" />
+            <marker date="1498766345181" expanded="true" signature="364:525" ph="{...}" />
+            <marker date="1498766345181" expanded="true" signature="386:395" ph="publisher...publisher" />
+            <marker date="1498766345181" expanded="true" signature="386:448" ph="publisher...{&#10;                        name&#10;                    }" />
+            <marker date="1498766345181" expanded="true" signature="396:448" ph="{...}" />
+            <marker date="1498766345181" expanded="true" signature="422:426" ph="name...name" />
+            <marker date="1498766345181" expanded="true" signature="470:474" ph="type...type" />
+            <marker date="1498766345181" expanded="true" signature="496:507" ph="createdDate...createdDate" />
+            <marker date="1498766345181" expanded="true" signature="552:559" ph="history...history" />
+            <marker date="1498766345181" expanded="true" signature="560:755" ph="{...}" />
+            <marker date="1498766345181" expanded="true" signature="583:586" ph="idp...idp" />
+            <marker date="1498766345181" expanded="true" signature="583:593" ph="idp...{name}" />
+            <marker date="1498766345181" expanded="true" signature="587:593" ph="{...}" />
+            <marker date="1498766345181" expanded="true" signature="588:592" ph="name...name" />
+            <marker date="1498766345181" expanded="true" signature="611:614" ph="idp...idp" />
+            <marker date="1498766345181" expanded="true" signature="611:709" ph="idp...{&#10;                    name,&#10;                    type&#10;                }" />
+            <marker date="1498766345181" expanded="true" signature="615:709" ph="{...}" />
+            <marker date="1498766345181" expanded="true" signature="637:639" ph="id...id" />
+            <marker date="1498766345181" expanded="true" signature="661:665" ph="name...name" />
+            <marker date="1498766345181" expanded="true" signature="687:691" ph="type...type" />
+            <marker date="1498766345181" expanded="true" signature="727:741" ph="lastActiveDate...lastActiveDate" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/components/AppComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="29" column="33" lean-forward="false" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="1063">
+          <caret line="83" column="68" lean-forward="false" selection-start-line="83" selection-start-column="68" selection-end-line="83" selection-end-column="68" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#617#643#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/index.html">
+    <entry file="file://$PROJECT_DIR$/js/components/DeviceHeaderComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="111" lean-forward="false" selection-start-line="21" selection-start-column="111" selection-end-line="21" selection-end-column="111" />
-          <folding />
+        <state relative-caret-position="527">
+          <caret line="31" column="37" lean-forward="false" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/components/ForgetIdpMutation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="31" column="25" lean-forward="false" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+          <folding>
+            <marker date="1499268085045" expanded="true" signature="106:317" ph="mutation...{&#10;        forgetIdp(input: $input) {&#10;            viewer {&#10;                device {&#10;                    globalId&#10;                }&#10;            }&#10;        }&#10;    }" />
+            <marker date="1499268085045" expanded="true" signature="115:132" ph="ForgetIdpMutation...ForgetIdpMutation" />
+            <marker date="1499268085045" expanded="true" signature="132:157" ph="(...)" />
+            <marker date="1499268085045" expanded="true" signature="141:155" ph="ForgetIdpInput...ForgetIdpInput" />
+            <marker date="1499268085045" expanded="true" signature="158:317" ph="{...}" />
+            <marker date="1499268085045" expanded="true" signature="168:177" ph="forgetIdp...forgetIdp" />
+            <marker date="1499268085045" expanded="true" signature="168:311" ph="forgetIdp...{&#10;            viewer {&#10;                device {&#10;                    globalId&#10;                }&#10;            }&#10;        }" />
+            <marker date="1499268085045" expanded="true" signature="177:192" ph="(...)" />
+            <marker date="1499268085045" expanded="true" signature="178:183" ph="input...input" />
+            <marker date="1499268085045" expanded="true" signature="193:311" ph="{...}" />
+            <marker date="1499268085045" expanded="true" signature="207:213" ph="viewer...viewer" />
+            <marker date="1499268085045" expanded="true" signature="207:301" ph="viewer...{&#10;                device {&#10;                    globalId&#10;                }&#10;            }" />
+            <marker date="1499268085045" expanded="true" signature="214:301" ph="{...}" />
+            <marker date="1499268085045" expanded="true" signature="232:238" ph="device...device" />
+            <marker date="1499268085045" expanded="true" signature="232:287" ph="device...{&#10;                    globalId&#10;                }" />
+            <marker date="1499268085045" expanded="true" signature="239:287" ph="{...}" />
+            <marker date="1499268085045" expanded="true" signature="261:269" ph="globalId...globalId" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/components/ForgetIdpButtonComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="38" lean-forward="false" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/schema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1641">
+          <caret line="390" column="33" lean-forward="false" selection-start-line="390" selection-start-column="33" selection-end-line="390" selection-end-column="33" />
+          <folding>
+            <element signature="e#617#846#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

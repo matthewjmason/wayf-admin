@@ -3,7 +3,7 @@
  *   relay-compiler
  *
  * @providesModule DeviceHeaderContainer_viewer.graphql
- * @generated SignedSource<<d6e34a89c5f0001ff1b11fe8f9071d9c>>
+ * @generated SignedSource<<8a6761282b2b2af900aaf6cbd0301d42>>
  * @flow
  * @nogrep
  */
@@ -20,13 +20,6 @@ export type DeviceHeaderContainer_viewer = {|
     +info: ?{|
       +userAgent: ?string;
     |};
-    +activity: ?$ReadOnlyArray<?{|
-      +publisher: ?{|
-        +name: ?string;
-      |};
-      +type: ?"REMOVE_IDP" | "READ_IDP_HISTORY" | "ADD_IDP";
-      +createdDate: ?any;
-    |}>;
   |};
   +latestActivity: ?{|
     +publisher: ?{|
@@ -72,49 +65,6 @@ const fragment /*: ConcreteFragment*/ = {
               "alias": null,
               "args": null,
               "name": "userAgent",
-              "storageKey": null
-            }
-          ],
-          "storageKey": null
-        },
-        {
-          "kind": "LinkedField",
-          "alias": null,
-          "args": null,
-          "concreteType": "DeviceAccessType",
-          "name": "activity",
-          "plural": true,
-          "selections": [
-            {
-              "kind": "LinkedField",
-              "alias": null,
-              "args": null,
-              "concreteType": "PublisherType",
-              "name": "publisher",
-              "plural": false,
-              "selections": [
-                {
-                  "kind": "ScalarField",
-                  "alias": null,
-                  "args": null,
-                  "name": "name",
-                  "storageKey": null
-                }
-              ],
-              "storageKey": null
-            },
-            {
-              "kind": "ScalarField",
-              "alias": null,
-              "args": null,
-              "name": "type",
-              "storageKey": null
-            },
-            {
-              "kind": "ScalarField",
-              "alias": null,
-              "args": null,
-              "name": "createdDate",
               "storageKey": null
             }
           ],

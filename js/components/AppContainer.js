@@ -21,6 +21,7 @@ export default createFragmentContainer(App, {
             history {
                 key: idp {name},
                 idp {
+                    id,
                     name,
                     type
                 },

@@ -3,7 +3,7 @@
  *   relay-compiler
  *
  * @providesModule AppContainer_viewer.graphql
- * @generated SignedSource<<287423bf829a34a8d2dadb3e1a531689>>
+ * @generated SignedSource<<f5d74485be824c633987908c92f52938>>
  * @flow
  * @nogrep
  */
@@ -15,11 +15,21 @@
 /*::
 import type {ConcreteFragment} from 'relay-runtime';
 export type AppContainer_viewer = {|
+  +device: ?{|
+    +activity: ?$ReadOnlyArray<?{|
+      +publisher: ?{|
+        +name: ?string;
+      |};
+      +type: ?"REMOVE_IDP" | "READ_IDP_HISTORY" | "ADD_IDP";
+      +createdDate: ?any;
+    |}>;
+  |};
   +history: ?$ReadOnlyArray<?{|
     +key: ?{|
       +name: ?string;
     |};
     +idp: ?{|
+      +id: ?string;
       +name: ?string;
       +type: ?"SAML" | "OAUTH" | "OPEN_ATHENS";
     |};
@@ -39,6 +49,60 @@ const fragment /*: ConcreteFragment*/ = {
       "kind": "FragmentSpread",
       "name": "DeviceHeader_viewer",
       "args": null
+    },
+    {
+      "kind": "LinkedField",
+      "alias": null,
+      "args": null,
+      "concreteType": "DeviceType",
+      "name": "device",
+      "plural": false,
+      "selections": [
+        {
+          "kind": "LinkedField",
+          "alias": null,
+          "args": null,
+          "concreteType": "DeviceAccessType",
+          "name": "activity",
+          "plural": true,
+          "selections": [
+            {
+              "kind": "LinkedField",
+              "alias": null,
+              "args": null,
+              "concreteType": "PublisherType",
+              "name": "publisher",
+              "plural": false,
+              "selections": [
+                {
+                  "kind": "ScalarField",
+                  "alias": null,
+                  "args": null,
+                  "name": "name",
+                  "storageKey": null
+                }
+              ],
+              "storageKey": null
+            },
+            {
+              "kind": "ScalarField",
+              "alias": null,
+              "args": null,
+              "name": "type",
+              "storageKey": null
+            },
+            {
+              "kind": "ScalarField",
+              "alias": null,
+              "args": null,
+              "name": "createdDate",
+              "storageKey": null
+            }
+          ],
+          "storageKey": null
+        }
+      ],
+      "storageKey": null
     },
     {
       "kind": "LinkedField",
@@ -74,6 +138,13 @@ const fragment /*: ConcreteFragment*/ = {
           "name": "idp",
           "plural": false,
           "selections": [
+            {
+              "kind": "ScalarField",
+              "alias": null,
+              "args": null,
+              "name": "id",
+              "storageKey": null
+            },
             {
               "kind": "ScalarField",
               "alias": null,

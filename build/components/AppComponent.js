@@ -42,6 +42,14 @@ var _DeviceHeaderContainer = require('./DeviceHeaderContainer');
 
 var _DeviceHeaderContainer2 = _interopRequireDefault(_DeviceHeaderContainer);
 
+var _ForgetIdpButtonComponent = require('./ForgetIdpButtonComponent');
+
+var _ForgetIdpButtonComponent2 = _interopRequireDefault(_ForgetIdpButtonComponent);
+
+var _moment = require('moment');
+
+var _moment2 = _interopRequireDefault(_moment);
+
 var _reactBootstrap = require('react-bootstrap');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -93,7 +101,7 @@ function sessionRow(activity) {
             _react3.default.createElement(
                 _reactBootstrap.Col,
                 { md: 5 },
-                access.createdDate
+                (0, _moment2.default)(access.createdDate).format('LLL')
             ),
             _react3.default.createElement(
                 _reactBootstrap.Col,
@@ -103,37 +111,58 @@ function sessionRow(activity) {
             _react3.default.createElement(
                 _reactBootstrap.Col,
                 { md: 2 },
-                access.type
+                getDisplayName(access.type)
             )
         );
     });
 }
 
-function summaryRow(usages) {
-    return usages.map(function (usage, i) {
+function getDisplayName(accessType) {
+    if ('REMOVE_IDP' === accessType) {
+        return 'DELETE';
+    } else if ('READ_IDP_HISTORY' === accessType) {
+        return 'GET';
+    } else if ('ADD_IDP' === accessType) {
+        return 'SAVE';
+    } else {
+        return accessType;
+    }
+}
+
+function summaryRow(props) {
+    return props.viewer.history.map(function (usage, i) {
         return _react3.default.createElement(
             _reactBootstrap.Row,
             null,
             _react3.default.createElement(
                 _reactBootstrap.Col,
-                { md: 5 },
+                { md: 3 },
                 usage.idp.name
             ),
             _react3.default.createElement(
                 _reactBootstrap.Col,
-                { md: 5 },
+                { md: 3 },
                 usage.idp.type
             ),
             _react3.default.createElement(
                 _reactBootstrap.Col,
                 { md: 2 },
-                usage.lastActiveDate
+                (0, _moment2.default)(usage.lastActiveDate).format('LLL')
+            ),
+            _react3.default.createElement(
+                _reactBootstrap.Col,
+                { md: 2 },
+                _react3.default.createElement(_ForgetIdpButtonComponent2.default, { relay: props.relay, viewer: props.viewer, idpId: usage.idp.id })
             )
         );
     });
 }
+function buttonClick(i) {
+    console.log(i);
+    alert(i);
+}
 
-function loadSummary(history) {
+function loadSummary(props) {
 
     return _react3.default.createElement(
         _reactBootstrap.Grid,
@@ -143,21 +172,26 @@ function loadSummary(history) {
             { className: 'row-fluid' },
             _react3.default.createElement(
                 _reactBootstrap.Col,
-                { md: 5 },
+                { md: 3 },
                 _react3.default.createElement(
                     'h2',
                     null,
-                    'Last Seen'
+                    'Name'
                 )
             ),
             _react3.default.createElement(
                 _reactBootstrap.Col,
-                { md: 5 },
+                { md: 3 },
                 _react3.default.createElement(
                     'h2',
                     null,
-                    'Organization'
+                    'Protocol'
                 )
+            ),
+            _react3.default.createElement(
+                _reactBootstrap.Col,
+                { md: 2 },
+                _react3.default.createElement('h2', null)
             ),
             _react3.default.createElement(
                 _reactBootstrap.Col,
@@ -165,7 +199,7 @@ function loadSummary(history) {
                 _react3.default.createElement('h2', null)
             )
         ),
-        summaryRow(history)
+        summaryRow(props)
     );
 }
 
@@ -224,7 +258,7 @@ var App = _wrapComponent('App')(function (_React$Component) {
                             _react3.default.createElement(
                                 _reactBootstrap.Tab,
                                 { eventKey: 1, title: 'Overview' },
-                                loadSummary(this.props.viewer.history)
+                                loadSummary(this.props)
                             ),
                             _react3.default.createElement(
                                 _reactBootstrap.Tab,
@@ -242,19 +276,6 @@ var App = _wrapComponent('App')(function (_React$Component) {
 
 var _default = App;
 exports.default = _default;
-/*
-export default class App extends React.Component {
-    static propTypes = {
-
-    };
-
-    render() {
-        return (
-            <p>Always a pleasure scaffolding your apps</p>
-        );
-    }
-}*/
-
 ;
 
 var _temp = function () {
@@ -264,7 +285,11 @@ var _temp = function () {
 
     __REACT_HOT_LOADER__.register(sessionRow, 'sessionRow', 'js/components/AppComponent.js');
 
+    __REACT_HOT_LOADER__.register(getDisplayName, 'getDisplayName', 'js/components/AppComponent.js');
+
     __REACT_HOT_LOADER__.register(summaryRow, 'summaryRow', 'js/components/AppComponent.js');
+
+    __REACT_HOT_LOADER__.register(buttonClick, 'buttonClick', 'js/components/AppComponent.js');
 
     __REACT_HOT_LOADER__.register(loadSummary, 'loadSummary', 'js/components/AppComponent.js');
 

@@ -16,7 +16,10 @@ import {
     graphql,
     compat
 } from 'react-relay';
+
 import DeviceHeader from './DeviceHeaderContainer';
+import ForgetIdpButton from './ForgetIdpButtonComponent';
+import moment from 'moment';
 
 import { Button,
     Grid,
@@ -37,13 +40,13 @@ function sessionRow(activity) {
             return (
                 <Row>
                   <Col md={5}>
-                      {access.createdDate}
+                      {moment(access.createdDate).format('LLL')}
                   </Col>
                   <Col md={5}>
                       {access.publisher.name}
                   </Col>
                   <Col md={2}>
-                      {access.type}
+                      {getDisplayName(access.type)}
                   </Col>
                 </Row>
             )
@@ -51,42 +54,64 @@ function sessionRow(activity) {
     );
 }
 
-function summaryRow(usages) {
-    return usages.map(
+function getDisplayName(accessType) {
+    if ('REMOVE_IDP' === accessType) {
+        return 'DELETE';
+    } else if ('READ_IDP_HISTORY' === accessType) {
+        return 'GET';
+    } else if ('ADD_IDP' === accessType) {
+        return 'SAVE'
+    } else {
+        return accessType;
+    }
+}
+
+function summaryRow(props) {
+    return props.viewer.history.map(
         function(usage, i) {
             return (
                 <Row>
-                  <Col md={5}>
+                  <Col md={3}>
                       {usage.idp.name}
                   </Col>
-                  <Col md={5}>
+                  <Col md={3}>
                       {usage.idp.type}
                   </Col>
                   <Col md={2}>
-                      {usage.lastActiveDate}
+                      {moment(usage.lastActiveDate).format('LLL')}
                   </Col>
+                   <Col md={2}>
+                       <ForgetIdpButton relay={props.relay} viewer={props.viewer} idpId={usage.idp.id}/>
+                   </Col>
                 </Row>
             )
         }
     );
 }
+function buttonClick(i) {
+    console.log(i);
+    alert(i);
+}
 
-function loadSummary(history) {
+function loadSummary(props) {
 
     return (
         <Grid>
           <Row className="row-fluid">
-            <Col md={5}>
-              <h2>Last Seen</h2>
+            <Col md={3}>
+              <h2>Name</h2>
             </Col>
-            <Col md={5}>
-              <h2>Organization</h2>
+            <Col md={3}>
+              <h2>Protocol</h2>
             </Col>
             <Col md={2}>
               <h2></h2>
             </Col>
+            <Col md={2}>
+                  <h2></h2>
+            </Col>
           </Row>
-            {summaryRow(history)}
+            {summaryRow(props)}
         </Grid>
     );
 }
@@ -129,7 +154,7 @@ export default class App extends React.Component {
               <Row className="row-fluid">
                 <Col md={12}>
                   <Tabs activeKey={this.state.activeTab} onSelect={this.handleSelect}>
-                    <Tab eventKey={1} title="Overview">{loadSummary(this.props.viewer.history)}</Tab>
+                    <Tab eventKey={1} title="Overview">{loadSummary(this.props)}</Tab>
                     <Tab eventKey={2} title="Activity">{loadActivity(this.props.viewer.device)}</Tab>
                   </Tabs>
                 </Col>
@@ -138,15 +163,3 @@ export default class App extends React.Component {
         );
     }
 }
-/*
-export default class App extends React.Component {
-    static propTypes = {
-
-    };
-
-    render() {
-        return (
-            <p>Always a pleasure scaffolding your apps</p>
-        );
-    }
-}*/

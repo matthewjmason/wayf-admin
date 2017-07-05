@@ -18,8 +18,15 @@ import {
     GraphQLSchema,
     GraphQLScalarType,
     GraphQLString,
-    GraphQLList
+    GraphQLList,
+    GraphQLInputObjectType,
+    GraphQLNonNull
 } from 'graphql';
+
+import {
+    mutationWithClientMutationId,
+    cursorForObjectInConnection
+} from 'graphql-relay';
 
 var fetch = require('node-fetch');
 var DataLoader = require('dataloader')
@@ -179,7 +186,7 @@ var PublisherType = new GraphQLObjectType({
             type: DateType
         }
     })
-})
+});
 
 var IdentityProviderType = new GraphQLObjectType({
     name: 'IdentityProviderType',
@@ -263,6 +270,31 @@ const ViewerType = new GraphQLObjectType({
     }
 });
 
+
+const forgetIdpMutation = mutationWithClientMutationId({
+    name: 'ForgetIdp',
+    inputFields: {
+        idpId: { type: new GraphQLNonNull(GraphQLInt) }
+    },
+
+    outputFields: {
+        viewer: {
+            type: ViewerType,
+            resolve: () => getViewer()
+        }
+    },
+
+    mutateAndGetPayload: ({idpId}) => forgetIdp(idpId)
+});
+
+
+const mutationType = new GraphQLObjectType({
+    name: 'Mutation',
+    fields: () => ({
+        forgetIdp: forgetIdpMutation
+    })
+});
+
 const queryType = new GraphQLObjectType({
     name: 'Query',
     fields: () => ({
@@ -276,7 +308,8 @@ const queryType = new GraphQLObjectType({
 
 
 export default new GraphQLSchema({
-    query: queryType
+    query: queryType,
+    mutation: mutationType
 });
 
 const BASE_URL = 'http://localhost:8080';
@@ -285,6 +318,12 @@ function fetchResponseByURL(relativeURL) {
     console.log(relativeURL);
 
     return fetch(`${BASE_URL}${relativeURL}`).then(res => res.json());
+}
+
+function deleteByURLAndHeader(relativeURL, header) {
+    console.log(relativeURL, header);
+
+    return fetch(`${BASE_URL}${relativeURL}`, {headers: header, method: 'delete'}).then(res => res.json());
 }
 
 function fetchResponseByURLAndHeader(relativeURL, header) {
@@ -344,4 +383,10 @@ function fetchHistory(id) {
     console.log(`fetching activity ${id}`);
 
     return fetchResponseByURLAndHeader(`/1/mydevice/history`, {'X-Device-Id': getViewer().secretDeviceId});
+}
+
+function forgetIdp(idpId) {
+    console.log(`forgetting idp ${idpId}`);
+
+    return deleteByURLAndHeader(`/1/mydevice/history/idp/${idpId}`, {'X-Device-Id': getViewer().secretDeviceId});
 }

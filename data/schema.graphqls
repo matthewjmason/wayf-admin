@@ -31,6 +31,16 @@ type DeviceType {
   modifiedDate: Date
 }
 
+input ForgetIdpInput {
+  idpId: Int!
+  clientMutationId: String
+}
+
+type ForgetIdpPayload {
+  viewer: viewer
+  clientMutationId: String
+}
+
 type IdentityProviderType {
   id: String
   type: IdentityProviderTypeEnum
@@ -49,6 +59,10 @@ type IdentityProviderUsageType {
   lastActiveDate: Date
   frequency: Float
   idp: IdentityProviderType
+}
+
+type Mutation {
+  forgetIdp(input: ForgetIdpInput!): ForgetIdpPayload
 }
 
 type PublisherType {

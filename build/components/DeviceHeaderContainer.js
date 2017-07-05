@@ -48,46 +48,6 @@ var _default = (0, _compat.createFragmentContainer)(_DeviceHeaderComponent2.defa
                                     canHaveSubselections: true
                                 },
                                 type: 'DeviceInfoType'
-                            }, {
-                                children: [{
-                                    children: [{
-                                        fieldName: 'name',
-                                        kind: 'Field',
-                                        metadata: {},
-                                        type: 'String'
-                                    }, {
-                                        fieldName: 'id',
-                                        kind: 'Field',
-                                        metadata: {
-                                            isGenerated: true,
-                                            isRequisite: true
-                                        },
-                                        type: 'String'
-                                    }],
-                                    fieldName: 'publisher',
-                                    kind: 'Field',
-                                    metadata: {
-                                        canHaveSubselections: true
-                                    },
-                                    type: 'PublisherType'
-                                }, {
-                                    fieldName: 'type',
-                                    kind: 'Field',
-                                    metadata: {},
-                                    type: 'DeviceAccessTypeEnum'
-                                }, {
-                                    fieldName: 'createdDate',
-                                    kind: 'Field',
-                                    metadata: {},
-                                    type: 'Date'
-                                }],
-                                fieldName: 'activity',
-                                kind: 'Field',
-                                metadata: {
-                                    canHaveSubselections: true,
-                                    isPlural: true
-                                },
-                                type: 'DeviceAccessType'
                             }],
                             fieldName: 'device',
                             kind: 'Field',
