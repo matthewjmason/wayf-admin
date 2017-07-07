@@ -3,7 +3,7 @@
  *   relay-compiler
  *
  * @providesModule AppContainer_viewer.graphql
- * @generated SignedSource<<f5d74485be824c633987908c92f52938>>
+ * @generated SignedSource<<e2a55429b222bde5b7713db43f8d4076>>
  * 
  * @nogrep
  */
@@ -14,28 +14,7 @@
 
 /*::
 import type {ConcreteFragment} from 'relay-runtime';
-export type AppContainer_viewer = {|
-  +device: ?{|
-    +activity: ?$ReadOnlyArray<?{|
-      +publisher: ?{|
-        +name: ?string;
-      |};
-      +type: ?"REMOVE_IDP" | "READ_IDP_HISTORY" | "ADD_IDP";
-      +createdDate: ?any;
-    |}>;
-  |};
-  +history: ?$ReadOnlyArray<?{|
-    +key: ?{|
-      +name: ?string;
-    |};
-    +idp: ?{|
-      +id: ?string;
-      +name: ?string;
-      +type: ?"SAML" | "OAUTH" | "OPEN_ATHENS";
-    |};
-    +lastActiveDate: ?any;
-  |}>;
-|};
+export type AppContainer_viewer = {| |};
 */
 
 var fragment /*: ConcreteFragment*/ = {
@@ -48,107 +27,13 @@ var fragment /*: ConcreteFragment*/ = {
     "name": "DeviceHeader_viewer",
     "args": null
   }, {
-    "kind": "LinkedField",
-    "alias": null,
-    "args": null,
-    "concreteType": "DeviceType",
-    "name": "device",
-    "plural": false,
-    "selections": [{
-      "kind": "LinkedField",
-      "alias": null,
-      "args": null,
-      "concreteType": "DeviceAccessType",
-      "name": "activity",
-      "plural": true,
-      "selections": [{
-        "kind": "LinkedField",
-        "alias": null,
-        "args": null,
-        "concreteType": "PublisherType",
-        "name": "publisher",
-        "plural": false,
-        "selections": [{
-          "kind": "ScalarField",
-          "alias": null,
-          "args": null,
-          "name": "name",
-          "storageKey": null
-        }],
-        "storageKey": null
-      }, {
-        "kind": "ScalarField",
-        "alias": null,
-        "args": null,
-        "name": "type",
-        "storageKey": null
-      }, {
-        "kind": "ScalarField",
-        "alias": null,
-        "args": null,
-        "name": "createdDate",
-        "storageKey": null
-      }],
-      "storageKey": null
-    }],
-    "storageKey": null
+    "kind": "FragmentSpread",
+    "name": "IdpHistory_viewer",
+    "args": null
   }, {
-    "kind": "LinkedField",
-    "alias": null,
-    "args": null,
-    "concreteType": "IdentityProviderUsageType",
-    "name": "history",
-    "plural": true,
-    "selections": [{
-      "kind": "LinkedField",
-      "alias": "key",
-      "args": null,
-      "concreteType": "IdentityProviderType",
-      "name": "idp",
-      "plural": false,
-      "selections": [{
-        "kind": "ScalarField",
-        "alias": null,
-        "args": null,
-        "name": "name",
-        "storageKey": null
-      }],
-      "storageKey": null
-    }, {
-      "kind": "LinkedField",
-      "alias": null,
-      "args": null,
-      "concreteType": "IdentityProviderType",
-      "name": "idp",
-      "plural": false,
-      "selections": [{
-        "kind": "ScalarField",
-        "alias": null,
-        "args": null,
-        "name": "id",
-        "storageKey": null
-      }, {
-        "kind": "ScalarField",
-        "alias": null,
-        "args": null,
-        "name": "name",
-        "storageKey": null
-      }, {
-        "kind": "ScalarField",
-        "alias": null,
-        "args": null,
-        "name": "type",
-        "storageKey": null
-      }],
-      "storageKey": null
-    }, {
-      "kind": "ScalarField",
-      "alias": null,
-      "args": null,
-      "name": "lastActiveDate",
-      "storageKey": null
-    }],
-    "storageKey": null
+    "kind": "FragmentSpread",
+    "name": "DeviceActivity_viewer",
+    "args": null
   }],
   "type": "viewer"
 };

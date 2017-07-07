@@ -42,9 +42,13 @@ var _DeviceHeaderContainer = require('./DeviceHeaderContainer');
 
 var _DeviceHeaderContainer2 = _interopRequireDefault(_DeviceHeaderContainer);
 
-var _ForgetIdpButtonComponent = require('./ForgetIdpButtonComponent');
+var _IdpHistoryComponent = require('./IdpHistoryComponent');
 
-var _ForgetIdpButtonComponent2 = _interopRequireDefault(_ForgetIdpButtonComponent);
+var _IdpHistoryComponent2 = _interopRequireDefault(_IdpHistoryComponent);
+
+var _DeviceActivityComponent = require('./DeviceActivityComponent');
+
+var _DeviceActivityComponent2 = _interopRequireDefault(_DeviceActivityComponent);
 
 var _moment = require('moment');
 
@@ -78,138 +82,6 @@ function _wrapComponent(id) {
     return function (Component) {
         return _reactTransformHmr2(_reactTransformCatchErrors2(Component, id), id);
     };
-} /**
-   * This file provided by Facebook is for non-commercial testing and evaluation
-   * purposes only.  Facebook reserves all rights not expressly granted.
-   *
-   * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-   * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-   * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
-   * FACEBOOK BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
-   * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-   * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-   */
-
-var classNames = require('classnames');
-
-function sessionRow(activity) {
-
-    return activity.map(function (access, i) {
-        return _react3.default.createElement(
-            _reactBootstrap.Row,
-            null,
-            _react3.default.createElement(
-                _reactBootstrap.Col,
-                { md: 5 },
-                (0, _moment2.default)(access.createdDate).format('LLL')
-            ),
-            _react3.default.createElement(
-                _reactBootstrap.Col,
-                { md: 5 },
-                access.publisher.name
-            ),
-            _react3.default.createElement(
-                _reactBootstrap.Col,
-                { md: 2 },
-                getDisplayName(access.type)
-            )
-        );
-    });
-}
-
-function getDisplayName(accessType) {
-    if ('REMOVE_IDP' === accessType) {
-        return 'DELETE';
-    } else if ('READ_IDP_HISTORY' === accessType) {
-        return 'GET';
-    } else if ('ADD_IDP' === accessType) {
-        return 'SAVE';
-    } else {
-        return accessType;
-    }
-}
-
-function summaryRow(props) {
-    return props.viewer.history.map(function (usage, i) {
-        return _react3.default.createElement(
-            _reactBootstrap.Row,
-            null,
-            _react3.default.createElement(
-                _reactBootstrap.Col,
-                { md: 3 },
-                usage.idp.name
-            ),
-            _react3.default.createElement(
-                _reactBootstrap.Col,
-                { md: 3 },
-                usage.idp.type
-            ),
-            _react3.default.createElement(
-                _reactBootstrap.Col,
-                { md: 2 },
-                (0, _moment2.default)(usage.lastActiveDate).format('LLL')
-            ),
-            _react3.default.createElement(
-                _reactBootstrap.Col,
-                { md: 2 },
-                _react3.default.createElement(_ForgetIdpButtonComponent2.default, { relay: props.relay, viewer: props.viewer, idpId: usage.idp.id })
-            )
-        );
-    });
-}
-function buttonClick(i) {
-    console.log(i);
-    alert(i);
-}
-
-function loadSummary(props) {
-
-    return _react3.default.createElement(
-        _reactBootstrap.Grid,
-        null,
-        _react3.default.createElement(
-            _reactBootstrap.Row,
-            { className: 'row-fluid' },
-            _react3.default.createElement(
-                _reactBootstrap.Col,
-                { md: 3 },
-                _react3.default.createElement(
-                    'h2',
-                    null,
-                    'Name'
-                )
-            ),
-            _react3.default.createElement(
-                _reactBootstrap.Col,
-                { md: 3 },
-                _react3.default.createElement(
-                    'h2',
-                    null,
-                    'Protocol'
-                )
-            ),
-            _react3.default.createElement(
-                _reactBootstrap.Col,
-                { md: 2 },
-                _react3.default.createElement('h2', null)
-            ),
-            _react3.default.createElement(
-                _reactBootstrap.Col,
-                { md: 2 },
-                _react3.default.createElement('h2', null)
-            )
-        ),
-        summaryRow(props)
-    );
-}
-
-function loadActivity(device) {
-
-    return _react3.default.createElement(
-        _reactBootstrap.Grid,
-        null,
-        sessionRow(device.activity)
-    );
 }
 
 var App = _wrapComponent('App')(function (_React$Component) {
@@ -258,12 +130,12 @@ var App = _wrapComponent('App')(function (_React$Component) {
                             _react3.default.createElement(
                                 _reactBootstrap.Tab,
                                 { eventKey: 1, title: 'Overview' },
-                                loadSummary(this.props)
+                                _react3.default.createElement(_IdpHistoryComponent2.default, { relay: this.props.relay, viewer: this.props.viewer })
                             ),
                             _react3.default.createElement(
                                 _reactBootstrap.Tab,
                                 { eventKey: 2, title: 'Activity' },
-                                loadActivity(this.props.viewer.device)
+                                _react3.default.createElement(_DeviceActivityComponent2.default, { viewer: this.props.viewer })
                             )
                         )
                     )
@@ -282,18 +154,6 @@ var _temp = function () {
     if (typeof __REACT_HOT_LOADER__ === 'undefined') {
         return;
     }
-
-    __REACT_HOT_LOADER__.register(sessionRow, 'sessionRow', 'js/components/AppComponent.js');
-
-    __REACT_HOT_LOADER__.register(getDisplayName, 'getDisplayName', 'js/components/AppComponent.js');
-
-    __REACT_HOT_LOADER__.register(summaryRow, 'summaryRow', 'js/components/AppComponent.js');
-
-    __REACT_HOT_LOADER__.register(buttonClick, 'buttonClick', 'js/components/AppComponent.js');
-
-    __REACT_HOT_LOADER__.register(loadSummary, 'loadSummary', 'js/components/AppComponent.js');
-
-    __REACT_HOT_LOADER__.register(loadActivity, 'loadActivity', 'js/components/AppComponent.js');
 
     __REACT_HOT_LOADER__.register(App, 'App', 'js/components/AppComponent.js');
 

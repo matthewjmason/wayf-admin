@@ -18,6 +18,9 @@ export default class DeviceHeader extends React.Component {
     static propTypes = {
         viewer: PropTypes.object.isRequired,
     };
+    constructor(props) {
+        super(props);
+    }
 
     render() {
         return (

@@ -14,6 +14,14 @@ var _DeviceHeaderContainer = require('./DeviceHeaderContainer');
 
 var _DeviceHeaderContainer2 = _interopRequireDefault(_DeviceHeaderContainer);
 
+var _IdpHistoryContainer = require('./IdpHistoryContainer');
+
+var _IdpHistoryContainer2 = _interopRequireDefault(_IdpHistoryContainer);
+
+var _DeviceActivityContainer = require('./DeviceActivityContainer');
+
+var _DeviceActivityContainer2 = _interopRequireDefault(_DeviceActivityContainer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = (0, _compat.createFragmentContainer)(_AppComponent2.default, {
@@ -23,123 +31,16 @@ var _default = (0, _compat.createFragmentContainer)(_AppComponent2.default, {
         },
         classic: function classic() {
             var RelayQL_GENERATED = require('react-relay/classic').QL,
-                DeviceHeader_viewer = _DeviceHeaderContainer2.default.getFragment('viewer');
+                DeviceHeader_viewer = _DeviceHeaderContainer2.default.getFragment('viewer'),
+                IdpHistory_viewer = _IdpHistoryContainer2.default.getFragment('viewer'),
+                DeviceActivity_viewer = _DeviceActivityContainer2.default.getFragment('viewer');
 
             return {
                 kind: 'FragmentDefinition',
                 argumentDefinitions: [],
                 node: function () {
                     return {
-                        children: [].concat.apply([], [{
-                            children: [{
-                                children: [{
-                                    children: [{
-                                        fieldName: 'name',
-                                        kind: 'Field',
-                                        metadata: {},
-                                        type: 'String'
-                                    }, {
-                                        fieldName: 'id',
-                                        kind: 'Field',
-                                        metadata: {
-                                            isGenerated: true,
-                                            isRequisite: true
-                                        },
-                                        type: 'String'
-                                    }],
-                                    fieldName: 'publisher',
-                                    kind: 'Field',
-                                    metadata: {
-                                        canHaveSubselections: true
-                                    },
-                                    type: 'PublisherType'
-                                }, {
-                                    fieldName: 'type',
-                                    kind: 'Field',
-                                    metadata: {},
-                                    type: 'DeviceAccessTypeEnum'
-                                }, {
-                                    fieldName: 'createdDate',
-                                    kind: 'Field',
-                                    metadata: {},
-                                    type: 'Date'
-                                }],
-                                fieldName: 'activity',
-                                kind: 'Field',
-                                metadata: {
-                                    canHaveSubselections: true,
-                                    isPlural: true
-                                },
-                                type: 'DeviceAccessType'
-                            }],
-                            fieldName: 'device',
-                            kind: 'Field',
-                            metadata: {
-                                canHaveSubselections: true
-                            },
-                            type: 'DeviceType'
-                        }, {
-                            children: [{
-                                alias: 'key',
-                                children: [{
-                                    fieldName: 'name',
-                                    kind: 'Field',
-                                    metadata: {},
-                                    type: 'String'
-                                }, {
-                                    fieldName: 'id',
-                                    kind: 'Field',
-                                    metadata: {
-                                        isGenerated: true,
-                                        isRequisite: true
-                                    },
-                                    type: 'String'
-                                }],
-                                fieldName: 'idp',
-                                kind: 'Field',
-                                metadata: {
-                                    canHaveSubselections: true
-                                },
-                                type: 'IdentityProviderType'
-                            }, {
-                                children: [{
-                                    fieldName: 'id',
-                                    kind: 'Field',
-                                    metadata: {
-                                        isRequisite: true
-                                    },
-                                    type: 'String'
-                                }, {
-                                    fieldName: 'name',
-                                    kind: 'Field',
-                                    metadata: {},
-                                    type: 'String'
-                                }, {
-                                    fieldName: 'type',
-                                    kind: 'Field',
-                                    metadata: {},
-                                    type: 'IdentityProviderTypeEnum'
-                                }],
-                                fieldName: 'idp',
-                                kind: 'Field',
-                                metadata: {
-                                    canHaveSubselections: true
-                                },
-                                type: 'IdentityProviderType'
-                            }, {
-                                fieldName: 'lastActiveDate',
-                                kind: 'Field',
-                                metadata: {},
-                                type: 'Date'
-                            }],
-                            fieldName: 'history',
-                            kind: 'Field',
-                            metadata: {
-                                canHaveSubselections: true,
-                                isPlural: true
-                            },
-                            type: 'IdentityProviderUsageType'
-                        }, RelayQL_GENERATED.__frag(DeviceHeader_viewer)]),
+                        children: [].concat.apply([], [RelayQL_GENERATED.__frag(DeviceHeader_viewer), RelayQL_GENERATED.__frag(IdpHistory_viewer), RelayQL_GENERATED.__frag(DeviceActivity_viewer)]),
                         id: RelayQL_GENERATED.__id(),
                         kind: 'Fragment',
                         metadata: {},

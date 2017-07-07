@@ -18,10 +18,6 @@ var _AppContainer = require('../components/AppContainer');
 
 var _AppContainer2 = _interopRequireDefault(_AppContainer);
 
-var _DeviceHeaderContainer = require('../components/DeviceHeaderContainer');
-
-var _DeviceHeaderContainer2 = _interopRequireDefault(_DeviceHeaderContainer);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _default = _react2.default.createElement(
