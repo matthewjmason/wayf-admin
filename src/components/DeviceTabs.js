@@ -33,7 +33,7 @@ class DeviceTabs extends React.Component {
   }
 
   componentDidMount() {
-    this.handleSelect('activity');
+    this.handleSelect('history');
   }
 
   render() {

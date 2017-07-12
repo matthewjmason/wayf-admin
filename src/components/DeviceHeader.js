@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { createFragmentContainer, createRefetchContainer, graphql } from 'react-relay';
+import moment from 'moment';
 
 import { Button,
     Grid,
@@ -30,7 +31,7 @@ class DeviceHeader extends React.Component {
                   </Row>
                   <Row>
                       <Col md={12}>
-                          <Label bsStyle="success">&nbsp;</Label>&nbsp;Last seen {this.props.viewer.latestActivity.createdDate} at {this.props.viewer.latestActivity.publisher.name}
+                          <Label bsStyle="success">&nbsp;</Label>&nbsp;Last seen {moment(this.props.viewer.latestActivity.createdDate).format('LLL')} at {this.props.viewer.latestActivity.publisher.name}
                       </Col>
                   </Row>
               </Grid>
