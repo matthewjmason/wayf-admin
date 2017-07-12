@@ -1,15 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import IdpHistory from './IdpHistory';
-import { createFragmentContainer, createRefetchContainer, graphql } from 'react-relay';
-import { Button,
-  Nav,
+import { createFragmentContainer, graphql } from 'react-relay';
+import { Nav,
   NavItem,
-  Grid,
   Col,
   Row,
-  Tab,
-  Tabs,
   TabContainer,
   TabContent, TabPane} from 'react-bootstrap';
 import DeviceActivity from "./DeviceActivity";
@@ -23,44 +19,21 @@ class DeviceTabs extends React.Component {
   constructor(props) {
     super(props);
 
-    this.tabStates = { fetchedHistory: true, fetchedActivity: false };
     this.handleSelect = this.handleSelect.bind(this);
   }
 
   handleSelect(eventKey) {
-    var requiresRefetch = false;
-
-    var refetchVariables = null;
-
-    if (eventKey == 'history') {
-      if (!this.tabStates.fetchedHistory) {
-        requiresRefetch = true;
-
-        refetchVariables = fragmentVariables => ({
-          fetchHistory: true,
-          fetchActivity: !this.tabStates.fetchActivity
-        });
-
-        this.tabStates.fetchedHistory = true;
-      }
+    if (eventKey === 'history') {
+      this.idpHistoryComponent.refs.component.toggleShow();
     }
 
-    if (eventKey == 'activity') {
-      if (!this.tabStates.fetchedActivity) {
-        requiresRefetch = true;
-
-        refetchVariables = fragmentVariables => ({
-          fetchHistory: this.tabStates.fetchedHistory,
-          fetchActivity: true
-        });
-
-        this.tabStates.fetchedActivity = true;
-      }
+    if (eventKey === 'activity') {
+      this.deviceActivityComponent.refs.component.toggleShow();
     }
+  }
 
-    if (requiresRefetch) {
-      this.props.relay.refetch(refetchVariables, null);
-    }
+  componentDidMount() {
+    this.handleSelect('activity');
   }
 
   render() {
@@ -76,8 +49,12 @@ class DeviceTabs extends React.Component {
             </Col>
 
             <TabContent>
-              <TabPane eventKey="history"><IdpHistory relay={this.props.relay} viewer={this.props.viewer}/></TabPane>
-              <TabPane eventKey="activity"><DeviceActivity viewer={this.props.viewer}/></TabPane>
+              <TabPane eventKey="history">
+                <IdpHistory relay={this.props.relay} viewer={this.props.viewer} ref={(idpHistory) => { this.idpHistoryComponent = idpHistory; }}/>
+              </TabPane>
+              <TabPane eventKey="activity">
+                <DeviceActivity relay={this.props.relay} viewer={this.props.viewer} ref={(deviceActivity) => { this.deviceActivityComponent = deviceActivity; }}/>
+              </TabPane>
             </TabContent>
           </Row>
         </TabContainer>
@@ -87,39 +64,12 @@ class DeviceTabs extends React.Component {
 
 DeviceTabs.propTypes = propTypes;
 
-export default createRefetchContainer(
+export default createFragmentContainer(
     DeviceTabs,
     graphql.experimental`
-        fragment DeviceTabs_viewer on viewer
-        @argumentDefinitions(
-            fetchHistory: {type: "Boolean!", defaultValue: true},
-            fetchActivity: {type: "Boolean!", defaultValue: false}
-        ) {
-            history @include(if: $fetchHistory) {
-                key: idp {name},
-                idp {
-                    id,
-                    name,
-                    type
-                },
-                lastActiveDate
-            }
-              device @include(if: $fetchActivity) {
-                  activity {
-                      publisher {
-                          name
-                      },
-                      type,
-                      createdDate
-                  }
-              }
-        }
-    `,
-    graphql.experimental`
-        query DeviceTabsRefetchQuery($fetchHistory: Boolean!, $fetchActivity: Boolean!) {
-            viewer {
-                ...DeviceTabs_viewer @arguments(fetchHistory: $fetchHistory, fetchActivity: $fetchActivity)
-            }
-        }
+        fragment DeviceTabs_viewer on viewer {
+            ...IdpHistory_viewer,
+            ...DeviceActivity_viewer
+        },
     `,
 );

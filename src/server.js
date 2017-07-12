@@ -6,6 +6,7 @@ import ReactDOMServer from 'react-dom/server';
 import serialize from 'serialize-javascript';
 import webpack from 'webpack';
 import webpackMiddleware from 'webpack-dev-middleware';
+import cookieParser from 'cookie-parser';
 
 import { ServerFetcher } from './fetcher';
 import { createResolver, historyMiddlewares, render, routeConfig }
@@ -15,8 +16,13 @@ import schema from './data/schema';
 const PORT = 3000;
 
 const app = express();
+app.use(cookieParser());
 
-app.use('/graphql', graphQLHTTP({ graphiql: true, schema }));
+app.use('/graphql', graphQLHTTP((request) => ({
+  schema: schema,
+  rootValue: { session: request.deviceId },
+  graphiql: true
+})));
 
 const webpackConfig = {
   entry: [
