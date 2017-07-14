@@ -32,10 +32,6 @@ class DeviceTabs extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.handleSelect('history');
-  }
-
   render() {
     return (
         <TabContainer defaultActiveKey="history">

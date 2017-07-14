@@ -5,16 +5,29 @@ import 'isomorphic-fetch';
 // enough to get things working.
 
 class FetcherBase {
-  constructor(url) {
+  constructor(url, deviceId) {
     this.url = url;
+    this.deviceId = deviceId;
   }
 
   async fetch(operation, variables) {
+    let headerVals = null;
+
+    if (this.deviceId) {
+      headerVals = {
+        'Cookie': this.deviceId,
+        'Content-Type': 'application/json',
+      };
+    } else {
+      headerVals = {
+        'Content-Type': 'application/json',
+      };
+    }
+
     const response = await fetch(this.url, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: headerVals,
+      credentials: 'same-origin',
       body: JSON.stringify({ query: operation.text, variables }),
     });
     return response.json();
@@ -22,8 +35,8 @@ class FetcherBase {
 }
 
 export class ServerFetcher extends FetcherBase {
-  constructor(url) {
-    super(url);
+  constructor(url, deviceId) {
+    super(url, deviceId);
 
     this.payloads = [];
   }
@@ -43,7 +56,7 @@ export class ServerFetcher extends FetcherBase {
 
 export class ClientFetcher extends FetcherBase {
   constructor(url, payloads) {
-    super(url);
+    super(url, null);
 
     this.payloads = payloads;
   }

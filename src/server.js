@@ -6,23 +6,42 @@ import ReactDOMServer from 'react-dom/server';
 import serialize from 'serialize-javascript';
 import webpack from 'webpack';
 import webpackMiddleware from 'webpack-dev-middleware';
-import cookieParser from 'cookie-parser';
-
+import session from 'express-session';
 import { ServerFetcher } from './fetcher';
 import { createResolver, historyMiddlewares, render, routeConfig }
   from './router';
 import schema from './data/schema';
-
+import cookieParser from 'cookie-parser';
 const PORT = 3000;
+var MemoryStore = session.MemoryStore;
 
 const app = express();
 app.use(cookieParser());
+app.use(session({
+  secret: 'wayf',
+  cookie: {
+    httpOnly: false
+  },
+  store: new MemoryStore()
+}));
 
-app.use('/graphql', graphQLHTTP((request) => ({
-  schema: schema,
-  rootValue: { session: request.deviceId },
-  graphiql: true
-})));
+app.use('/graphql', graphQLHTTP(request => {
+  let deviceId = null;
+
+  if (request.cookies && request.cookies.deviceId) {
+    deviceId = request.cookies.deviceId;
+  } else {
+    deviceId = request.headers.cookie;
+  }
+
+  request.session.deviceId = deviceId;
+
+  console.log('session', request.session);
+  return {
+    schema: schema,
+    graphiql: true,
+  };
+}));
 
 const webpackConfig = {
   entry: [
@@ -53,7 +72,9 @@ app.use(webpackMiddleware(webpack(webpackConfig), {
 }));
 
 app.use(async (req, res) => {
-  const fetcher = new ServerFetcher(`http://localhost:${PORT}/graphql`);
+  var deviceId = req.cookies.deviceId;
+
+  const fetcher = new ServerFetcher(`http://localhost:${PORT}/graphql`, deviceId);
 
   const { redirect, status, element } = await getFarceResult({
     url: req.url,

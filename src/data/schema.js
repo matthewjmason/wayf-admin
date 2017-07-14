@@ -215,10 +215,10 @@ export class User {
         this.secretDeviceId = secretDeviceId;
     }
 }
-const viewer = new User('baedb88c-af67-47b1-96da-940fd3643f2c');
 
-function getViewer() {
-    return new User('baedb88c-af67-47b1-96da-940fd3643f2c');
+function getViewer(deviceId) {
+    console.log('deviceId ' + deviceId)
+    return new User(deviceId);
 }
 
 // The root provides a resolver function for each API endpoint
@@ -279,12 +279,14 @@ const forgetIdpMutation = mutationWithClientMutationId({
 
     outputFields: {
         viewer: {
-            type: ViewerType,
-            resolve: () => getViewer()
+            type: ViewerType
         }
     },
 
-    mutateAndGetPayload: ({idpId}) => forgetIdp(idpId)
+    mutateAndGetPayload: ({idpId}, root) => {
+        console.log('mutate');
+        console.log(root.session.deviceId);
+        return forgetIdp(idpId, root.session.deviceId);}
 });
 
 
@@ -301,7 +303,7 @@ const queryType = new GraphQLObjectType({
         // Add your own root fields here
         viewer: {
             type: ViewerType,
-            resolve: () => getViewer()
+            resolve: (parentValue, args, request) => getViewer(request.session.deviceId)
         }
     })
 });
@@ -382,13 +384,14 @@ function fetchLatestActivity(id) {
 function fetchHistory(id) {
     console.log(`fetching activity ${id}`);
 
-    return fetchResponseByURLAndHeader(`/1/mydevice/history`, {'X-Device-Id': getViewer().secretDeviceId});
+    return fetchResponseByURLAndHeader(`/1/mydevice/history`, {'X-Device-Id': id});
 }
 
-function forgetIdp(idpId) {
+function forgetIdp(idpId, root) {
     console.log(`forgetting idp ${idpId}`);
+  console.log(`forgetting idp root ${root}`);
 
-    return deleteByURLAndHeader(`/1/mydevice/history/idp/${idpId}`, {'X-Device-Id': getViewer().secretDeviceId}).then((function (res) {
+    return deleteByURLAndHeader(`/1/mydevice/history/idp/${idpId}`, {'X-Device-Id': root}).then((function (res) {
         return getViewer();
     }));
 }

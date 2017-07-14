@@ -27,6 +27,7 @@ export class IdpHistory extends React.Component {
     this.summaryRow = this.summaryRow.bind(this);
     this.loadSummary = this.loadSummary.bind(this);
     this.subscribeToForget = this.subscribeToForget.bind(this);
+    this.getProtocolDisplayName = this.getProtocolDisplayName.bind(this);
   }
 
   subscribeToForget() {
@@ -45,6 +46,18 @@ export class IdpHistory extends React.Component {
     }
   }
 
+  getProtocolDisplayName(protocol) {
+    if ('SAML' === protocol) {
+      return 'SAML';
+    } else if ('OPEN_ATHENS' === protocol) {
+      return 'Open Athens';
+    } else if ('OAUTH' === protocol) {
+      return 'OAUTH';
+    } else {
+      return protocol;
+    }
+  }
+
   summaryRow(history) {
     if (!history) {
       return;
@@ -57,7 +70,7 @@ export class IdpHistory extends React.Component {
                   {usage.idp.name}
                 </Col>
                 <Col md={3}>
-                  {usage.idp.type}
+                  {this.getProtocolDisplayName(usage.idp.type)}
                 </Col>
                 <Col md={2}>
                   {moment(usage.lastActiveDate).format('LLL')}
