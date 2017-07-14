@@ -1,94 +1,80 @@
-export class Todo extends Object {}
-export class User extends Object {}
+var fetch = require('node-fetch');
+import DataLoader from 'dataloader';
 
-// Mock authenticated ID.
-const VIEWER_ID = 'me';
 
-// Mock user data.
-const viewer = new User();
-viewer.id = VIEWER_ID;
-const usersById = {
-  [VIEWER_ID]: viewer,
-};
+export var publisherLoader = new DataLoader(keys => fetchPublishers(keys));
+export var identityProviderLoader = new DataLoader(keys => fetchIdentityProviders(keys));
 
-const todosById = {};
-const todoIdsByUser = {
-  [VIEWER_ID]: [],
-};
-let nextTodoId = 0;
+const BASE_URL = 'http://localhost:8080';
 
-export function addTodo(text, complete) {
-  const todo = new Todo();
-  Object.assign(todo, {
-    id: `${nextTodoId++}`,
-    complete: Boolean(complete),
-    text,
-  });
-
-  todosById[todo.id] = todo;
-  todoIdsByUser[VIEWER_ID].push(todo.id);
-
-  return todo.id;
-}
-
-// Mock todo data.
-addTodo('Taste JavaScript', true);
-addTodo('Buy a unicorn', false);
-
-export function getTodo(id) {
-  return todosById[id];
-}
-
-export function changeTodoStatus(id, complete) {
-  const todo = getTodo(id);
-  todo.complete = complete;
-}
-
-export function getTodos(status = 'any') {
-  const todos = todoIdsByUser[VIEWER_ID].map(id => todosById[id]);
-  if (status === 'any') {
-    return todos;
+export class User {
+  constructor(secretDeviceId) {
+    this.secretDeviceId = secretDeviceId;
   }
-
-  return todos.filter(todo => todo.complete === (status === 'completed'));
+}
+export function getViewer(deviceId) {
+  console.log('deviceId ' + deviceId)
+  return new User(deviceId);
 }
 
-export function getUser() {
-  return usersById[VIEWER_ID];
+function fetchResponseByURL(relativeURL) {
+  console.log(relativeURL);
+  return fetch(`${BASE_URL}${relativeURL}`).then(res => res.json());
 }
 
-export function getViewer() {
-  return getUser(VIEWER_ID);
+function deleteByURLAndHeader(relativeURL, header) {
+  console.log(relativeURL, header);
+
+  return fetch(`${BASE_URL}${relativeURL}`, {headers: header, method: 'delete'}).then(res => res.json());
 }
 
-export function markAllTodos(complete) {
-  const changedTodos = [];
-  getTodos().forEach((todo) => {
-    if (todo.complete !== complete) {
-      /* eslint-disable no-param-reassign */
-      todo.complete = complete;
-      /* eslint-enable no-param-reassign */
-      changedTodos.push(todo);
-    }
-  });
-  return changedTodos.map(todo => todo.id);
+function fetchResponseByURLAndHeader(relativeURL, header) {
+  console.log(relativeURL, header);
+
+  return fetch(`${BASE_URL}${relativeURL}`, {headers: header}).then(res => res.json());
 }
 
-export function removeTodo(id) {
-  const todoIndex = todoIdsByUser[VIEWER_ID].indexOf(id);
-  if (todoIndex !== -1) {
-    todoIdsByUser[VIEWER_ID].splice(todoIndex, 1);
-  }
-  delete todosById[id];
+export function fetchDevice(id) {
+  return fetchResponseByURL(`/1/device/${id}`);
 }
 
-export function removeCompletedTodos() {
-  const todosToRemove = getTodos().filter(todo => todo.complete);
-  todosToRemove.forEach(todo => removeTodo(todo.id));
-  return todosToRemove.map(todo => todo.id);
+export function fetchIdentityProvider(id) {
+  return fetchResponseByURL(`/1/identityProvider/${id}`);
 }
 
-export function renameTodo(id, text) {
-  const todo = getTodo(id);
-  todo.text = text;
+function fetchIdentityProviders(ids) {
+  return fetchResponseByURL(`/1/identityProviders?ids=${ids}`);
+}
+
+
+export function fetchPublisher(id) {
+  return fetchResponseByURL(`/1/publisher/${id}`);
+}
+
+function fetchPublishers(id) {
+  return fetchResponseByURL(`/1/publishers?ids=${id}`);
+}
+
+export function fetchActivity(id) {
+  return fetchResponseByURL(`/1/device/${id}/activity`);
+}
+
+
+export function fetchLatestActivity(id) {
+  return fetchResponseByURL(`/1/device/${id}/activity?limit=1&type=ADD_IDP`)
+      .then(function(res) {
+        var activity = res;
+
+        return activity[0];
+      });
+}
+
+export function fetchHistory(id) {
+  return fetchResponseByURLAndHeader(`/1/mydevice/history`, {'X-Device-Id': id});
+}
+
+export function forgetIdp(idpId, root) {
+  return deleteByURLAndHeader(`/1/mydevice/history/idp/${idpId}`, {'X-Device-Id': root}).then((function (res) {
+    return getViewer();
+  }));
 }

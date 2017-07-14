@@ -19,20 +19,25 @@ import {
     GraphQLScalarType,
     GraphQLString,
     GraphQLList,
-    GraphQLInputObjectType,
     GraphQLNonNull
 } from 'graphql';
 
 import {
-    mutationWithClientMutationId,
-    cursorForObjectInConnection
+    fetchActivity,
+    fetchDevice,
+    fetchIdentityProvider,
+    fetchPublisher,
+    fetchHistory,
+    fetchLatestActivity,
+    forgetIdp,
+    publisherLoader,
+    identityProviderLoader,
+    getViewer
+} from './database';
+
+import {
+    mutationWithClientMutationId
 } from 'graphql-relay';
-
-var fetch = require('node-fetch');
-var DataLoader = require('dataloader')
-
-var publisherLoader = new DataLoader(keys => fetchPublishers(keys));
-var identityProviderLoader = new DataLoader(keys => fetchIdentityProviders(keys));
 
 var DateType = new GraphQLScalarType({
     name: 'Date',
@@ -210,17 +215,6 @@ var IdentityProviderType = new GraphQLObjectType({
 });
 
 
-export class User {
-    constructor(secretDeviceId) {
-        this.secretDeviceId = secretDeviceId;
-    }
-}
-
-function getViewer(deviceId) {
-    console.log('deviceId ' + deviceId)
-    return new User(deviceId);
-}
-
 // The root provides a resolver function for each API endpoint
 const ViewerType = new GraphQLObjectType({
     name: 'viewer',
@@ -270,7 +264,6 @@ const ViewerType = new GraphQLObjectType({
     }
 });
 
-
 const forgetIdpMutation = mutationWithClientMutationId({
     name: 'ForgetIdp',
     inputFields: {
@@ -284,9 +277,8 @@ const forgetIdpMutation = mutationWithClientMutationId({
     },
 
     mutateAndGetPayload: ({idpId}, root) => {
-        console.log('mutate');
-        console.log(root.session.deviceId);
-        return forgetIdp(idpId, root.session.deviceId);}
+        return forgetIdp(idpId, root.session.deviceId);
+    }
 });
 
 
@@ -313,85 +305,3 @@ export default new GraphQLSchema({
     query: queryType,
     mutation: mutationType
 });
-
-const BASE_URL = 'http://localhost:8080';
-
-function fetchResponseByURL(relativeURL) {
-    console.log(relativeURL);
-
-    return fetch(`${BASE_URL}${relativeURL}`).then(res => res.json());
-}
-
-function deleteByURLAndHeader(relativeURL, header) {
-    console.log(relativeURL, header);
-
-    return fetch(`${BASE_URL}${relativeURL}`, {headers: header, method: 'delete'}).then(res => res.json());
-}
-
-function fetchResponseByURLAndHeader(relativeURL, header) {
-    console.log(relativeURL, header);
-
-    return fetch(`${BASE_URL}${relativeURL}`, {headers: header}).then(res => res.json());
-}
-
-function fetchDevice(id) {
-    console.log(`fetching device ${id}`);
-
-    return fetchResponseByURL(`/1/device/${id}`);
-}
-
-function fetchIdentityProvider(id) {
-    console.log(`fetching identity provider ${id}`);
-
-    return fetchResponseByURL(`/1/identityProvider/${id}`);
-}
-
-function fetchIdentityProviders(ids) {
-    console.log(`fetching identity provider ${ids}`);
-
-    return fetchResponseByURL(`/1/identityProviders?ids=${ids}`);
-}
-
-function fetchPublisher(id) {
-    console.log(`fetching publisher ${id}`);
-
-    return fetchResponseByURL(`/1/publisher/${id}`);
-}
-
-function fetchPublishers(id) {
-    console.log(`fetching publishers ${id}`);
-
-    return fetchResponseByURL(`/1/publishers?ids=${id}`);
-}
-
-function fetchActivity(id) {
-    console.log(`fetching activity ${id}`);
-
-    return fetchResponseByURL(`/1/device/${id}/activity`);
-}
-
-function fetchLatestActivity(id) {
-    console.log(`fetching latest activity ${id}`);
-
-    return fetchResponseByURL(`/1/device/${id}/activity?limit=1&type=ADD_IDP`)
-        .then(function(res) {
-            var activity = res;
-
-            return activity[0];
-        });
-}
-
-function fetchHistory(id) {
-    console.log(`fetching activity ${id}`);
-
-    return fetchResponseByURLAndHeader(`/1/mydevice/history`, {'X-Device-Id': id});
-}
-
-function forgetIdp(idpId, root) {
-    console.log(`forgetting idp ${idpId}`);
-  console.log(`forgetting idp root ${root}`);
-
-    return deleteByURLAndHeader(`/1/mydevice/history/idp/${idpId}`, {'X-Device-Id': root}).then((function (res) {
-        return getViewer();
-    }));
-}
