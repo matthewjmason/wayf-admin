@@ -1,11 +1,12 @@
-var fetch = require('node-fetch');
+import 'isomorphic-fetch';
 import DataLoader from 'dataloader';
+import config from '../../config';
+
+const BASE_URL = config.wayf.host + ':' + config.wayf.port;
 
 
 export var publisherLoader = new DataLoader(keys => fetchPublishers(keys));
 export var identityProviderLoader = new DataLoader(keys => fetchIdentityProviders(keys));
-
-const BASE_URL = 'http://localhost:8080';
 
 export class User {
   constructor(secretDeviceId) {
@@ -18,7 +19,7 @@ export function getViewer(deviceId) {
 }
 
 function fetchResponseByURL(relativeURL) {
-  console.log(relativeURL);
+  console.log(`${BASE_URL}${relativeURL}`);
   return fetch(`${BASE_URL}${relativeURL}`).then(res => res.json());
 }
 
@@ -58,7 +59,6 @@ function fetchPublishers(id) {
 export function fetchActivity(id) {
   return fetchResponseByURL(`/1/device/${id}/activity`);
 }
-
 
 export function fetchLatestActivity(id) {
   return fetchResponseByURL(`/1/device/${id}/activity?limit=1&type=ADD_IDP`)

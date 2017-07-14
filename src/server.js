@@ -8,12 +8,13 @@ import webpack from 'webpack';
 import webpackMiddleware from 'webpack-dev-middleware';
 import session from 'express-session';
 import { ServerFetcher } from './fetcher';
-import { createResolver, historyMiddlewares, render, routeConfig }
-  from './router';
+import { createResolver, historyMiddlewares, render, routeConfig } from './router';
 import schema from './data/schema';
 import cookieParser from 'cookie-parser';
-const PORT = 3000;
-var MemoryStore = session.MemoryStore;
+import config from '../config';
+
+const PORT = config.express.port;
+const GRAPHQL_URL = config.graphql.host + ':' + config.graphql.port + config.graphql.path;
 
 const app = express();
 app.use(cookieParser());
@@ -22,10 +23,9 @@ app.use(session({
   cookie: {
     httpOnly: false
   },
-  store: new MemoryStore()
 }));
 
-app.use('/graphql', graphQLHTTP(request => {
+app.use(config.graphql.path, graphQLHTTP(request => {
   let deviceId = null;
 
   if (request.cookies && request.cookies.deviceId) {
@@ -74,7 +74,7 @@ app.use(webpackMiddleware(webpack(webpackConfig), {
 app.use(async (req, res) => {
   var deviceId = req.cookies.deviceId;
 
-  const fetcher = new ServerFetcher(`http://localhost:${PORT}/graphql`, deviceId);
+  const fetcher = new ServerFetcher(GRAPHQL_URL, deviceId);
 
   const { redirect, status, element } = await getFarceResult({
     url: req.url,
