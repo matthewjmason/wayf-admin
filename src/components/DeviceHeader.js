@@ -1,17 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { createFragmentContainer, createRefetchContainer, graphql } from 'react-relay';
+import { createFragmentContainer, graphql } from 'react-relay';
 import moment from 'moment';
 
-import { Button,
-    Grid,
+import { Grid,
     Col,
     Row,
-    Nav,
-    NavItem,
     PageHeader,
-    Tab,
-    Tabs,
     Label } from 'react-bootstrap';
 
 const propTypes = {

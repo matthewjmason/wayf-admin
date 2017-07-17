@@ -19,7 +19,6 @@ export default class ForgetIdpButton extends React.Component {
     this.state = {isLoading: false};
 
     this.handleClick = this.handleClick.bind(this);
-
   }
 
   handleClick() {
