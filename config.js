@@ -9,8 +9,8 @@ var config = {
   },
 
   wayf: {
-    host: 'http://localhost',
-    port: 8080
+    host: 'https://wayf-cloud-sandbox.literatumonline.com',
+    port: 443
   }
 };
 
