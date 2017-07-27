@@ -35,9 +35,6 @@ app.use(config.graphql.path, graphQLHTTP(request => {
     deviceId = request.headers.cookie;
   }
 
-  if (!deviceId){
-
-  }
   request.session.deviceId = deviceId;
 
   return {

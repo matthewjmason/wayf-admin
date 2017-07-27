@@ -1,3 +1,17 @@
+input CreatePublisherRegistrationInput {
+  publisherName: String!
+  contactFirstName: String!
+  contactLastName: String!
+  contactEmail: String!
+  contactPhoneNumber: String!
+  clientMutationId: String
+}
+
+type CreatePublisherRegistrationPayload {
+  publisherRegistration: PublisherRegistrationType
+  clientMutationId: String
+}
+
 # Date custom scalar type
 scalar Date
 
@@ -63,6 +77,18 @@ type IdentityProviderUsageType {
 
 type Mutation {
   forgetIdp(input: ForgetIdpInput!): ForgetIdpPayload
+  createPublisherRegistration(input: CreatePublisherRegistrationInput!): CreatePublisherRegistrationPayload
+}
+
+type PublisherRegistrationType {
+  id: Int
+  status: String
+  publisherName: String
+  contact: UserType
+  applicationDate: Date
+  approvalDate: Date
+  createdDate: Date
+  modifiedDate: Date
 }
 
 type PublisherType {
@@ -76,6 +102,17 @@ type PublisherType {
 
 type Query {
   viewer: viewer
+  publisherRegistration: PublisherRegistrationType
+}
+
+type UserType {
+  id: Int
+  firstName: String
+  lastName: String
+  email: String
+  phoneNumber: String
+  createdDate: Date
+  modifiedDate: Date
 }
 
 type viewer {

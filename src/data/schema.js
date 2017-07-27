@@ -32,7 +32,8 @@ import {
     forgetIdp,
     publisherLoader,
     identityProviderLoader,
-    getViewer
+    getViewer,
+    createPublisherRegistration
 } from './database';
 
 import {
@@ -193,6 +194,65 @@ var PublisherType = new GraphQLObjectType({
     })
 });
 
+
+var UserType = new GraphQLObjectType({
+    name: 'UserType',
+    fields: () => ({
+        id: {
+            type: GraphQLInt
+        },
+        firstName: {
+            type: GraphQLString
+        },
+        lastName: {
+            type: GraphQLString
+        },
+        email: {
+            type: GraphQLString
+        },
+        phoneNumber: {
+            type: GraphQLString
+        },
+        createdDate: {
+            type: DateType
+        },
+        modifiedDate: {
+            type: DateType
+        }
+    })
+});
+
+
+var PublisherRegistrationType = new GraphQLObjectType({
+    name: 'PublisherRegistrationType',
+    fields: () => ({
+        id: {
+            type: GraphQLInt
+        },
+        status : {
+            type: GraphQLString
+        },
+        publisherName: {
+            type: GraphQLString
+        },
+        contact: {
+            type: UserType
+        },
+        applicationDate: {
+            type: DateType
+        },
+        approvalDate: {
+            type: DateType
+        },
+        createdDate: {
+            type: DateType
+        },
+        modifiedDate: {
+            type: DateType
+        }
+    })
+});
+
 var IdentityProviderType = new GraphQLObjectType({
     name: 'IdentityProviderType',
     fields: () => ({
@@ -281,11 +341,42 @@ const forgetIdpMutation = mutationWithClientMutationId({
     }
 });
 
+const createPublisherRegistrationMutation = mutationWithClientMutationId({
+    name: 'CreatePublisherRegistration',
+    inputFields: {
+        publisherName: { type: new GraphQLNonNull(GraphQLString) },
+        contactFirstName: { type: new GraphQLNonNull(GraphQLString) },
+        contactLastName: { type: new GraphQLNonNull(GraphQLString) },
+        contactEmail: { type: new GraphQLNonNull(GraphQLString) },
+        contactPhoneNumber: { type: new GraphQLNonNull(GraphQLString) },
+    },
+    outputFields: {
+        publisherRegistration: {
+            type: PublisherRegistrationType,
+            resolve: (root, args) => root
+        },
+    },
+    mutateAndGetPayload: ({publisherName, contactFirstName, contactLastName, contactEmail, contactPhoneNumber}, root) => {
+        var publisherRegistration = {
+            "publisherName" : publisherName,
+            "contact" : {
+                "firstName" : contactFirstName,
+                "lastName" : contactLastName,
+                "email" : contactEmail,
+                "phoneNumber" : contactPhoneNumber
+            }
+        };
+
+        return createPublisherRegistration(publisherRegistration);
+    }
+});
+
 
 const mutationType = new GraphQLObjectType({
     name: 'Mutation',
     fields: () => ({
-        forgetIdp: forgetIdpMutation
+        forgetIdp: forgetIdpMutation,
+        createPublisherRegistration: createPublisherRegistrationMutation
     })
 });
 
@@ -296,6 +387,9 @@ const queryType = new GraphQLObjectType({
         viewer: {
             type: ViewerType,
             resolve: (parentValue, args, request) => getViewer(request.session.deviceId)
+        },
+        publisherRegistration: {
+            type: PublisherRegistrationType,
         }
     })
 });
