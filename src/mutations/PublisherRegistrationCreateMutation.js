@@ -29,7 +29,8 @@ function commit(
     contactFirstName: string,
     contactLastName: string,
     contactEmail: string,
-    contactPhoneNumber: string
+    contactPhoneNumber: string,
+    onComplete: func
 ) {
   const variables  = {
     input: {
@@ -48,7 +49,7 @@ function commit(
         mutation,
         variables: variables,
         onCompleted: (response) => {
-          console.log(response);
+          onComplete();
         },
         onError: err => console.error(err),
       }

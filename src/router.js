@@ -8,6 +8,8 @@ import { graphql } from 'react-relay';
 import { Environment, Network, RecordSource, Store } from 'relay-runtime';
 
 import DeviceApp from './components/DeviceApp';
+import PublisherRegistrationInput from './components/PublisherRegistrationInput';
+import PublisherApp from './components/PublisherApp';
 
 export const historyMiddlewares = [queryMiddleware];
 
@@ -22,18 +24,17 @@ export function createResolver(fetcher) {
 
 
 export const routeConfig = makeRouteConfig(
-  <Route
-    path="/"
-    Component={DeviceApp}
+   <Route
+    path="/publisher"
+    Component={PublisherApp}
     query={graphql`
-      query router_DeviceApp_Query {
-        viewer {
-          ...DeviceApp_viewer
+      query router_PublisherApp_Query {
+        publisherRegistration {
+          ...PublisherApp_publisherRegistration
         }
       }
     `}
   >
-
   </Route>,
 );
 
