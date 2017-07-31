@@ -10,6 +10,7 @@ import { Environment, Network, RecordSource, Store } from 'relay-runtime';
 import DeviceApp from './components/DeviceApp';
 import PublisherRegistrationInput from './components/PublisherRegistrationInput';
 import PublisherApp from './components/PublisherApp';
+import PublisherInfo from './components/PublisherInfo';
 
 export const historyMiddlewares = [queryMiddleware];
 
@@ -24,8 +25,7 @@ export function createResolver(fetcher) {
 
 
 export const routeConfig = makeRouteConfig(
-   <Route
-    path="/publisher"
+   <Route path="publisher"
     Component={PublisherApp}
     query={graphql`
       query router_PublisherApp_Query {
@@ -33,8 +33,9 @@ export const routeConfig = makeRouteConfig(
           ...PublisherApp_publisherRegistration
         }
       }
-    `}
-  >
+    `}>
+    <Route Component={PublisherInfo} />
+    <Route path="register" Component={PublisherRegistrationInput} />
   </Route>,
 );
 

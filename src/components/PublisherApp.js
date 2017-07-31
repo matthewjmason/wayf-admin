@@ -20,54 +20,14 @@ import {
 class PublisherApp extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-        showRegistration: false
-    };
-
-    this.determinePublisherContent = this.determinePublisherContent.bind(this);
-    this.handleRegistrationSubmission = this.handleRegistrationSubmission.bind(this);
-    this.handleRegisterRequest = this.handleRegisterRequest.bind(this);
   }
-
-  handleRegistrationSubmission() {
-    var state = this.state;
-    state.showRegistration = false;
-
-    this.setState(state);
-  }
-
-  handleRegisterRequest() {
-    var state = this.state;
-    state.showRegistration = true;
-
-    this.setState(state);
-  }
-
-  determinePublisherContent() {
-    if (this.state.showRegistration) {
-      return (
-          <PublisherRegistrationInput relay={this.props.relay} onSuccess={this.handleRegistrationSubmission} /> 
-      );
-    } else {
-      return (
-          <Col>
-            <PublisherInfo />
-            <Button bsStyle="success" type="submit" onClick={this.handleRegisterRequest}>
-              Register
-            </Button>
-          </Col>
-      );
-    }
-  }
-
 
   render() {
     return (
         <div data-framework="relay">
           <Grid>
             <PublisherHeader />
-            {this.determinePublisherContent()}
+            {this.props.children}
           </Grid>
         </div>
       );

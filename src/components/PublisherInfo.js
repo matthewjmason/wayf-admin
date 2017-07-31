@@ -1,13 +1,15 @@
 import React from 'react';
 
 import { 
-  Grid
+  Grid,
+  Button
 } from 'react-bootstrap';
 
 export default class PublisherInfo extends React.Component {
 
   render() {
     return (
+      <div>
         <p>
         The where-are-you-from (WAYF) service is intended to reduce, or eliminate where possible, the friction that users/researchers 
         experience as they try to access content on different publisher platforms where they are presented with a very large number of 
@@ -17,7 +19,13 @@ export default class PublisherInfo extends React.Component {
         options to a minimal set that apply for the given user profile.
         <br /><br />
         For more information on the project, please visit <a href="http://wayf-cloud.readme.io">wayf-cloud.readme.io</a>
+        <br /><br />
+        If you'd like to be a part of the WAYF cloud, please register.
         </p>
+        <Button bsStyle="success" type="submit" href="/publisher/register">
+            Sign Up!
+        </Button>
+      </div>
     );
   }
 }

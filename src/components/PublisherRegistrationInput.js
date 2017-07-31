@@ -143,10 +143,10 @@ class PublisherRegistrationInput extends React.Component {
             <Modal.Title id="contained-modal-title-lg">Sucess!</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            Your request was received. You should hear back from the WAYF team in the next couple of days.
+            Your request was received. You should receive a response from the WAYF team in the next couple of days.
           </Modal.Body>
           <Modal.Footer>
-            <Button bsStyle="success" onClick={this.hideSuccessModal}>OK</Button>
+            <Button bsStyle="success" href="/publisher">OK</Button>
           </Modal.Footer>
         </Modal>
 
@@ -209,7 +209,7 @@ class PublisherRegistrationInput extends React.Component {
         <Button type="submit" disabled={this.state.disableSubmit} onClick={this.handleSubmit}>
           Submit
         </Button>
-        <Button bsStyle="danger"disabled={this.state.disableSubmit} onClick={this.props.onSuccess}>
+        <Button bsStyle="danger"disabled={this.state.disableSubmit} href="/publisher">
           Cancel
         </Button>
       </div>
