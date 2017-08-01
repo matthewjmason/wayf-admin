@@ -15,6 +15,16 @@ type CreatePublisherRegistrationPayload {
 # Date custom scalar type
 scalar Date
 
+input DenyPublisherRegistrationInput {
+  publisherRegistrationId: Int!
+  clientMutationId: String
+}
+
+type DenyPublisherRegistrationPayload {
+  publisherRegistration: PublisherRegistrationType
+  clientMutationId: String
+}
+
 type DeviceAccessType {
   localId: String
   device: DeviceType
@@ -78,6 +88,7 @@ type IdentityProviderUsageType {
 type Mutation {
   forgetIdp(input: ForgetIdpInput!): ForgetIdpPayload
   createPublisherRegistration(input: CreatePublisherRegistrationInput!): CreatePublisherRegistrationPayload
+  denyPublisherRegistration(input: DenyPublisherRegistrationInput!): DenyPublisherRegistrationPayload
 }
 
 type PublisherRegistrationType {

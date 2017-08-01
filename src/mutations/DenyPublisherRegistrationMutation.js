@@ -1,11 +1,12 @@
 import { graphql, commitMutation, Environment } from 'react-relay/compat';
 
 const mutation = graphql`
-    mutation PublisherRegistrationCreateMutation($input: CreatePublisherRegistrationInput!) {
-        createPublisherRegistration(input: $input) {
-            publisherRegistration {
-                responseId: id
-            }
+    mutation DenyPublisherRegistrationMutation($input: DenyPublisherRegistrationInput!) {
+        denyPublisherRegistration(input: $input) {
+              publisherRegistration {
+                id,
+                status
+              }
         }
     }
 `;
@@ -23,22 +24,16 @@ function getConfigs(viewerId) {
   }];
 }
 
+
+
 function commit(
     environment: Environment,
-    publisherName: string,
-    contactFirstName: string,
-    contactLastName: string,
-    contactEmail: string,
-    contactPhoneNumber: string,
+    publisherRegistrationId: number,
     onComplete: func
 ) {
   const variables  = {
     input: {
-      publisherName,
-      contactFirstName,
-      contactLastName,
-      contactEmail,
-      contactPhoneNumber
+      publisherRegistrationId,
     }
   }
 
@@ -54,5 +49,6 @@ function commit(
       }
   );
 }
+
 
 export default { commit };

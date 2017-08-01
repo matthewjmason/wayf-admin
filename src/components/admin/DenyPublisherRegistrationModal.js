@@ -6,10 +6,12 @@ import {
 } from 'react-bootstrap';
 
 import PropTypes from 'prop-types';
+import DenyPublisherRegistrationMutation from'../../mutations/DenyPublisherRegistrationMutation'
 
 const propTypes = {
   onDeny: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
+  relay: PropTypes.object.isRequired,
   publisherRegistration: PropTypes.object.isRequired
 };
 
@@ -23,14 +25,29 @@ export default class DenyPublisherRegistrationModal extends React.Component {
     	showModal: true
     };
 
-    this.handleDeny = this.handleDeny.bind(this);
+    this.handleDenyRequest = this.handleDenyRequest.bind(this);
+    this.handleDenySuccess = this.handleDenySuccess.bind(this);
     this.cancel = this.cancel.bind(this);
   }
 
-  handleDeny() {
+  handleDenyRequest() {
   	var state = this.state;
   	state.disableActions = true;
-  	this.props.setState(state);
+  	this.setState(state);
+
+  	DenyPublisherRegistrationMutation.commit(
+        this.props.relay.environment,
+        this.props.publisherRegistration.publisherRegistrationId, 
+        this.handleDenySuccess
+    );
+  }
+
+  handleDenySuccess() {
+  	var state = this.state;
+  	state.showModal = false;
+  	this.setState(state);
+
+  	this.props.onDeny();
   }
 
   cancel() {
@@ -51,7 +68,7 @@ export default class DenyPublisherRegistrationModal extends React.Component {
 	        <p>Are you sure you want to reject the request for <b>{this.props.publisherRegistration.publisherName}</b>?</p>
 	      </Modal.Body>
 	      <Modal.Footer>
-	        <Button type="submit" bsStyle="danger" disabled={this.state.disableActions} onClick={this.handleDeny}>
+	        <Button type="submit" bsStyle="danger" disabled={this.state.disableActions} onClick={this.handleDenyRequest}>
 	          Deny
 	        </Button>
 	        <Button disabled={this.state.disableActions} onClick={this.cancel}>

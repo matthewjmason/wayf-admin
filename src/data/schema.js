@@ -38,7 +38,8 @@ import {
     fetchPendingRegistrations,
     fetchApprovedRegistrations,
     fetchDeniedRegistrations,
-    getAdminViewer
+    getAdminViewer,
+    denyPublisherRegistration
 } from './database';
 
 import {
@@ -359,6 +360,23 @@ const forgetIdpMutation = mutationWithClientMutationId({
     }
 });
 
+const denyPublisherRegistrationMutation = mutationWithClientMutationId({
+    name: 'DenyPublisherRegistration',
+    inputFields: {
+        publisherRegistrationId: { type: new GraphQLNonNull(GraphQLInt) }
+    },
+
+    outputFields: {
+        publisherRegistration: {
+            type: PublisherRegistrationType
+        }
+    },
+
+    mutateAndGetPayload: ({publisherRegistrationId}, root) => {
+        return denyPublisherRegistration(publisherRegistrationId);
+    }
+});
+
 const createPublisherRegistrationMutation = mutationWithClientMutationId({
     name: 'CreatePublisherRegistration',
     inputFields: {
@@ -394,7 +412,8 @@ const mutationType = new GraphQLObjectType({
     name: 'Mutation',
     fields: () => ({
         forgetIdp: forgetIdpMutation,
-        createPublisherRegistration: createPublisherRegistrationMutation
+        createPublisherRegistration: createPublisherRegistrationMutation,
+        denyPublisherRegistration: denyPublisherRegistrationMutation
     })
 });
 

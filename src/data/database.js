@@ -40,6 +40,13 @@ function postToCloud(body, relativeURL) {
     });
 }
 
+function patchToCloud(body, relativeURL) {
+  return fetch(`${BASE_URL}${relativeURL}`, { method: 'PATCH', body: JSON.stringify(body) })
+    .then(function(res) {
+        return res.json();
+    });
+}
+
 function deleteByURLAndHeader(relativeURL, header) {
   console.log(relativeURL, header);
 
@@ -112,4 +119,13 @@ export function fetchDeniedRegistrations() {
 
 export function fetchUsers(ids) {
   return fetchResponseByURL(`/1/users?ids=${ids}`);
+}
+
+export function denyPublisherRegistration(publisherRegistrationId) {
+  var body = {
+    id: publisherRegistrationId,
+    status: 'DENIED'
+  };
+
+  return patchToCloud(body, `/1/publisherRegistration/${publisherRegistrationId}`);
 }

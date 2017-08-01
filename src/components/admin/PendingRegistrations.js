@@ -27,7 +27,7 @@ class PendingRegistrations extends React.Component {
     this.approveClick = this.approveClick.bind(this);
     this.cancelApproval = this.cancelApproval.bind(this);
     this.denyClick = this.denyClick.bind(this);
-    this.cancelDenial = this.cancelDenial.bind(this);
+    this.clearDenyRequest = this.clearDenyRequest.bind(this);
 
     this.state = {
       publisherRegistrationToApprove: null,
@@ -44,7 +44,7 @@ class PendingRegistrations extends React.Component {
   toggleShow() {
     if (!this.fetchedHistory) {
       const refetchVariables = () => ({
-        fetchHistory: true
+        fetchPendingRegistrations: true
       });
 
       this.fetchedHistory = true;
@@ -73,11 +73,18 @@ class PendingRegistrations extends React.Component {
     this.setState(state);
   }
 
-  cancelDenial() {
+  clearDenyRequest() {
+    console.log('clearing');
     var state = this.state;
     state.publisherRegistrationToDeny = null;
 
     this.setState(state);
+    const refetchVariables = () => ({
+        fetchPendingRegistrations: true
+      });
+
+    this.props.relay.refetch(refetchVariables, null);
+
   }
 
   pendingRegistrationsRowMapper(pendingPublisherRegistrations) {
@@ -120,7 +127,7 @@ class PendingRegistrations extends React.Component {
     if (this.state.publisherRegistrationToApprove) {
       actionModal = <CreatePublisherModal onCancel={this.cancelApproval} publisherRegistration={this.state.publisherRegistrationToApprove}/>;
     } else if (this.state.publisherRegistrationToDeny) {
-      actionModal = <DenyPublisherRegistrationModal onCancel={this.cancelDenial} publisherRegistration={this.state.publisherRegistrationToDeny}/>;
+      actionModal = <DenyPublisherRegistrationModal relay={this.props.relay} onCancel={this.clearDenyRequest} onDeny={this.clearDenyRequest} publisherRegistration={this.state.publisherRegistrationToDeny}/>;
     } else {
       actionModal = <div></div>;
     }
@@ -157,6 +164,7 @@ export default createRefetchContainer(
               fetchPendingRegistrations: {type: "Boolean!", defaultValue: true}
           ) {
             pendingPublisherRegistrations @include(if: $fetchPendingRegistrations) {
+              publisherRegistrationId: id,
               publisherName,
               status,
               contact {
