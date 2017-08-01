@@ -32,8 +32,13 @@ import {
     forgetIdp,
     publisherLoader,
     identityProviderLoader,
+    userLoader,
     getViewer,
-    createPublisherRegistration
+    createPublisherRegistration,
+    fetchPendingRegistrations,
+    fetchApprovedRegistrations,
+    fetchDeniedRegistrations,
+    getAdminViewer
 } from './database';
 
 import {
@@ -236,7 +241,8 @@ var PublisherRegistrationType = new GraphQLObjectType({
             type: GraphQLString
         },
         contact: {
-            type: UserType
+            type: UserType,
+            resolve: (root) => userLoader.load(root.contact.id)
         },
         applicationDate: {
             type: DateType
@@ -320,6 +326,18 @@ const ViewerType = new GraphQLObjectType({
                 id: {type: GraphQLInt}
             },
             resolve: (root, args) => fetchIdentityProvider(args.id)
+        },
+        pendingPublisherRegistrations: {
+            type: new GraphQLList(PublisherRegistrationType),
+            resolve: (root, args) => fetchPendingRegistrations()
+        },
+        approvedPublisherRegistrations: {
+            type: new GraphQLList(PublisherRegistrationType),
+            resolve: (root, args) => fetchApprovedRegistrations()
+        },
+        deniedPublisherRegistrations: {
+            type: new GraphQLList(PublisherRegistrationType),
+            resolve: (root, args) => fetchDeniedRegistrations()
         }
     }
 });
@@ -386,7 +404,13 @@ const queryType = new GraphQLObjectType({
         // Add your own root fields here
         viewer: {
             type: ViewerType,
-            resolve: (parentValue, args, request) => getViewer(request.session.deviceId)
+            resolve: (parentValue, args, request) => {
+                if (request.session.deviceId) {
+                    return getViewer(request.session.deviceId);
+                } else {
+                    return getViewer(null);
+                }
+            }
         },
         publisherRegistration: {
             type: PublisherRegistrationType,

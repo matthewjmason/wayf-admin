@@ -121,4 +121,7 @@ type viewer {
   publisher(id: String): PublisherType
   history(globalId: String): [IdentityProviderUsageType]
   latestActivity(globalId: String): DeviceAccessType
+  pendingPublisherRegistrations: [PublisherRegistrationType]
+  approvedPublisherRegistrations: [PublisherRegistrationType]
+  deniedPublisherRegistrations: [PublisherRegistrationType]
 }

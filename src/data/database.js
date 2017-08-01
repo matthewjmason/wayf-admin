@@ -7,6 +7,7 @@ const BASE_URL = config.wayf.host + ':' + config.wayf.port;
 
 export var publisherLoader = new DataLoader(keys => fetchPublishers(keys));
 export var identityProviderLoader = new DataLoader(keys => fetchIdentityProviders(keys));
+export var userLoader = new DataLoader(keys => fetchUsers(keys));
 
 export class User {
   constructor(secretDeviceId) {
@@ -16,6 +17,10 @@ export class User {
 
 function buildDeviceCookieHeader(deviceId) {
   return { Cookie: `deviceId=${deviceId}` };
+}
+
+export function getAdminViewer() {
+  return new User();
 }
 
 export function getViewer(deviceId) {
@@ -91,4 +96,20 @@ export function forgetIdp(idpId, deviceId) {
 
 export function createPublisherRegistration(publisherRegistration) {
   return postToCloud(publisherRegistration, '/1/publisherRegistration');
+}
+
+export function fetchPendingRegistrations() {
+  return fetchResponseByURL(`/1/publisherRegistrations?statuses=PENDING`);
+}
+
+export function fetchApprovedRegistrations() {
+  return fetchResponseByURL(`/1/publisherRegistrations?statuses=APPROVED`);
+}
+
+export function fetchDeniedRegistrations() {
+  return fetchResponseByURL(`/1/publisherRegistrations?statuses=DENIED`);
+}
+
+export function fetchUsers(ids) {
+  return fetchResponseByURL(`/1/users?ids=${ids}`);
 }
