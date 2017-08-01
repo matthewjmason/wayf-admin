@@ -4,12 +4,13 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import { createRefetchContainer, graphql } from 'react-relay';
 import CreatePublisherModal from './CreatePublisherModal'
-
+import DenyPublisherRegistrationModal from './DenyPublisherRegistrationModal'
 import {
   Grid,
   Table,
   Col,
   Button,
+  Glyphicon,
   Row} from 'react-bootstrap';
 
 
@@ -24,9 +25,13 @@ class PendingRegistrations extends React.Component {
 
     this.pendingRegistrationsRowMapper = this.pendingRegistrationsRowMapper.bind(this);
     this.approveClick = this.approveClick.bind(this);
+    this.cancelApproval = this.cancelApproval.bind(this);
+    this.denyClick = this.denyClick.bind(this);
+    this.cancelDenial = this.cancelDenial.bind(this);
 
     this.state = {
-      activePublisherRegistration: null
+      publisherRegistrationToApprove: null,
+      publisherRegistrationToDeny: null
     };
 
   }
@@ -49,7 +54,28 @@ class PendingRegistrations extends React.Component {
 
   approveClick(publisherRegistration) {
     var state = this.state;
-    state.activePublisherRegistration = publisherRegistration;
+    state.publisherRegistrationToApprove = publisherRegistration;
+
+    this.setState(state);
+  }
+
+  denyClick(publisherRegistration) {
+    var state = this.state;
+    state.publisherRegistrationToDeny = publisherRegistration;
+
+    this.setState(state);
+  }
+
+  cancelApproval() {
+    var state = this.state;
+    state.publisherRegistrationToApprove = null;
+
+    this.setState(state);
+  }
+
+  cancelDenial() {
+    var state = this.state;
+    state.publisherRegistrationToDeny = null;
 
     this.setState(state);
   }
@@ -79,7 +105,9 @@ class PendingRegistrations extends React.Component {
                 {moment(publisherRegistration.applicationDate).format('LLL')}
               </td>
               <td>
-                <Button bsStyle="success" value={publisherRegistration} onClick={() => this.approveClick(publisherRegistration)} >Approve</Button>&nbsp;<Button bsStyle="danger">Reject</Button>
+                <Button bsStyle="success" value={publisherRegistration} onClick={() => this.approveClick(publisherRegistration)} ><Glyphicon glyph="ok" /></Button>
+                &nbsp;
+                <Button bsStyle="danger" onClick={() => this.denyClick(publisherRegistration)} ><Glyphicon glyph="remove" /></Button>
               </td>
             </tr>
           )
@@ -88,18 +116,20 @@ class PendingRegistrations extends React.Component {
   }
 
   render() {
-    var approveModal;
-    if (this.state.activePublisherRegistration) {
-      approveModal = <CreatePublisherModal publisherRegistration={this.state.activePublisherRegistration}/>;
+    var actionModal;
+    if (this.state.publisherRegistrationToApprove) {
+      actionModal = <CreatePublisherModal onCancel={this.cancelApproval} publisherRegistration={this.state.publisherRegistrationToApprove}/>;
+    } else if (this.state.publisherRegistrationToDeny) {
+      actionModal = <DenyPublisherRegistrationModal onCancel={this.cancelDenial} publisherRegistration={this.state.publisherRegistrationToDeny}/>;
     } else {
-      approveModal = <div></div>;
+      actionModal = <div></div>;
     }
 
 
 
     return (
       <Grid>
-        {approveModal}
+        {actionModal}
         <Table striped bordered condensed hover>
           <thead>
             <tr>
