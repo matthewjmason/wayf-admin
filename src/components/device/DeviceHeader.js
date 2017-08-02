@@ -23,8 +23,6 @@ class DeviceHeader extends React.Component {
   }
 
   getUserAgent() {
-    console.log(this.props.viewer.device);
-
     if (this.props.viewer.device && this.props.viewer.device.info) {
       return this.props.viewer.device.info.userAgent;
     }

@@ -6,9 +6,11 @@ import {
 } from 'react-relay';
 class RootApp extends React.Component {
   render() {
+    return (
     <div data-framework="relay">
         {this.props.children}
     </div>
+    );
   }
 }
 

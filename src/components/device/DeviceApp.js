@@ -18,7 +18,7 @@ class DeviceApp extends React.Component {
     if (!this.props.viewer.device || !this.props.viewer.device.globalId) {
       newUserModal = <NewUserModal />
     }
-    
+
     return (
       <div data-framework="relay">
         <Grid>
@@ -34,7 +34,7 @@ class DeviceApp extends React.Component {
 DeviceApp.propTypes = propTypes;
 
 export default createFragmentContainer(
-    DeviceApp,
+  DeviceApp,
   graphql`
     fragment DeviceApp_viewer on viewer {
       device {

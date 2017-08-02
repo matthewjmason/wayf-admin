@@ -64,24 +64,24 @@ export class IdpHistory extends React.Component {
     }
 
     return history.map(
-        (usage, i) => {
-          return (
-              <tr>
-                <td>
-                  {usage.idp.name}
-                </td>
-                <td>
-                  {this.getProtocolDisplayName(usage.idp.type)}
-                </td>
-                <td>
-                  {moment(usage.lastActiveDate).format('LLL')}
-                </td>
-                <td>
-                  <ForgetIdpButton idpId={usage.idp.id} viewer={this.props.viewer} relay={this.props.relay} subscriber={this.subscribeToForget} />
-                </td>
-              </tr>
-          )
-        }
+      (usage, i) => {
+        return (
+          <tr key={i}>
+            <td>
+              {usage.idp.name}
+            </td>
+            <td>
+              {this.getProtocolDisplayName(usage.idp.type)}
+            </td>
+            <td>
+              {moment(usage.lastActiveDate).format('LLL')}
+            </td>
+            <td>
+              <ForgetIdpButton idpId={usage.idp.idpId} viewer={this.props.viewer} relay={this.props.relay} subscriber={this.subscribeToForget} />
+            </td>
+          </tr>
+        )
+      }
     );
   }
 
@@ -114,7 +114,7 @@ export default createRefetchContainer(
             history @include(if: $fetchHistory) {
                 key: idp {name},
                 idp {
-                    id,
+                    idpId: id,
                     name,
                     type
                 },

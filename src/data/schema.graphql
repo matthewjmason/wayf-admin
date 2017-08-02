@@ -66,7 +66,7 @@ type ForgetIdpPayload {
 }
 
 type IdentityProviderType {
-  id: String
+  id: Int
   type: IdentityProviderTypeEnum
   name: String
   createdDate: Date

@@ -46,21 +46,21 @@ export class DeviceActivity extends React.Component {
     }
 
     return device.activity.map(
-        function(access, i) {
-          return (
-              <tr>
-                <td>
-                  {moment(access.createdDate).format('LLL')}
-                </td>
-                <td>
-                  {access.publisher.name}
-                </td>
-                <td>
-                  <AccessTypeDisplay accessType={access.type} />
-                </td>
-              </tr>
-          )
-        }
+      function(access, i) {
+        return (
+          <tr key={i}>
+            <td>
+              {moment(access.createdDate).format('LLL')}
+            </td>
+            <td>
+              {access.publisher.name}
+            </td>
+            <td>
+              <AccessTypeDisplay accessType={access.type} />
+            </td>
+          </tr>
+        )
+      }
     );
   }
 

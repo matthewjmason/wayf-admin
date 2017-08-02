@@ -264,7 +264,7 @@ var IdentityProviderType = new GraphQLObjectType({
     name: 'IdentityProviderType',
     fields: () => ({
         id: {
-            type: GraphQLString
+            type: GraphQLInt
         },
         type: {
             type: IdentityProviderTypeEnum

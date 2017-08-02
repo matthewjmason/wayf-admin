@@ -34,7 +34,7 @@ class DeviceTabs extends React.Component {
 
   render() {
     return (
-        <TabContainer defaultActiveKey="history">
+        <TabContainer generateChildId={(eventKey, type) => `${type}-${eventKey}`} defaultActiveKey="history">
           <Row className="clearfix">
 
             <Col md={12}>
