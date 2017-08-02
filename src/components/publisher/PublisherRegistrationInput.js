@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import { createFragmentContainer, graphql } from 'react-relay';
 
-import PublisherRegistrationCreateMutation from '../mutations/PublisherRegistrationCreateMutation';
+import PublisherRegistrationCreateMutation from '../../mutations/PublisherRegistrationCreateMutation';
 
 import { 
   Form,
@@ -221,8 +221,8 @@ class PublisherRegistrationInput extends React.Component {
 export default createFragmentContainer(
   PublisherRegistrationInput,
   graphql`
-    fragment PublisherRegistrationInput_publisherRegistration on PublisherRegistrationType {
-        id
+    fragment PublisherRegistrationInput_viewer on viewer {
+        viewerId
     }
   `
 );

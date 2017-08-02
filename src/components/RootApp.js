@@ -1,15 +1,23 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-
-export default class RootApp extends React.Component {
+import { 
+  createFragmentContainer, 
+  graphql 
+} from 'react-relay';
+class RootApp extends React.Component {
   render() {
-
-    return (
-      <div data-framework="relay">
-        <h1>Welcome</h1>
-      </div>
-    );
+    <div data-framework="relay">
+        {this.props.children}
+    </div>
   }
 }
 
+export default createFragmentContainer(
+  RootApp,
+  graphql`
+    fragment RootApp_viewer on viewer {
+      viewerId
+    }
+  `
+);
 

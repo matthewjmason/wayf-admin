@@ -286,6 +286,9 @@ var IdentityProviderType = new GraphQLObjectType({
 const ViewerType = new GraphQLObjectType({
     name: 'viewer',
     fields: {
+        viewerId: {
+            type: GraphQLString
+        },
         device: {
             type: DeviceType,
             args: {
@@ -312,14 +315,14 @@ const ViewerType = new GraphQLObjectType({
             args: {
                 globalId: {type: GraphQLString}
             },
-            resolve: (root, args) => fetchHistory(root.secretDeviceId)
+            resolve: (root, args) => root.secretDeviceId? fetchHistory(root.secretDeviceId) : null
         },
         latestActivity: {
             type: DeviceAccessType,
             args: {
                 globalId: {type: GraphQLString}
             },
-            resolve: (root, args) => fetchLatestActivity(root.secretDeviceId)
+            resolve: (root, args) => root.secretDeviceId? fetchLatestActivity(root.secretDeviceId) : null
         },
         identityProvider: {
             type: IdentityProviderType,

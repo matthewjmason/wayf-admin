@@ -11,12 +11,11 @@ const propTypes = {
 
 class DeviceApp extends React.Component {
   render() {
-
     return (
       <div data-framework="relay">
         <Grid>
           <DeviceHeader viewer={this.props.viewer} />
-          <DeviceTabs viewer={this.props.viewer} />
+          <DeviceTabs viewer={this.props.viewer} relay={this.props.relay} />
         </Grid>
       </div>
     );

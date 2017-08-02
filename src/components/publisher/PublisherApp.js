@@ -24,12 +24,10 @@ class PublisherApp extends React.Component {
 
   render() {
     return (
-        <div data-framework="relay">
-          <Grid>
-            <PublisherHeader />
-            {this.props.children}
-          </Grid>
-        </div>
+        <Grid>
+          <PublisherHeader />
+          {this.props.children}
+        </Grid>
       );
   
   }
@@ -38,8 +36,8 @@ class PublisherApp extends React.Component {
 export default createFragmentContainer(
   PublisherApp,
   graphql`
-    fragment PublisherApp_publisherRegistration on PublisherRegistrationType {
-        ...PublisherRegistrationInput_publisherRegistration
+    fragment PublisherApp_viewer on viewer {
+        ...PublisherRegistrationInput_viewer
     }
   `
 );

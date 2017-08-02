@@ -127,6 +127,7 @@ type UserType {
 }
 
 type viewer {
+  viewerId: String
   device(globalId: String): DeviceType
   identityProvider(id: Int): IdentityProviderType
   publisher(id: String): PublisherType

@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Button} from 'react-bootstrap';
-import ForgetIdpMutation from '../mutations/ForgetIdpMutation';
+import ForgetIdpMutation from '../../mutations/ForgetIdpMutation';
 
 
 export default class ForgetIdpButton extends React.Component {

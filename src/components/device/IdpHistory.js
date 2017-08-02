@@ -85,30 +85,30 @@ export class IdpHistory extends React.Component {
   }
 
   loadSummary(history) {
+    var historyRows = null;
+
     if (history) {
-
-      return (
-          <Grid>
-            <Row className="row-fluid">
-              <Col md={3}>
-                <h2>Name</h2>
-              </Col>
-              <Col md={3}>
-                <h2>Protocol</h2>
-              </Col>
-              <Col md={2}>
-                <h2></h2>
-              </Col>
-              <Col md={2}>
-              </Col>
-            </Row>
-
-            {this.summaryRow(history)}
-          </Grid>
-      );
+      historyRows = this.summaryRow(history);
     }
+    return (
+        <Grid>
+          <Row className="row-fluid">
+            <Col md={3}>
+              <h2>Name</h2>
+            </Col>
+            <Col md={3}>
+              <h2>Protocol</h2>
+            </Col>
+            <Col md={2}>
+              <h2></h2>
+            </Col>
+            <Col md={2}>
+            </Col>
+          </Row>
 
-    return <Grid>No History</Grid>;
+          {historyRows}
+        </Grid>
+    );
   }
 
 

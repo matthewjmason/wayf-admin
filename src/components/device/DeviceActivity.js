@@ -40,9 +40,10 @@ export class DeviceActivity extends React.Component {
   }
 
   sessionRows(device) {
-    if (!device) {
-      return <Button>Nothing</Button>;
+    if (!device || !device.activity) {
+      return <p>No activty to display</p>;
     }
+
     return device.activity.map(
         function(access, i) {
           return (
