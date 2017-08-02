@@ -11,9 +11,10 @@ import {
   ControlLabel,
   FormControl,
   HelpBlock,
-  Button,
   Modal
 } from 'react-bootstrap';
+
+import Button from 'react-bootstrap-button-loader';
 
 const propTypes = {
   relay: PropTypes.object.isRequired,
@@ -81,7 +82,7 @@ export default class CreatePublisherModal extends React.Component {
       return;
     }
 
-    this.setState({disableSubmit: true, showProcessingModal: true});
+    this.setState({disableSubmit: true, loading: true});
   }
 
   validateInputs() {
@@ -224,7 +225,7 @@ export default class CreatePublisherModal extends React.Component {
             {this.getModalBody()}
           </Modal.Body>
           <Modal.Footer>
-            <Button type="submit" disabled={this.state.disableSubmit} onClick={this.handleSubmit}>
+            <Button type="submit" loading={this.state.loading} spinColor='#000' onClick={this.handleSubmit}>
               Submit
             </Button>
             <Button bsStyle="danger" disabled={this.state.disableSubmit} onClick={this.cancel}>
