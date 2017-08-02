@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 import {
   Col,
   Button, Grid,
-  Row} from 'react-bootstrap';
+  Row
+} from 'react-bootstrap';
 
 import AccessTypeDisplay from './AccessTypeDisplay';
 import { createRefetchContainer, graphql } from 'react-relay';

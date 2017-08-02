@@ -26,6 +26,8 @@ app.use(session({
 }));
 
 
+app.use(express.static('public'));
+
 app.use(config.graphql.path, graphQLHTTP(request => {
   let deviceId = null;
 
@@ -55,11 +57,23 @@ const webpackConfig = {
   },
 
   module: {
+    loaders: [
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url?limit=25000'
+      }
+    ],
     rules: [
       { test: /\.js$/, exclude: /node_modules/, use: 'babel-loader' },
       { test: /\.css$/, use: ExtractTextPlugin.extract('css-loader') },
       { test: /learn\.json$/, use: 'file-loader?name=[name].[ext]' },
-    ],
+      {
+        test: /\.(png|jpg|svg)$/,
+        use: {
+          loader: 'url-loader',
+        },
+      }
+    ]
   },
 
   plugins: [

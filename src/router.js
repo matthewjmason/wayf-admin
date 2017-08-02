@@ -8,6 +8,8 @@ import { graphql } from 'react-relay';
 import { Environment, Network, RecordSource, Store } from 'relay-runtime';
 
 import RootApp from './components/RootApp';
+import DefaultHome from './components/DefaultHome';
+
 import DeviceApp from './components/device/DeviceApp';
 import AdminApp from './components/admin/AdminApp';
 import PublisherRegistrationInput from './components/publisher/PublisherRegistrationInput';
@@ -35,7 +37,9 @@ export const routeConfig = makeRouteConfig(
             }
           }
         `}>
-    
+
+    <Route Component={DefaultHome} />
+
     <Route path="publisher"
         Component={PublisherApp}
         query={graphql`
