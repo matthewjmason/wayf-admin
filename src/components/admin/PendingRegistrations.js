@@ -124,9 +124,9 @@ class PendingRegistrations extends React.Component {
   render() {
     var actionModal;
     if (this.state.publisherRegistrationToApprove) {
-      actionModal = <CreatePublisherModal onCancel={this.cancelApproval} publisherRegistration={this.state.publisherRegistrationToApprove}/>;
+      actionModal = <CreatePublisherModal relay={this.props.relay} onClose={this.cancelApproval} publisherRegistration={this.state.publisherRegistrationToApprove}/>;
     } else if (this.state.publisherRegistrationToDeny) {
-      actionModal = <DenyPublisherRegistrationModal relay={this.props.relay} onCancel={this.clearDenyRequest} onDeny={this.clearDenyRequest} publisherRegistration={this.state.publisherRegistrationToDeny}/>;
+      actionModal = <DenyPublisherRegistrationModal relay={this.props.relay} onClose={this.clearDenyRequest} onDeny={this.clearDenyRequest} publisherRegistration={this.state.publisherRegistrationToDeny}/>;
     } else {
       actionModal = <div></div>;
     }

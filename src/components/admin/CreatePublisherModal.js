@@ -11,16 +11,20 @@ import {
   ControlLabel,
   FormControl,
   HelpBlock,
-  Modal
+  Modal,
+  Grid,
+  Alert
 } from 'react-bootstrap';
 
 import Button from 'react-bootstrap-button-loader';
+import CreatePublisherMutation from '../../mutations/CreatePublisherMutation';
+import CreatePublisherForm from './CreatePublisherForm';
+import PublisherDisplay from './PublisherDisplay';
 
 const propTypes = {
   relay: PropTypes.object.isRequired,
-  onApprove: PropTypes.func.isRequired,
-  onCancel: PropTypes.func.isRequired,
-  publisherRegistration: PropTypes.object.isRequired
+  onClose: PropTypes.func.isRequired,
+  publisherRegistration: PropTypes.object
 };
 
 export default class CreatePublisherModal extends React.Component {
@@ -29,9 +33,9 @@ export default class CreatePublisherModal extends React.Component {
 
     this.state = {
         showModal: true,
-        showProcessingModal: false,
-        showSuccessModal: false,
-        disableSubmit: false,
+        loading: false,
+        showSuccessAlert: false,
+        successfulCreation: false,
         publisherNameValidationState: null,
         publisherCodeValidationState: null,
         contactFirstNameValidationState: null,
@@ -40,178 +44,109 @@ export default class CreatePublisherModal extends React.Component {
         contactEmailValidationState: null,
     };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.hideProcessingModal = this.hideProcessingModal.bind(this);
     this.hideSuccessModal = this.hideSuccessModal.bind(this);
-    this.validateInputs = this.validateInputs.bind(this);
-    this.generatePublisherCode = this.generatePublisherCode.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.successfulCreation = this.successfulCreation.bind(this);
+    this.getModalTitle = this.getModalTitle.bind(this);
     this.getModalBody = this.getModalBody.bind(this);
-    this.cancel = this.cancel.bind(this);
+    this.getModalBottomPanel = this.getModalBottomPanel.bind(this);
+    this.hideModal = this.hideModal.bind(this);
   }
 
-  hideProcessingModal() {
+  successfulCreation(mutationResponse) {
+    console.log(mutationResponse.createPublisher.publisher);
     var state = this.state;
-    state.showProcessingModal = false;
-    state.showSuccessModal = true;
+    state.loading = false;
+    state.successfulCreation = true;
+    state.createdPublisher = mutationResponse.createPublisher.publisher;
+    state.showSuccessAlert = true;
 
     this.setState(state);
-  }
-
-  hideSuccessModal() {
-    var state = this.state;
-    state.showProcessingModal = false;
-    state.showSuccessModal = false; 
-    state.succesfulRegistration = true;
-
-    this.setState(state);
-
-    this.props.onSuccess();
-  }
-
-  cancel() {
-    var state = this.state;
-    state.showModal = false;
-    this.setState(state);
-    this.props.onCancel();
   }
 
   handleSubmit() {
-    var validInputs = this.validateInputs();
+    var validInputs = this.createPublisherForm.validateInputs();
 
     if (!validInputs) {
       return;
     }
 
     this.setState({disableSubmit: true, loading: true});
+
+    var publisherRegistrationId = 
+      this.props.publisherRegistration? 
+        this.props.publisherRegistration.publisherRegistrationId : null;
+
+    CreatePublisherMutation.commit(
+          this.props.relay.environment,
+          this.createPublisherForm.publisherName.value,
+          this.createPublisherForm.publisherCode.value,
+          publisherRegistrationId,
+          this.createPublisherForm.contactFirstName.value,
+          this.createPublisherForm.contactLastName.value,
+          this.createPublisherForm.contactPhoneNumber.value,
+          this.createPublisherForm.contactEmail.value,
+          this.successfulCreation
+    );
   }
 
-  validateInputs() {
+  hideSuccessModal() {
     var state = this.state;
+    state.showSuccessAlert = false;
+    this.setState(state);
+  }
 
-    var successfulValidation = true;
-
-    if (!this.publisherName.value) {
-      state.publisherNameValidationState = 'error';
-      successfulValidation = false;
-    } else {
-      state.publisherNameValidationState = null;
+  getModalAlert() {
+    if (this.state.showSuccessAlert) {
+      return (<Alert bsStyle="success" onDismiss={this.hideSuccessModal}>Success!</Alert>);
     }
+  }
 
-    if (!this.publisherCode.value) {
-      state.publisherCodeValidationState = 'error';
-      successfulValidation = false;
-    } else {
-      state.publisherCodeValidationState = null;
-    }
-
-    if (!this.contactFirstName.value) {
-      state.contactFirstNameValidationState = 'error';
-      successfulValidation = false;
-    } else {
-      state.contactFirstNameValidationState = null;
-    }
-
-    if (!this.contactLastName.value) {
-      state.contactLastNameValidationState = 'error';
-      successfulValidation = false;
-    } else {
-      state.contactLastNameValidationState = null;
-    }
-
-    if (!this.contactEmail.value) {
-      state.contactEmailValidationState = 'error';
-      successfulValidation = false;
-    } else {
-      state.contactEmailValidationState = null;
-    }
-
-    if (!this.contactPhoneNumber.value) {
-      state.contactPhoneNumberValidationState = 'error';
-      successfulValidation = false;
-    } else {
-      state.contactPhoneNumberValidationState = null;
-    }
+  hideModal() {
+    var state = this.state;
+    state.showModal = false;
 
     this.setState(state);
 
-    return successfulValidation;
+    this.props.onClose();
   }
 
-  generatePublisherCode(publisherName) {
-    var upperCasePulisherName = publisherName.toUpperCase();
-    var noWhitespace = upperCasePulisherName.replace(/\s+/g, '_');
-
-    return noWhitespace;
+  getModalTitle() {
+    if (this.props.publisherRegistration) {
+      return "Approve Registration Request";
+    } else {
+      return "Create New Publisher";
+    }
   }
 
   getModalBody() {
-    console.log(this.state.showProcessingModal);
-    if (this.state.showProcessingModal) {
+    if (this.state.successfulCreation) {
       return (
-        <p>Your request is processing...</p>
+        <PublisherDisplay publisher={this.state.createdPublisher} />
       );
     } else {
       return (
-            <Form horizontal>
-              <h3>Publisher Information</h3>
-
-              <FormGroup controlId="publisherName" validationState={this.state.publisherNameValidationState}>
-                <Col componentClass={ControlLabel} sm={2}>
-                  Publisher Name
-                </Col>
-                <Col sm={10}>
-                  <FormControl inputRef={ref => { this.publisherName = ref; }} type="text" defaultValue={this.props.publisherRegistration.publisherName} />
-                </Col>
-              </FormGroup>
-
-              <FormGroup controlId="publisherCode" validationState={this.state.publisherCodeValidationState}>
-                <Col componentClass={ControlLabel} sm={2}>
-                  Publisher Code
-                </Col>
-                <Col sm={10}>
-                  <FormControl inputRef={ref => { this.publisherCode = ref; }} type="text" defaultValue={this.generatePublisherCode(this.props.publisherRegistration.publisherName)} />
-                </Col>
-              </FormGroup>
-
-              <h3>Contact Information</h3>
-
-              <FormGroup controlId="contactFirstName" validationState={this.state.contactFirstNameValidationState}>
-                <Col componentClass={ControlLabel} sm={2}>
-                  First Name
-                </Col>
-                <Col sm={10}>
-                  <FormControl  inputRef={(ref) => {this.contactFirstName = ref}} type="text" defaultValue={this.props.publisherRegistration.contact.firstName} />
-                </Col>
-              </FormGroup>
-
-              <FormGroup controlId="contactLastName" validationState={this.state.contactLastNameValidationState}>
-                <Col componentClass={ControlLabel} sm={2} >
-                  Last Name
-                </Col>
-                <Col sm={10}>
-                  <FormControl inputRef={(ref) => {this.contactLastName = ref}} type="text" defaultValue={this.props.publisherRegistration.contact.lastName} />
-                </Col>
-              </FormGroup>
-
-              <FormGroup controlId="contactEmail" validationState={this.state.contactEmailValidationState}>
-                <Col componentClass={ControlLabel} sm={2}>
-                  Email
-                </Col>
-                <Col sm={10}>
-                  <FormControl inputRef={(ref) => {this.contactEmail = ref}} type="email" defaultValue={this.props.publisherRegistration.contact.email} />
-                </Col>
-              </FormGroup>
-
-              <FormGroup controlId="contactPhoneNumber" validationState={this.state.contactPhoneNumberValidationState}>
-                <Col componentClass={ControlLabel} sm={2}>
-                  Phone Number
-                </Col>
-                <Col sm={10}>
-                  <FormControl inputRef={(ref) => {this.contactPhoneNumber = ref}} type="text" defaultValue={this.props.publisherRegistration.contact.phoneNumber} />
-                </Col>
-              </FormGroup>
-            </Form>
+          <CreatePublisherForm ref={instance => {this.createPublisherForm = instance; }} publisherRegistration={this.props.publisherRegistration} />
         );
+    }
+  }
+
+  getModalBottomPanel() {
+    if (this.state.successfulCreation) {
+      return (
+        <Button onClick={this.hideModal}>Close</Button>
+      );
+    } else {
+      return (
+        <div>
+          <Button type="submit" loading={this.state.loading} spinColor='#000' onClick={this.handleSubmit}>
+            Submit
+          </Button>
+          <Button bsStyle="danger" onClick={this.hideModal}>
+            Cancel
+          </Button>
+        </div>    
+      );
     }
   }
 
@@ -219,18 +154,14 @@ export default class CreatePublisherModal extends React.Component {
     return (
         <Modal show={this.state.showModal} dialogClassName="custom-modal">
           <Modal.Header>
-            <Modal.Title id="contained-modal-title-lg">Approve Registration Request</Modal.Title>
+            <Modal.Title id="contained-modal-title-lg">{this.getModalTitle()}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            {this.getModalBody()}
+            {this.getModalAlert()}
+            {this.getModalBody()} 
           </Modal.Body>
           <Modal.Footer>
-            <Button type="submit" loading={this.state.loading} spinColor='#000' onClick={this.handleSubmit}>
-              Submit
-            </Button>
-            <Button bsStyle="danger" disabled={this.state.disableSubmit} onClick={this.cancel}>
-              Cancel
-            </Button>          
+            {this.getModalBottomPanel()}        
           </Modal.Footer>
         </Modal>
     );

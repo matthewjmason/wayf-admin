@@ -1,10 +1,20 @@
 import { graphql, commitMutation, Environment } from 'react-relay/compat';
 
 const mutation = graphql`
-    mutation PublisherRegistrationCreateMutation($input: CreatePublisherRegistrationInput!) {
-        createPublisherRegistration(input: $input) {
-            publisherRegistration {
-                responseId: id
+    mutation CreatePublisherMutation($input: CreatePublisherInput!) {
+        createPublisher(input: $input) {
+            publisher {
+              name,
+              code,
+              widgetLocation,
+              token,
+              status
+              contact {
+                firstName,
+                lastName,
+                email,
+                phoneNumber
+              }
             }
         }
     }
@@ -13,6 +23,8 @@ const mutation = graphql`
 function commit(
     environment: Environment,
     publisherName: string,
+    publisherCode: string,
+    registrationId: int,
     contactFirstName: string,
     contactLastName: string,
     contactPhoneNumber: string,
@@ -22,6 +34,8 @@ function commit(
   const variables  = {
     input: {
       publisherName,
+      publisherCode,
+      registrationId,
       contactFirstName,
       contactLastName,
       contactPhoneNumber,
@@ -35,7 +49,7 @@ function commit(
         mutation,
         variables: variables,
         onCompleted: (response) => {
-          onComplete();
+          onComplete(response);
         },
         onError: err => console.error(err),
       }

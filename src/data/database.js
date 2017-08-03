@@ -105,6 +105,11 @@ export function createPublisherRegistration(publisherRegistration) {
   return postToCloud(publisherRegistration, '/1/publisherRegistration');
 }
 
+export function createPublisher(publisher) {
+  return postToCloud(publisher, '/1/publisher');
+}
+
+
 export function fetchPendingRegistrations() {
   return fetchResponseByURL(`/1/publisherRegistrations?statuses=PENDING`);
 }

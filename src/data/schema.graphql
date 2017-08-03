@@ -1,3 +1,19 @@
+input CreatePublisherInput {
+  publisherName: String!
+  publisherCode: String!
+  registrationId: Int
+  contactFirstName: String!
+  contactLastName: String!
+  contactPhoneNumber: String!
+  contactEmail: String!
+  clientMutationId: String
+}
+
+type CreatePublisherPayload {
+  publisher: PublisherType
+  clientMutationId: String
+}
+
 input CreatePublisherRegistrationInput {
   publisherName: String!
   contactFirstName: String!
@@ -88,6 +104,7 @@ type IdentityProviderUsageType {
 type Mutation {
   forgetIdp(input: ForgetIdpInput!): ForgetIdpPayload
   createPublisherRegistration(input: CreatePublisherRegistrationInput!): CreatePublisherRegistrationPayload
+  createPublisher(input: CreatePublisherInput!): CreatePublisherPayload
   denyPublisherRegistration(input: DenyPublisherRegistrationInput!): DenyPublisherRegistrationPayload
 }
 
@@ -107,6 +124,10 @@ type PublisherType {
   status: String
   code: String
   name: String
+  contact: UserType
+  registration: PublisherRegistrationType
+  widgetLocation: String
+  token: String
   createdDate: Date
   modifiedDate: Date
 }
