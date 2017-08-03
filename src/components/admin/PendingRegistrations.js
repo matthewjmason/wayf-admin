@@ -74,7 +74,6 @@ class PendingRegistrations extends React.Component {
   }
 
   clearDenyRequest() {
-    console.log('clearing');
     var state = this.state;
     state.publisherRegistrationToDeny = null;
 
@@ -95,7 +94,7 @@ class PendingRegistrations extends React.Component {
     return pendingPublisherRegistrations.map(
         (publisherRegistration, i) => {
           return (
-            <tr>
+            <tr key={i}>
               <td>
                 {publisherRegistration.publisherName}
               </td>

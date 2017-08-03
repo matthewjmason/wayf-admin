@@ -37,7 +37,7 @@ class AdminTabs extends React.Component {
 
   render() {
     return (
-        <TabContainer defaultActiveKey="pending">
+        <TabContainer generateChildId={(eventKey, type) => `${type}-${eventKey}`} defaultActiveKey="pending">
           <Row className="clearfix">
 
             <Col md={12}>

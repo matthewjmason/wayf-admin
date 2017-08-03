@@ -22,8 +22,6 @@ class AdminApp extends React.Component {
   }
 
   render() {
-    console.log(this.props.adminViewer);
-    console.log(this.props.viewer);
     return (
         <div data-framework="relay">
           <Grid>
