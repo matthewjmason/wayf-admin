@@ -386,8 +386,8 @@ const createPublisherRegistrationMutation = mutationWithClientMutationId({
         publisherName: { type: new GraphQLNonNull(GraphQLString) },
         contactFirstName: { type: new GraphQLNonNull(GraphQLString) },
         contactLastName: { type: new GraphQLNonNull(GraphQLString) },
-        contactEmail: { type: new GraphQLNonNull(GraphQLString) },
         contactPhoneNumber: { type: new GraphQLNonNull(GraphQLString) },
+        contactEmail: { type: new GraphQLNonNull(GraphQLString) }
     },
     outputFields: {
         publisherRegistration: {
@@ -395,7 +395,7 @@ const createPublisherRegistrationMutation = mutationWithClientMutationId({
             resolve: (root, args) => root
         },
     },
-    mutateAndGetPayload: ({publisherName, contactFirstName, contactLastName, contactEmail, contactPhoneNumber}, root) => {
+    mutateAndGetPayload: ({publisherName, contactFirstName, contactLastName, contactPhoneNumber, contactEmail}, root) => {
         var publisherRegistration = {
             "publisherName" : publisherName,
             "contact" : {

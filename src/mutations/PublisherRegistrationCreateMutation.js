@@ -28,8 +28,8 @@ function commit(
     publisherName: string,
     contactFirstName: string,
     contactLastName: string,
-    contactEmail: string,
     contactPhoneNumber: string,
+    contactEmail: string,
     onComplete: func
 ) {
   const variables  = {
@@ -37,8 +37,8 @@ function commit(
       publisherName,
       contactFirstName,
       contactLastName,
-      contactEmail,
-      contactPhoneNumber
+      contactPhoneNumber,
+      contactEmail
     }
   }
 

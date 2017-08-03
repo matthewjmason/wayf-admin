@@ -2,8 +2,8 @@ input CreatePublisherRegistrationInput {
   publisherName: String!
   contactFirstName: String!
   contactLastName: String!
-  contactEmail: String!
   contactPhoneNumber: String!
+  contactEmail: String!
   clientMutationId: String
 }
 
