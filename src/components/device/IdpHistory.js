@@ -12,6 +12,7 @@ import {
   Table} from 'react-bootstrap';
 
 import ForgetIdpButton from './ForgetIdpButton';
+import ForgetIdpModal from './ForgetIdpModal';
 
 export class IdpHistory extends React.Component {
   static propTypes = {
@@ -24,10 +25,19 @@ export class IdpHistory extends React.Component {
 
     this.fetchedHistory = false;
 
+    this.state = {
+      identityProviderToForget: null
+    }
+
     this.toggleShow = this.toggleShow.bind(this);
     this.generateHistoryRows = this.generateHistoryRows.bind(this);
     this.subscribeToForget = this.subscribeToForget.bind(this);
     this.getProtocolDisplayName = this.getProtocolDisplayName.bind(this);
+    this.generateForgetIdpModal = this.generateForgetIdpModal.bind(this);
+    this.handleForgetIdpRequest = this.handleForgetIdpRequest.bind(this);
+    this.clearForgetIdpRequest = this.clearForgetIdpRequest.bind(this);
+    this.clearForgetIdpRequestAndRefetch = this.clearForgetIdpRequestAndRefetch.bind(this);
+    this.refetch = this.refetch.bind(this);
   }
 
   subscribeToForget() {
@@ -37,13 +47,17 @@ export class IdpHistory extends React.Component {
 
   toggleShow() {
     if (!this.fetchedHistory) {
-      const refetchVariables = () => ({
-        fetchHistory: true
-      });
-
-      this.fetchedHistory = true;
-      this.props.relay.refetch(refetchVariables, null);
+      this.refetch();
     }
+  }
+
+  refetch() {
+    const refetchVariables = () => ({
+      fetchHistory: true
+    });
+
+    this.fetchedHistory = true;
+    this.props.relay.refetch(refetchVariables, null);
   }
 
   getProtocolDisplayName(protocol) {
@@ -56,6 +70,26 @@ export class IdpHistory extends React.Component {
     } else {
       return protocol;
     }
+  }
+
+  handleForgetIdpRequest(identityProvider) {
+    var state = this.state;
+    state.identityProviderToForget = identityProvider;
+
+    this.setState(state);
+  }
+
+  clearForgetIdpRequest() {
+    var state = this.state;
+    state.identityProviderToForget = null;
+
+    this.setState(state);
+  }
+
+  clearForgetIdpRequestAndRefetch() {
+    console.log("clearing");
+    this.clearForgetIdpRequest();
+    this.refetch();
   }
 
   generateHistoryRows(history) {
@@ -77,12 +111,20 @@ export class IdpHistory extends React.Component {
               {moment(usage.lastActiveDate).format('LLL')}
             </td>
             <td>
-              <ForgetIdpButton idpId={usage.idp.idpId} viewer={this.props.viewer} relay={this.props.relay} subscriber={this.subscribeToForget} />
+              <Button bsStyle="danger" onClick={() => this.handleForgetIdpRequest(usage.idp)}>
+                Forget
+              </Button>
             </td>
           </tr>
         )
       }
     );
+  }
+
+  generateForgetIdpModal() {
+    if (this.state.identityProviderToForget) {
+      return (<ForgetIdpModal viewer={this.props.viewer} onForget={this.clearForgetIdpRequestAndRefetch} onClose={this.clearForgetIdpRequest} identityProvider={this.state.identityProviderToForget} relay={this.props.relay} />);
+    }
   }
 
   render() {
@@ -97,6 +139,7 @@ export class IdpHistory extends React.Component {
           </tr>
         </thead>
         <tbody>
+          {this.generateForgetIdpModal()}
           {this.generateHistoryRows(this.props.viewer.history)}
         </tbody>
       </Table>

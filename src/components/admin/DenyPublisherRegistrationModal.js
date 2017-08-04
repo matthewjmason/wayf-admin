@@ -10,7 +10,7 @@ import DenyPublisherRegistrationMutation from'../../mutations/DenyPublisherRegis
 
 const propTypes = {
   onDeny: PropTypes.func.isRequired,
-  onCancel: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
   relay: PropTypes.object.isRequired,
   publisherRegistration: PropTypes.object.isRequired
 };
@@ -55,7 +55,7 @@ export default class DenyPublisherRegistrationModal extends React.Component {
   	state.showModal = false;
   	this.setState(state);
 
-  	this.props.onCancel();
+  	this.props.onClose();
   }
 
   render() {

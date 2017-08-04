@@ -23,7 +23,8 @@ import PublisherDisplay from './PublisherDisplay';
 
 const propTypes = {
   relay: PropTypes.object.isRequired,
-  onClose: PropTypes.func.isRequired,
+  onClose: PropTypes.func,
+  onSuccess: PropTypes.func,
   publisherRegistration: PropTypes.object
 };
 
@@ -44,17 +45,17 @@ export default class CreatePublisherModal extends React.Component {
         contactEmailValidationState: null,
     };
 
-    this.hideSuccessModal = this.hideSuccessModal.bind(this);
+    this.hideSuccessAlert = this.hideSuccessAlert.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.successfulCreation = this.successfulCreation.bind(this);
     this.getModalTitle = this.getModalTitle.bind(this);
     this.getModalBody = this.getModalBody.bind(this);
     this.getModalBottomPanel = this.getModalBottomPanel.bind(this);
     this.hideModal = this.hideModal.bind(this);
+    this.confirm = this.confirm.bind(this);
   }
 
   successfulCreation(mutationResponse) {
-    console.log(mutationResponse.createPublisher.publisher);
     var state = this.state;
     state.loading = false;
     state.successfulCreation = true;
@@ -62,6 +63,14 @@ export default class CreatePublisherModal extends React.Component {
     state.showSuccessAlert = true;
 
     this.setState(state);
+  }
+
+  confirm() {
+    this.hideModal();
+
+    if (this.props.onSuccess) {
+      this.props.onSuccess();
+    }
   }
 
   handleSubmit() {
@@ -90,7 +99,7 @@ export default class CreatePublisherModal extends React.Component {
     );
   }
 
-  hideSuccessModal() {
+  hideSuccessAlert() {
     var state = this.state;
     state.showSuccessAlert = false;
     this.setState(state);
@@ -98,7 +107,7 @@ export default class CreatePublisherModal extends React.Component {
 
   getModalAlert() {
     if (this.state.showSuccessAlert) {
-      return (<Alert bsStyle="success" onDismiss={this.hideSuccessModal}>Success!</Alert>);
+      return (<Alert bsStyle="success" onDismiss={this.hideSuccessAlert}>Success!</Alert>);
     }
   }
 
@@ -134,7 +143,7 @@ export default class CreatePublisherModal extends React.Component {
   getModalBottomPanel() {
     if (this.state.successfulCreation) {
       return (
-        <Button onClick={this.hideModal}>Close</Button>
+        <Button onClick={this.confirm}>Close</Button>
       );
     } else {
       return (

@@ -28,6 +28,8 @@ class PendingRegistrations extends React.Component {
     this.cancelApproval = this.cancelApproval.bind(this);
     this.denyClick = this.denyClick.bind(this);
     this.clearDenyRequest = this.clearDenyRequest.bind(this);
+    this.refetch = this.refetch.bind(this);
+    this.clearApprovalAndRefetch = this.clearApprovalAndRefetch.bind(this);
 
     this.state = {
       publisherRegistrationToApprove: null,
@@ -52,6 +54,15 @@ class PendingRegistrations extends React.Component {
     }
   }
 
+  refetch() {
+    const refetchVariables = () => ({
+      fetchPendingRegistrations: true
+    });
+
+    this.fetchedHistory = true;
+    this.props.relay.refetch(refetchVariables, null);
+  }
+
   approveClick(publisherRegistration) {
     var state = this.state;
     state.publisherRegistrationToApprove = publisherRegistration;
@@ -73,6 +84,11 @@ class PendingRegistrations extends React.Component {
     this.setState(state);
   }
 
+  clearApprovalAndRefetch() {
+    this.cancelApproval();
+    this.refetch();
+  }
+
   clearDenyRequest() {
     var state = this.state;
     state.publisherRegistrationToDeny = null;
@@ -83,7 +99,6 @@ class PendingRegistrations extends React.Component {
       });
 
     this.props.relay.refetch(refetchVariables, null);
-
   }
 
   pendingRegistrationsRowMapper(pendingPublisherRegistrations) {
@@ -124,14 +139,12 @@ class PendingRegistrations extends React.Component {
   render() {
     var actionModal;
     if (this.state.publisherRegistrationToApprove) {
-      actionModal = <CreatePublisherModal relay={this.props.relay} onClose={this.cancelApproval} publisherRegistration={this.state.publisherRegistrationToApprove}/>;
+      actionModal = <CreatePublisherModal relay={this.props.relay} onClose={this.cancelApproval} onSuccess={this.clearApprovalAndRefetch} publisherRegistration={this.state.publisherRegistrationToApprove}/>;
     } else if (this.state.publisherRegistrationToDeny) {
       actionModal = <DenyPublisherRegistrationModal relay={this.props.relay} onClose={this.clearDenyRequest} onDeny={this.clearDenyRequest} publisherRegistration={this.state.publisherRegistrationToDeny}/>;
     } else {
       actionModal = <div></div>;
     }
-
-
 
     return (
       <Grid>

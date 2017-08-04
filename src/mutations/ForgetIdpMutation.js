@@ -18,33 +18,23 @@ const mutation = graphql`
     }
 `;
 
-function getConfigs(viewerId) {
-  return [{
-    type: 'RANGE_ADD',
-    parentName: 'viewer',
-    parentID: viewerId,
-    connectionName: 'features',
-    edgeName: 'featureEdge',
-    rangeBehaviors: {
-      '': 'append',
-    },
-  }];
-}
-
 function commit(
     environment: Environment,
     idpId: number,
-    viewerId: number,
     onCompleted: func
 ) {
+  const variables  = {
+    input: {
+      idpId
+    }
+  }
   commitMutation(
       environment,
       {
         mutation,
-        variables: { input: idpId },
-        configs: getConfigs(viewerId),
+        variables: variables,
         onCompleted: (response) => {
-          onCompleted();
+          onCompleted(response);
         },
         onError: err => console.error(err),
       }

@@ -27,6 +27,7 @@ export class DeviceActivity extends React.Component {
 
     this.toggleShow = this.toggleShow.bind(this);
     this.generateActivityRows = this.generateActivityRows.bind(this);
+    this.getPublisherName = this.getPublisherName.bind(this);
   }
 
   toggleShow() {
@@ -40,20 +41,24 @@ export class DeviceActivity extends React.Component {
     }
   }
 
+  getPublisherName(deviceAccess) {
+    return (deviceAccess.publisher)? deviceAccess.publisher.name : 'Device Admin';
+  }
+
   generateActivityRows(device) {
     if (!device || !device.activity) {
       return <tr><td colSpan="3">No Data to display!</td></tr>;
     }
 
     return device.activity.map(
-      function(access, i) {
+      (access, i) => {
         return (
           <tr key={i}>
             <td>
               {moment(access.createdDate).format('LLL')}
             </td>
             <td>
-              {access.publisher.name}
+              {this.getPublisherName(access)}
             </td>
             <td>
               <AccessTypeDisplay accessType={access.type} />
@@ -64,14 +69,13 @@ export class DeviceActivity extends React.Component {
     );
   }
 
-
   render() {
     return (
       <Table striped condensed hover>
         <thead>
           <tr>
             <th>Timestamp</th>
-            <th>Publisher Name</th>
+            <th>Platform Name</th>
             <th>Access Type</th>
           </tr>
         </thead>

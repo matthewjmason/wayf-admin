@@ -42,7 +42,7 @@ class AdminTabs extends React.Component {
 
             <Col md={12}>
               <Nav bsStyle="tabs" onSelect={this.handleSelect}>
-                <NavItem eventKey="pending">Pending</NavItem>
+                <NavItem eventKey="pending">Pending Registrations</NavItem>
               </Nav>
             </Col>
 
