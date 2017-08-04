@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { createFragmentContainer, graphql } from 'react-relay';
 
 import PublisherRegistrationCreateMutation from '../../mutations/PublisherRegistrationCreateMutation';
+import CreatePublisherForm from '../admin/CreatePublisherForm';
 
 import { 
   Form,
@@ -40,7 +41,6 @@ class PublisherRegistrationInput extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.hideProcessingModal = this.hideProcessingModal.bind(this);
     this.hideSuccessModal = this.hideSuccessModal.bind(this);
-    this.validateInputs = this.validateInputs.bind(this);
   }
 
   hideProcessingModal() {
@@ -64,7 +64,7 @@ class PublisherRegistrationInput extends React.Component {
 
 
   handleSubmit() {
-    var validInputs = this.validateInputs();
+    var validInputs = this.createPublisherForm.validateInputs();
 
     if (!validInputs) {
       return;
@@ -74,58 +74,13 @@ class PublisherRegistrationInput extends React.Component {
 
     PublisherRegistrationCreateMutation.commit(
           this.props.relay.environment,
-          this.publisherName.value,
-          this.contactFirstName.value,
-          this.contactLastName.value,
-          this.contactPhoneNumber.value,
-          this.contactEmail.value,
+          this.createPublisherForm.publisherName.value,
+          this.createPublisherForm.contactFirstName.value,
+          this.createPublisherForm.contactLastName.value,
+          this.createPublisherForm.contactPhoneNumber.value,
+          this.createPublisherForm.contactEmail.value,
           this.hideProcessingModal
     );
-  }
-
-  validateInputs() {
-    var state = this.state;
-
-    var successfulValidation = true;
-
-    if (!this.publisherName.value) {
-      state.publisherNameValidationState = 'error';
-      successfulValidation = false;
-    } else {
-      state.publisherNameValidationState = null;
-    }
-
-    if (!this.contactFirstName.value) {
-      state.contactFirstNameValidationState = 'error';
-      successfulValidation = false;
-    } else {
-      state.contactFirstNameValidationState = null;
-    }
-
-    if (!this.contactLastName.value) {
-      state.contactLastNameValidationState = 'error';
-      successfulValidation = false;
-    } else {
-      state.contactLastNameValidationState = null;
-    }
-
-    if (!this.contactEmail.value) {
-      state.contactEmailValidationState = 'error';
-      successfulValidation = false;
-    } else {
-      state.contactEmailValidationState = null;
-    }
-
-    if (!this.contactPhoneNumber.value) {
-      state.contactPhoneNumberValidationState = 'error';
-      successfulValidation = false;
-    } else {
-      state.contactPhoneNumberValidationState = null;
-    }
-
-    this.setState(state);
-
-    return successfulValidation;
   }
 
   render() {
@@ -150,62 +105,7 @@ class PublisherRegistrationInput extends React.Component {
           </Modal.Footer>
         </Modal>
 
-
-        <Form horizontal>
-          <h3>Publisher Information</h3>
-
-          <FormGroup controlId="publisherName" validationState={this.state.publisherNameValidationState}>
-            <Col componentClass={ControlLabel} sm={2}>
-              Publisher Name
-            </Col>
-            <Col sm={10}>
-              <FormControl inputRef={ref => { this.publisherName = ref; }} type="text" placeholder="" />
-            </Col>
-          </FormGroup>
-
-          <h3>Contact Information</h3>
-
-          <FormGroup controlId="contactFirstName" validationState={this.state.contactFirstNameValidationState}>
-            <Col componentClass={ControlLabel} sm={2}>
-              First Name
-            </Col>
-            <Col sm={10}>
-              <FormControl  inputRef={(ref) => {this.contactFirstName = ref}} type="text" placeholder="" />
-            </Col>
-          </FormGroup>
-
-          <FormGroup controlId="contactLastName" validationState={this.state.contactLastNameValidationState}>
-            <Col componentClass={ControlLabel} sm={2} >
-              Last Name
-            </Col>
-            <Col sm={10}>
-              <FormControl inputRef={(ref) => {this.contactLastName = ref}} type="text" placeholder="" />
-            </Col>
-          </FormGroup>
-
-          <FormGroup controlId="contactEmail" validationState={this.state.contactEmailValidationState}>
-            <Col componentClass={ControlLabel} sm={2}>
-              Email
-            </Col>
-            <Col sm={10}>
-              <FormControl inputRef={(ref) => {this.contactEmail = ref}} type="email" placeholder="" />
-            </Col>
-          </FormGroup>
-
-          <FormGroup controlId="contactPhoneNumber" validationState={this.state.contactPhoneNumberValidationState}>
-            <Col componentClass={ControlLabel} sm={2}>
-              Phone Number
-            </Col>
-            <Col sm={10}>
-              <FormControl inputRef={(ref) => {this.contactPhoneNumber = ref}} type="text" placeholder="" />
-            </Col>
-          </FormGroup>
-
-          <FormGroup>
-            <Col smOffset={2} sm={10}>
-            </Col>
-          </FormGroup>
-        </Form>
+        <CreatePublisherForm ref={instance => {this.createPublisherForm = instance; }} suppressPublisherCode={true}/>
         <Button type="submit" disabled={this.state.disableSubmit} onClick={this.handleSubmit}>
           Submit
         </Button>

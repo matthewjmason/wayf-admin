@@ -17,6 +17,7 @@ import {
 import Button from 'react-bootstrap-button-loader';
 
 const propTypes = {
+  suppressPublisherCode: PropTypes.bool,
   publisherRegistration: PropTypes.object
 };
 
@@ -35,7 +36,7 @@ export default class CreatePublisherForm extends React.Component {
 
     this.validateInputs = this.validateInputs.bind(this);
     this.generatePublisherCode = this.generatePublisherCode.bind(this);
-
+    this.genereatePublisherCodeInput = this.genereatePublisherCodeInput.bind(this);
 
     if (this.props.publisherRegistration) {
       this.defaultValues = {
@@ -63,11 +64,13 @@ export default class CreatePublisherForm extends React.Component {
       state.publisherNameValidationState = null;
     }
 
-    if (!this.publisherCode.value) {
-      state.publisherCodeValidationState = 'error';
-      successfulValidation = false;
-    } else {
-      state.publisherCodeValidationState = null;
+    if (!this.props.suppressPublisherCode) {
+      if (!this.publisherCode.value) {
+        state.publisherCodeValidationState = 'error';
+        successfulValidation = false;
+      } else {
+        state.publisherCodeValidationState = null;
+      }
     }
 
     if (!this.contactFirstName.value) {
@@ -110,6 +113,21 @@ export default class CreatePublisherForm extends React.Component {
     return noWhitespace;
   }
 
+  genereatePublisherCodeInput() {
+    if (!this.props.suppressPublisherCode) {
+      return (
+        <FormGroup controlId="publisherCode" validationState={this.state.publisherCodeValidationState}>
+          <Col componentClass={ControlLabel} sm={2}>
+            Publisher Code
+          </Col>
+          <Col sm={10}>
+            <FormControl inputRef={ref => { this.publisherCode = ref; }} type="text" defaultValue={this.defaultValues.publisherCode} />
+          </Col>
+        </FormGroup>
+      );
+    }
+  }
+
 
   render() {
     return (
@@ -125,14 +143,7 @@ export default class CreatePublisherForm extends React.Component {
           </Col>
         </FormGroup>
 
-        <FormGroup controlId="publisherCode" validationState={this.state.publisherCodeValidationState}>
-          <Col componentClass={ControlLabel} sm={2}>
-            Publisher Code
-          </Col>
-          <Col sm={10}>
-            <FormControl inputRef={ref => { this.publisherCode = ref; }} type="text" defaultValue={this.defaultValues.publisherCode} />
-          </Col>
-        </FormGroup>
+        {this.genereatePublisherCodeInput()}
 
         <h3>Contact Information</h3>
 
