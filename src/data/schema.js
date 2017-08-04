@@ -32,7 +32,15 @@ import {
     forgetIdp,
     publisherLoader,
     identityProviderLoader,
-    getViewer
+    userLoader,
+    getViewer,
+    createPublisherRegistration,
+    createPublisher,
+    fetchPendingRegistrations,
+    fetchApprovedRegistrations,
+    fetchDeniedRegistrations,
+    getAdminViewer,
+    denyPublisherRegistration
 } from './database';
 
 import {
@@ -184,6 +192,79 @@ var PublisherType = new GraphQLObjectType({
         name: {
             type: GraphQLString
         },
+        contact: {
+            type: UserType,
+            resolve: (root) => userLoader.load(root.contact.id)
+        },
+        registration: {
+            type: PublisherRegistrationType
+        },
+        widgetLocation: {
+            type: GraphQLString
+        },
+        token: {
+            type: GraphQLString
+        },
+        createdDate: {
+            type: DateType
+        },
+        modifiedDate: {
+            type: DateType
+        }
+    })
+});
+
+
+var UserType = new GraphQLObjectType({
+    name: 'UserType',
+    fields: () => ({
+        id: {
+            type: GraphQLInt
+        },
+        firstName: {
+            type: GraphQLString
+        },
+        lastName: {
+            type: GraphQLString
+        },
+        email: {
+            type: GraphQLString
+        },
+        phoneNumber: {
+            type: GraphQLString
+        },
+        createdDate: {
+            type: DateType
+        },
+        modifiedDate: {
+            type: DateType
+        }
+    })
+});
+
+
+var PublisherRegistrationType = new GraphQLObjectType({
+    name: 'PublisherRegistrationType',
+    fields: () => ({
+        id: {
+            type: GraphQLInt
+        },
+        status : {
+            type: GraphQLString
+        },
+        publisherName: {
+            type: GraphQLString
+        },
+        contact: {
+            type: UserType,
+            resolve: (root) => userLoader.load(root.contact.id)
+        },
+        applicationDate: {
+            type: DateType
+        },
+        approvalDate: {
+            type: DateType
+        },
         createdDate: {
             type: DateType
         },
@@ -197,7 +278,7 @@ var IdentityProviderType = new GraphQLObjectType({
     name: 'IdentityProviderType',
     fields: () => ({
         id: {
-            type: GraphQLString
+            type: GraphQLInt
         },
         type: {
             type: IdentityProviderTypeEnum
@@ -219,6 +300,9 @@ var IdentityProviderType = new GraphQLObjectType({
 const ViewerType = new GraphQLObjectType({
     name: 'viewer',
     fields: {
+        viewerId: {
+            type: GraphQLString
+        },
         device: {
             type: DeviceType,
             args: {
@@ -245,14 +329,14 @@ const ViewerType = new GraphQLObjectType({
             args: {
                 globalId: {type: GraphQLString}
             },
-            resolve: (root, args) => fetchHistory(root.secretDeviceId)
+            resolve: (root, args) => root.secretDeviceId? fetchHistory(root.secretDeviceId) : null
         },
         latestActivity: {
             type: DeviceAccessType,
             args: {
                 globalId: {type: GraphQLString}
             },
-            resolve: (root, args) => fetchLatestActivity(root.secretDeviceId)
+            resolve: (root, args) => root.secretDeviceId? fetchLatestActivity(root.secretDeviceId) : null
         },
         identityProvider: {
             type: IdentityProviderType,
@@ -260,6 +344,18 @@ const ViewerType = new GraphQLObjectType({
                 id: {type: GraphQLInt}
             },
             resolve: (root, args) => fetchIdentityProvider(args.id)
+        },
+        pendingPublisherRegistrations: {
+            type: new GraphQLList(PublisherRegistrationType),
+            resolve: (root, args) => fetchPendingRegistrations()
+        },
+        approvedPublisherRegistrations: {
+            type: new GraphQLList(PublisherRegistrationType),
+            resolve: (root, args) => fetchApprovedRegistrations()
+        },
+        deniedPublisherRegistrations: {
+            type: new GraphQLList(PublisherRegistrationType),
+            resolve: (root, args) => fetchDeniedRegistrations()
         }
     }
 });
@@ -281,11 +377,96 @@ const forgetIdpMutation = mutationWithClientMutationId({
     }
 });
 
+const denyPublisherRegistrationMutation = mutationWithClientMutationId({
+    name: 'DenyPublisherRegistration',
+    inputFields: {
+        publisherRegistrationId: { type: new GraphQLNonNull(GraphQLInt) }
+    },
+
+    outputFields: {
+        publisherRegistration: {
+            type: PublisherRegistrationType
+        }
+    },
+
+    mutateAndGetPayload: ({publisherRegistrationId}, root) => {
+        return denyPublisherRegistration(publisherRegistrationId);
+    }
+});
+
+const createPublisherRegistrationMutation = mutationWithClientMutationId({
+    name: 'CreatePublisherRegistration',
+    inputFields: {
+        publisherName: { type: new GraphQLNonNull(GraphQLString) },
+        contactFirstName: { type: new GraphQLNonNull(GraphQLString) },
+        contactLastName: { type: new GraphQLNonNull(GraphQLString) },
+        contactPhoneNumber: { type: new GraphQLNonNull(GraphQLString) },
+        contactEmail: { type: new GraphQLNonNull(GraphQLString) }
+    },
+    outputFields: {
+        publisherRegistration: {
+            type: PublisherRegistrationType,
+            resolve: (root, args) => root
+        },
+    },
+    mutateAndGetPayload: ({publisherName, contactFirstName, contactLastName, contactPhoneNumber, contactEmail}, root) => {
+        var publisherRegistration = {
+            "publisherName" : publisherName,
+            "contact" : {
+                "firstName" : contactFirstName,
+                "lastName" : contactLastName,
+                "email" : contactEmail,
+                "phoneNumber" : contactPhoneNumber
+            }
+        };
+
+        return createPublisherRegistration(publisherRegistration);
+    }
+});
+
+const createPublisherMutation = mutationWithClientMutationId({
+    name: 'CreatePublisher',
+    inputFields: {
+        publisherName: { type: new GraphQLNonNull(GraphQLString) },
+        publisherCode: { type: new GraphQLNonNull(GraphQLString) },
+        registrationId: { type: GraphQLInt },
+        contactFirstName: { type: new GraphQLNonNull(GraphQLString) },
+        contactLastName: { type: new GraphQLNonNull(GraphQLString) },
+        contactPhoneNumber: { type: new GraphQLNonNull(GraphQLString) },
+        contactEmail: { type: new GraphQLNonNull(GraphQLString) }
+    },
+    outputFields: {
+        publisher: {
+            type: PublisherType,
+            resolve: (root, args) => root
+        },
+    },
+    mutateAndGetPayload: ({publisherName, publisherCode, registrationId, contactFirstName, contactLastName, contactPhoneNumber, contactEmail}, root) => {
+        var publisher = {
+            "name" : publisherName,
+            "code" : publisherCode,
+            "registration": {
+                "id": registrationId
+            },
+            "contact" : {
+                "firstName" : contactFirstName,
+                "lastName" : contactLastName,
+                "email" : contactEmail,
+                "phoneNumber" : contactPhoneNumber
+            }
+        };
+
+        return createPublisher(publisher);
+    }
+});
 
 const mutationType = new GraphQLObjectType({
     name: 'Mutation',
     fields: () => ({
-        forgetIdp: forgetIdpMutation
+        forgetIdp: forgetIdpMutation,
+        createPublisherRegistration: createPublisherRegistrationMutation,
+        createPublisher: createPublisherMutation,
+        denyPublisherRegistration: denyPublisherRegistrationMutation
     })
 });
 
@@ -295,7 +476,16 @@ const queryType = new GraphQLObjectType({
         // Add your own root fields here
         viewer: {
             type: ViewerType,
-            resolve: (parentValue, args, request) => getViewer(request.session.deviceId)
+            resolve: (parentValue, args, request) => {
+                if (request.session.deviceId) {
+                    return getViewer(request.session.deviceId);
+                } else {
+                    return getViewer(null);
+                }
+            }
+        },
+        publisherRegistration: {
+            type: PublisherRegistrationType,
         }
     })
 });

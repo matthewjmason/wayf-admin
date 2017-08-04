@@ -1,5 +1,45 @@
+input CreatePublisherInput {
+  publisherName: String!
+  publisherCode: String!
+  registrationId: Int
+  contactFirstName: String!
+  contactLastName: String!
+  contactPhoneNumber: String!
+  contactEmail: String!
+  clientMutationId: String
+}
+
+type CreatePublisherPayload {
+  publisher: PublisherType
+  clientMutationId: String
+}
+
+input CreatePublisherRegistrationInput {
+  publisherName: String!
+  contactFirstName: String!
+  contactLastName: String!
+  contactPhoneNumber: String!
+  contactEmail: String!
+  clientMutationId: String
+}
+
+type CreatePublisherRegistrationPayload {
+  publisherRegistration: PublisherRegistrationType
+  clientMutationId: String
+}
+
 # Date custom scalar type
 scalar Date
+
+input DenyPublisherRegistrationInput {
+  publisherRegistrationId: Int!
+  clientMutationId: String
+}
+
+type DenyPublisherRegistrationPayload {
+  publisherRegistration: PublisherRegistrationType
+  clientMutationId: String
+}
 
 type DeviceAccessType {
   localId: String
@@ -42,7 +82,7 @@ type ForgetIdpPayload {
 }
 
 type IdentityProviderType {
-  id: String
+  id: Int
   type: IdentityProviderTypeEnum
   name: String
   createdDate: Date
@@ -63,6 +103,20 @@ type IdentityProviderUsageType {
 
 type Mutation {
   forgetIdp(input: ForgetIdpInput!): ForgetIdpPayload
+  createPublisherRegistration(input: CreatePublisherRegistrationInput!): CreatePublisherRegistrationPayload
+  createPublisher(input: CreatePublisherInput!): CreatePublisherPayload
+  denyPublisherRegistration(input: DenyPublisherRegistrationInput!): DenyPublisherRegistrationPayload
+}
+
+type PublisherRegistrationType {
+  id: Int
+  status: String
+  publisherName: String
+  contact: UserType
+  applicationDate: Date
+  approvalDate: Date
+  createdDate: Date
+  modifiedDate: Date
 }
 
 type PublisherType {
@@ -70,18 +124,37 @@ type PublisherType {
   status: String
   code: String
   name: String
+  contact: UserType
+  registration: PublisherRegistrationType
+  widgetLocation: String
+  token: String
   createdDate: Date
   modifiedDate: Date
 }
 
 type Query {
   viewer: viewer
+  publisherRegistration: PublisherRegistrationType
+}
+
+type UserType {
+  id: Int
+  firstName: String
+  lastName: String
+  email: String
+  phoneNumber: String
+  createdDate: Date
+  modifiedDate: Date
 }
 
 type viewer {
+  viewerId: String
   device(globalId: String): DeviceType
   identityProvider(id: Int): IdentityProviderType
   publisher(id: String): PublisherType
   history(globalId: String): [IdentityProviderUsageType]
   latestActivity(globalId: String): DeviceAccessType
+  pendingPublisherRegistrations: [PublisherRegistrationType]
+  approvedPublisherRegistrations: [PublisherRegistrationType]
+  deniedPublisherRegistrations: [PublisherRegistrationType]
 }

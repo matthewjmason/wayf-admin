@@ -3,9 +3,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {
-  Col,
+  Table,
   Button, Grid,
-  Row} from 'react-bootstrap';
+  Row
+} from 'react-bootstrap';
 
 import AccessTypeDisplay from './AccessTypeDisplay';
 import { createRefetchContainer, graphql } from 'react-relay';
@@ -25,7 +26,7 @@ export class DeviceActivity extends React.Component {
     this.fetchedActivity = false;
 
     this.toggleShow = this.toggleShow.bind(this);
-    this.sessionRows = this.sessionRows.bind(this);
+    this.generateActivityRows = this.generateActivityRows.bind(this);
   }
 
   toggleShow() {
@@ -39,32 +40,46 @@ export class DeviceActivity extends React.Component {
     }
   }
 
-  sessionRows(device) {
-    if (!device) {
-      return <Button>Nothing</Button>;
+  generateActivityRows(device) {
+    if (!device || !device.activity) {
+      return <tr><td colSpan="3">No Data to display!</td></tr>;
     }
+
     return device.activity.map(
-        function(access, i) {
-          return (
-              <Row>
-                <Col md={5}>
-                  {moment(access.createdDate).format('LLL')}
-                </Col>
-                <Col md={5}>
-                  {access.publisher.name}
-                </Col>
-                <Col md={2}>
-                  <AccessTypeDisplay accessType={access.type} />
-                </Col>
-              </Row>
-          )
-        }
+      function(access, i) {
+        return (
+          <tr key={i}>
+            <td>
+              {moment(access.createdDate).format('LLL')}
+            </td>
+            <td>
+              {access.publisher.name}
+            </td>
+            <td>
+              <AccessTypeDisplay accessType={access.type} />
+            </td>
+          </tr>
+        )
+      }
     );
   }
 
 
   render() {
-    return <Grid>{this.sessionRows(this.props.viewer.device)}</Grid>;
+    return (
+      <Table striped condensed hover>
+        <thead>
+          <tr>
+            <th>Timestamp</th>
+            <th>Publisher Name</th>
+            <th>Access Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          {this.generateActivityRows(this.props.viewer.device)}
+        </tbody>
+      </Table>
+    );
   }
 }
 

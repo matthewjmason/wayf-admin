@@ -26,6 +26,8 @@ app.use(session({
 }));
 
 
+app.use(express.static('public'));
+
 app.use(config.graphql.path, graphQLHTTP(request => {
   let deviceId = null;
 
@@ -35,9 +37,6 @@ app.use(config.graphql.path, graphQLHTTP(request => {
     deviceId = request.headers.cookie;
   }
 
-  if (!deviceId){
-
-  }
   request.session.deviceId = deviceId;
 
   return {
@@ -58,11 +57,23 @@ const webpackConfig = {
   },
 
   module: {
+    loaders: [
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url?limit=25000'
+      }
+    ],
     rules: [
       { test: /\.js$/, exclude: /node_modules/, use: 'babel-loader' },
       { test: /\.css$/, use: ExtractTextPlugin.extract('css-loader') },
       { test: /learn\.json$/, use: 'file-loader?name=[name].[ext]' },
-    ],
+      {
+        test: /\.(png|jpg|svg)$/,
+        use: {
+          loader: 'url-loader',
+        },
+      }
+    ]
   },
 
   plugins: [
@@ -76,28 +87,6 @@ app.use(webpackMiddleware(webpack(webpackConfig), {
 
 app.use(async (req, res) => {
   var deviceId = req.cookies.deviceId;
-
-  if (!deviceId) {
-    res.status(200).send(`
-    <!DOCTYPE html>
-    <html>
-
-    <head>
-      <meta charset="utf-8">
-        <title>WAYF Cloud</title>
-        <link rel="stylesheet" href="styles.css">
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
-
-            <!-- Optional theme -->
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap-theme.min.css">
-    </head>
-
-    <body>
-    <div><h1>Welcome!</h1><h1><small>Your device is not registered with the WAYF cloud. To begin, visit a participating partner</small></h1></div>
-    </body>
-
-    </html>`);
-  }
 
   const fetcher = new ServerFetcher(GRAPHQL_URL, deviceId);
 

@@ -8,7 +8,8 @@ import {
   Grid,
   Col,
   Button,
-  Row} from 'react-bootstrap';
+  Row,
+  Table} from 'react-bootstrap';
 
 import ForgetIdpButton from './ForgetIdpButton';
 
@@ -24,8 +25,7 @@ export class IdpHistory extends React.Component {
     this.fetchedHistory = false;
 
     this.toggleShow = this.toggleShow.bind(this);
-    this.summaryRow = this.summaryRow.bind(this);
-    this.loadSummary = this.loadSummary.bind(this);
+    this.generateHistoryRows = this.generateHistoryRows.bind(this);
     this.subscribeToForget = this.subscribeToForget.bind(this);
     this.getProtocolDisplayName = this.getProtocolDisplayName.bind(this);
   }
@@ -58,62 +58,49 @@ export class IdpHistory extends React.Component {
     }
   }
 
-  summaryRow(history) {
+  generateHistoryRows(history) {
     if (!history) {
-      return;
+      return <tr><td colSpan="4">No Data to display!</td></tr>;
     }
+
     return history.map(
-        (usage, i) => {
-          return (
-              <Row>
-                <Col md={3}>
-                  {usage.idp.name}
-                </Col>
-                <Col md={3}>
-                  {this.getProtocolDisplayName(usage.idp.type)}
-                </Col>
-                <Col md={2}>
-                  {moment(usage.lastActiveDate).format('LLL')}
-                </Col>
-                <Col md={2}>
-                  <ForgetIdpButton idpId={usage.idp.id} viewer={this.props.viewer} relay={this.props.relay} subscriber={this.subscribeToForget} />
-                </Col>
-              </Row>
-          )
-        }
+      (usage, i) => {
+        return (
+          <tr key={i}>
+            <td>
+              {usage.idp.name}
+            </td>
+            <td>
+              {this.getProtocolDisplayName(usage.idp.type)}
+            </td>
+            <td>
+              {moment(usage.lastActiveDate).format('LLL')}
+            </td>
+            <td>
+              <ForgetIdpButton idpId={usage.idp.idpId} viewer={this.props.viewer} relay={this.props.relay} subscriber={this.subscribeToForget} />
+            </td>
+          </tr>
+        )
+      }
     );
   }
 
-  loadSummary(history) {
-    if (history) {
-
-      return (
-          <Grid>
-            <Row className="row-fluid">
-              <Col md={3}>
-                <h2>Name</h2>
-              </Col>
-              <Col md={3}>
-                <h2>Protocol</h2>
-              </Col>
-              <Col md={2}>
-                <h2></h2>
-              </Col>
-              <Col md={2}>
-              </Col>
-            </Row>
-
-            {this.summaryRow(history)}
-          </Grid>
-      );
-    }
-
-    return <Grid>No History</Grid>;
-  }
-
-
   render() {
-    return this.loadSummary(this.props.viewer.history);
+    return (
+      <Table striped condensed hover>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Protocol</th>
+            <th>Timestamp</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {this.generateHistoryRows(this.props.viewer.history)}
+        </tbody>
+      </Table>
+    )
   }
 }
 
@@ -127,7 +114,7 @@ export default createRefetchContainer(
             history @include(if: $fetchHistory) {
                 key: idp {name},
                 idp {
-                    id,
+                    idpId: id,
                     name,
                     type
                 },

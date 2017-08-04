@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import IdpHistory from './IdpHistory';
 import { createFragmentContainer, graphql } from 'react-relay';
 import { Nav,
   NavItem,
@@ -8,14 +7,14 @@ import { Nav,
   Row,
   TabContainer,
   TabContent, TabPane} from 'react-bootstrap';
-import DeviceActivity from "./DeviceActivity";
+import PendingRegistrations from "./PendingRegistrations";
 
 const propTypes = {
   viewer: PropTypes.object.isRequired,
   relay: PropTypes.object.isRequired,
 };
 
-class DeviceTabs extends React.Component {
+class AdminTabs extends React.Component {
   constructor(props) {
     super(props);
 
@@ -23,33 +22,33 @@ class DeviceTabs extends React.Component {
   }
 
   handleSelect(eventKey) {
-    if (eventKey === 'history') {
+    if (eventKey === 'pending') {
       this.idpHistoryComponent.refs.component.toggleShow();
     }
 
-    if (eventKey === 'activity') {
+    if (eventKey === 'approved') {
+      this.deviceActivityComponent.refs.component.toggleShow();
+    }
+
+    if (eventKey === 'denied') {
       this.deviceActivityComponent.refs.component.toggleShow();
     }
   }
 
   render() {
     return (
-        <TabContainer defaultActiveKey="history">
+        <TabContainer generateChildId={(eventKey, type) => `${type}-${eventKey}`} defaultActiveKey="pending">
           <Row className="clearfix">
 
             <Col md={12}>
               <Nav bsStyle="tabs" onSelect={this.handleSelect}>
-                <NavItem eventKey="history">Overview</NavItem>
-                <NavItem eventKey="activity">Activity</NavItem>
+                <NavItem eventKey="pending">Pending</NavItem>
               </Nav>
             </Col>
 
             <TabContent>
-              <TabPane eventKey="history">
-                <IdpHistory relay={this.props.relay} viewer={this.props.viewer} ref={(idpHistory) => { this.idpHistoryComponent = idpHistory; }}/>
-              </TabPane>
-              <TabPane eventKey="activity">
-                <DeviceActivity relay={this.props.relay} viewer={this.props.viewer} ref={(deviceActivity) => { this.deviceActivityComponent = deviceActivity; }}/>
+              <TabPane eventKey="pending">
+                <PendingRegistrations relay={this.props.relay} viewer={this.props.viewer} ref={(pendingRegistrations) => { this.pendingRegistrations = pendingRegistrations; }}/>
               </TabPane>
             </TabContent>
           </Row>
@@ -58,14 +57,13 @@ class DeviceTabs extends React.Component {
   }
 }
 
-DeviceTabs.propTypes = propTypes;
+AdminTabs.propTypes = propTypes;
 
 export default createFragmentContainer(
-    DeviceTabs,
+    AdminTabs,
     graphql.experimental`
-        fragment DeviceTabs_viewer on viewer {
-            ...IdpHistory_viewer,
-            ...DeviceActivity_viewer
+        fragment AdminTabs_viewer on viewer {
+            ...PendingRegistrations_viewer
         },
     `,
 );

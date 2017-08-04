@@ -15,19 +15,48 @@ const propTypes = {
 };
 
 class DeviceHeader extends React.Component {
+    constructor(props) {
+    super(props);
+
+    this.getUserAgent = this.getUserAgent.bind(this);
+    this.getLatestActivity = this.getLatestActivity.bind(this);
+  }
+
+  getUserAgent() {
+    if (this.props.viewer.device && this.props.viewer.device.info) {
+      return this.props.viewer.device.info.userAgent;
+    }
+
+    return '';
+  }
+
+  getLatestActivity() {
+    if (this.props.viewer.latestActivity) {
+      return (
+        <Col md={12}>
+            <Label bsStyle="success">&nbsp;</Label>&nbsp;Last seen {moment(this.props.viewer.latestActivity.createdDate).format('LLL')} at {this.props.viewer.latestActivity.publisher.name}
+        </Col>
+      );
+    } else {
+      return (
+        <Col md={12}>
+            <Label bsStyle="warning">&nbsp;</Label>&nbsp;No Activity
+        </Col>
+      );
+    }
+  }
+
   render() {
     return (
           <Row className="row-fluid">
               <Grid>
                   <Row>
                       <Col md={12}>
-                          <PageHeader>{this.props.viewer.device.info.userAgent}</PageHeader>
+                          <PageHeader>WAYF Device Admin&nbsp;<small>{this.getUserAgent()}</small></PageHeader>
                       </Col>
                   </Row>
                   <Row>
-                      <Col md={12}>
-                          <Label bsStyle="success">&nbsp;</Label>&nbsp;Last seen {moment(this.props.viewer.latestActivity.createdDate).format('LLL')} at {this.props.viewer.latestActivity.publisher.name}
-                      </Col>
+                      {this.getLatestActivity()}
                   </Row>
               </Grid>
           </Row>
